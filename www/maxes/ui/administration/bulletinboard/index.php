@@ -20,7 +20,7 @@
 <div class="maxes01">
     <ul class="maxes02">
         <li id="list" class="maxes02_1"><a href="#maxes02_1_1">List</a></li>
-        <li id="detailrec" class="maxes02_2"><a href="#maxes02_1_2">Bulletin Board</a></li>
+        <li id="detailrec" class="maxes02_2"><a href="#maxes02_1_2">Bulletin Boardssss</a></li>
     </ul>
     <div class="maxes04 shadow">
        <div id="maxes02_1_1" class="tab maxes02_1">
