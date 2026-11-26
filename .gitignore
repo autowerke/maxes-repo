@@ -22,3 +22,7 @@ tomcat/
 .DS_Store
 *.log
 venv/
+
+nginx/ssl/
+*.key
+*.crt
