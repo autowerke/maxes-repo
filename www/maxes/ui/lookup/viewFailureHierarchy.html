@@ -1,0 +1,311 @@
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            font-weight: 300;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .subtitle {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hierarchy-container {
+            padding: 40px;
+            background: #f8f9fa;
+            min-height: 400px;
+        }
+
+        .hierarchy-tree {
+            position: relative;
+        }
+
+        .tree-node {
+            position: relative;
+            margin: 0 0 15px 0;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .tree-node:nth-child(1) { animation-delay: 0.1s; }
+        .tree-node:nth-child(2) { animation-delay: 0.2s; }
+        .tree-node:nth-child(3) { animation-delay: 0.3s; }
+        .tree-node:nth-child(4) { animation-delay: 0.4s; }
+        .tree-node:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .node-content {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-left: 4px solid;
+            margin-left: calc(var(--level, 0) * 40px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .node-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .node-content:hover::before {
+            opacity: 1;
+        }
+
+        .node-content:hover {
+            transform: translateX(5px) translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .level-1 { border-left-color: #e74c3c; background: linear-gradient(135deg, #fff 0%, #ffebee 100%); }
+        .level-2 { border-left-color: #f39c12; background: linear-gradient(135deg, #fff 0%, #fff8e1 100%); }
+        .level-3 { border-left-color: #3498db; background: linear-gradient(135deg, #fff 0%, #e3f2fd 100%); }
+        .level-4 { border-left-color: #2ecc71; background: linear-gradient(135deg, #fff 0%, #e8f5e8 100%); }
+        .level-5 { border-left-color: #9b59b6; background: linear-gradient(135deg, #fff 0%, #f3e5f5 100%); }
+
+        .level-indicator {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 0.8em;
+            margin-right: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .level-1 .level-indicator { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .level-2 .level-indicator { background: linear-gradient(135deg, #f39c12, #d68910); }
+        .level-3 .level-indicator { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .level-4 .level-indicator { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+        .level-5 .level-indicator { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+
+        .node-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .failure-code {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .failure-level {
+            font-size: 0.85em;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .connector {
+            position: absolute;
+            left: calc(var(--parent-level, 0) * 40px + 17px);
+            top: -15px;
+            width: 23px;
+            height: 30px;
+            border-left: 2px solid #bdc3c7;
+            border-bottom: 2px solid #bdc3c7;
+            border-bottom-left-radius: 8px;
+        }
+
+        .tree-node:first-child .connector {
+            display: none;
+        }
+
+        .stats-panel {
+            background: white;
+            margin: 20px 40px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 3px solid #3498db;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2c3e50;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        .load-button {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px auto;
+            display: block;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .load-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #7f8c8d;
+        }
+
+        .empty-state .icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .hierarchy-container {
+                padding: 20px;
+            }
+            
+            .node-content {
+                margin-left: calc(var(--level, 0) * 20px);
+                padding: 12px 15px;
+            }
+            
+            .connector {
+                left: calc(var(--parent-level, 0) * 20px + 17px);
+                width: 13px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+	
+	
+<div class="container">
+        <div class="header">
+            <h1>FAILURE CODE HIERARCHY</h1>
+            <div class="subtitle">System Analysis & Monitoring Dashboard</div>
+        </div>
+        
+        <div class="hierarchy-container">
+            <div id="hierarchyTree" class="hierarchy-tree">
+                <div class="empty-state">
+                    <div class="icon">📊</div>
+                    <h3>No Data Available</h3>
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-panel" id="statsPanel" style="display: none;">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" id="totalNodes">0</span>
+                    <div class="stat-label">Total Nodes</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="maxDepth">0</span>
+                    <div class="stat-label">Max Depth</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="leafNodes">0</span>
+                    <div class="stat-label">Leaf Nodes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  

@@ -1,0 +1,531 @@
+/* --- Item Specific Styles --- */
+
+/* Ranking Badges */
+.max-rank-container { display: flex; gap: 8px; margin-bottom: 12px; }
+.max-rank-box { 
+    flex: 1; padding: 6px; border-radius: 6px; text-align: center;
+    border: 1px solid var(--max-border); background: #fff;
+}
+.max-rank-label { font-size: 10pt; text-transform: uppercase; color: var(--max-text-hint); font-weight: 700; display: block; margin-bottom: 2px; }
+.max-rank-value { font-size: 12pt; font-weight: 800; }
+
+/* Ranking Colors */
+.rank-a { color: #db3737; } /* Critical / High Usage */
+.rank-b { color: #d48806; } /* Medium */
+.rank-c { color: #0f6e56; } /* Low / Normal */
+
+/* Stock Alerts */
+.stock-safe { color: var(--max-success); }
+.stock-warning { color: #d48806; background: #fff7e6; padding: 2px 4px; border-radius: 4px; }
+.stock-danger { color: #db3737; background: #fff1f0; padding: 2px 4px; border-radius: 4px; font-weight: 700; }
+
+/* --- Stock Threshold Pills --- */
+.max-stock-supply-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 10px;
+}
+
+.max-supply-pill {
+    flex: 1;
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--max-border);
+}
+
+.max-supply-label {
+    font-size: 10pt;
+    color: var(--max-text-hint);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.max-supply-value {
+    font-size: 10pt;
+    font-weight: 700;
+    color: var(--max-text-main);
+}
+
+/* Expiry Alert */
+.max-expiry-alert {
+    background: #fff1f0;
+    border: 1px solid #ffa39e;
+    color: #cf1322;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10pt;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.max-expiry-alert.safe {
+    background: #f6ffed;
+    border-color: #b7eb8f;
+    color: #389e0d;
+}
+
+
+/* --- Vendor Supply Intelligence Cards --- */
+.max-vendor-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.max-vendor-card {
+    background: #ffffff;
+    border: 1px solid var(--max-border);
+    border-radius: 10px;
+    padding: 14px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.max-vendor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.max-vendor-name {
+    font-weight: 700;
+    font-size: 12pt;
+    color: var(--max-primary);
+    display: block;
+}
+
+.max-vendor-contact {
+    font-size: 10pt;
+    color: var(--max-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 2px;
+}
+
+/* Row untuk Leadtime & History */
+.max-vendor-info-row {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 10px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 12px;
+}
+
+/* Leadtime Styling */
+.max-lt-box {
+    background: #f8f9fa;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+
+.max-lt-title {
+    font-size: 10pt;
+    font-weight: 700;
+    color: var(--max-text-hint);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.max-lt-grid {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10pt;
+}
+
+.max-lt-total {
+    font-size: 13pt;
+    font-weight: 800;
+    color: var(--max-text-main);
+}
+
+/* History Styling */
+.max-history-box {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.max-last-price {
+    font-size: 12pt;
+    font-weight: 700;
+    color: var(--max-success);
+}
+
+.max-last-po {
+    font-size: 10pt;
+    font-family: 'Consolas', monospace;
+    color: var(--max-primary);
+    background: #e6f1fb;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 4px;
+}
+
+
+
+/* --- Item Info Enrichment --- */
+
+/* Barcode Style */
+.max-item-barcode {
+    font-family: 'Libre Barcode 39', 'Consolas', monospace;
+    font-size: 12pt;
+    background: #f8f9fa;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px dashed var(--max-text-hint);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+/* Staff Notes / Memo Box */
+.max-staff-notes {
+    background: #fffbe6; /* Kuning soft seperti post-it */
+    border-left: 4px solid #ffe58f;
+    padding: 12px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 10px;
+    font-size: 10pt;
+    color: #856404;
+    line-height: 1.4;
+}
+
+/* Logistics Unit Card */
+.max-unit-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--max-border);
+    border: 1px solid var(--max-border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.max-unit-item {
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.max-unit-label {
+    display: block;
+    font-size: 10pt;
+    color: var(--max-text-hint);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.max-unit-value {
+    font-size: 12pt;
+    font-weight: 700;
+    color: var(--max-primary);
+}
+
+
+/* --- Stock Inventory Cards --- */
+.max-stock-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.max-stock-item {
+    background: #ffffff;
+    border: 1px solid var(--max-border);
+    border-radius: 10px;
+    padding: 14px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* Label FIFO/LIFO di pojok kanan atas */
+.max-stock-type-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #e6f7ff;
+    color: #1890ff;
+    font-size: 10pt;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 0 0 0 8px;
+    text-transform: uppercase;
+}
+
+.max-stock-wh-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.max-stock-wh-name {
+    font-weight: 700;
+    font-size: 11pt;
+    color: var(--max-text-main);
+}
+
+.max-stock-rack {
+    font-size: 10pt;
+    color: var(--max-text-hint);
+    background: var(--max-bg-light);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Grid Info Utama */
+.max-stock-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Kolom Kiri: Quantity & Health Bar */
+.max-qty-display {
+    display: flex;
+    flex-direction: column;
+}
+
+.max-qty-value {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--max-text-main);
+    line-height: 1;
+}
+
+.max-qty-unit {
+    font-size: 10pt;
+    color: var(--max-text-hint);
+    margin-left: 4px;
+}
+
+/* Health Bar (Visualisasi Qty vs Safety Stock) */
+.max-stock-bar-bg {
+    width: 100%;
+    height: 6px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.max-stock-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+/* Kolom Kanan: Financials */
+.max-stock-finance {
+    background: var(--max-bg-light);
+    padding: 8px;
+    border-radius: 8px;
+    text-align: right;
+}
+
+.max-stock-batch-info {
+    font-size: 10pt;
+    color: var(--max-text-hint);
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 8px;
+}
+
+.max-stock-expiry {
+    color: #db3737;
+    font-weight: 700;
+}
+
+
+/* --- Production/Usage Activity Card - IMPROVED --- */
+.max-prod-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.max-prod-card {
+    background: #ffffff;
+    border: 1px solid var(--max-border);
+    border-radius: 12px;
+    padding: 0; /* Kita pakai padding di elemen dalam saja */
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* Header Area: Info Utama & WO */
+.max-prod-card-header {
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.max-prod-wo-badge {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 10pt;
+    color: #fff;
+    background: var(--max-primary);
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+}
+
+.max-prod-date-info {
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--max-text-main);
+}
+
+.max-prod-batch-tag {
+    font-size: 10pt;
+    color: var(--max-text-hint);
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+/* Qty Area: Angka Besar */
+.max-prod-qty-area {
+    padding: 0 15px 12px 15px;
+    text-align: right;
+}
+
+.max-prod-qty-val {
+    font-size: 14pt;
+    font-weight: 800;
+    color: var(--max-text-main);
+    display: block;
+    line-height: 1;
+}
+
+.max-prod-qty-label {
+    font-size: 10pt;
+    color: var(--max-text-hint);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Footer/Cost Area: Warna Abu-abu Solid */
+.max-prod-footer {
+    background: #f8f9fa;
+    border-top: 1px solid #f0f0f0;
+    padding: 10px 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi dua kolom rata */
+    gap: 10px;
+}
+
+.max-prod-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.max-prod-stat.align-right {
+    text-align: right;
+}
+
+.max-prod-stat-label {
+    font-size: 10pt;
+    color: var(--max-text-hint);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.max-prod-stat-value {
+    font-size: 10pt;
+    font-weight: 700;
+    color: var(--max-text-main);
+}
+
+.max-prod-stat-value.total {
+    color: var(--max-primary);
+    font-size: 12pt;
+}
+
+/* --- Item Assembly (BOM) Style --- */
+.max-assembly-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1px; /* Spasi tipis antar baris */
+    background: var(--max-border);
+    border: 1px solid var(--max-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.max-assembly-item {
+    background: #fff;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.max-assembly-item:hover {
+    background: #fafafa;
+}
+
+.max-assembly-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.max-assembly-id {
+    font-family: 'Consolas', monospace;
+    font-weight: 700;
+    font-size: 10pt;
+    color: var(--max-primary);
+}
+
+.max-assembly-qty-tag {
+    font-size: 10pt;
+    color: var(--max-text-main);
+    font-weight: 600;
+}
+
+.max-assembly-finance {
+    text-align: right;
+}
+
+.max-assembly-linecost {
+    font-size: 11pt;
+    font-weight: 700;
+    color: var(--max-text-main);
+    display: block;
+}
+
+.max-assembly-unitcost {
+    font-size: 10pt;
+    color: var(--max-text-hint);
+}
+
+/* Icon Indikator Cabang (Tree Structure) */
+.max-assembly-tree-icon {
+    color: var(--max-text-hint);
+    margin-right: 8px;
+    font-weight: 400;
+}

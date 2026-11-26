@@ -1,0 +1,41 @@
+<div id="lookupentry" class="col-md-12">
+	<div class="row">
+		<div class="col-md-6">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Initial Capital</td>						
+				</tr>
+				 <tr>
+					<td>Add Capital</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='newcapital' data-type='decimal'>  </td>
+				</tr>
+				<tr>
+					<td>Remarks</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='newremarks'>  </td>
+				</tr>
+				<tr>
+					<td>Debet</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='gldebitacct' data-lookup='chartofaccount'>  </td>
+				</tr>
+				<tr>
+					<td>Credit</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='glcreditacct' data-lookup='chartofaccountline|gldebitacct'>  </td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-6">
+			<table class="tbldata">
+				<tr>
+				<td>Company</td>
+				<td><input type='text' class='nonpersistent' data-attribute='orgcode' data-lookup='organization'></td>
+				 </tr>
+				 <tr>
+				 <td>Site</td>
+				<td><input type='text' class='nonpersistent' data-attribute='siteaddress' data-lookup='siteaddress'></td>
+			</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+	

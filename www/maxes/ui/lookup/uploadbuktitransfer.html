@@ -1,0 +1,21 @@
+<div id="lookupentry" class="col-md-12">
+	<div class="row eatfix">
+		<form id="formupload_buktitf" method="post" enctype="multipart/form-data"> 
+			<table class='tbldata'>
+				<tr><td><b>Line Num.</b></td><td><input name="fleetusagenum" class="readonly" data-attribute= "fleetusagenum" readonly></td></tr>
+				<tr><td><b>Upload Bukti Transfer<b></td><td><input type="file" name="fileToUpload" class="attfilefield" id="fileToUpload"></td></tr>
+				<tr><td><b>Description</b></td><td><input name="description" class="attdescfield" placeholder="Description"></td></tr>
+				<tr><td><b>Tel. Penumpang</b></td><td><input name="buktitf_pessangername" placeholder="Name Penumpang" data-attribute="buktitf_pessangername" data-lookup="fleetusagecust|fleetusagenum" data-lookupaction="y"></td></tr>
+				<tr><td colspan=2>
+				<p align=center>
+				<input type="hidden" name="ownertable">
+				<input type="hidden" name="ownerid">
+				<input type="hidden" name="isloader">
+				<input type="hidden" name="childtable">
+				<input type="hidden" name="childid" >
+				<input type="submit" value="Upload Bukti Transfer" name="upload_buktitf">
+				</p></td></tr>
+			</table>
+		</form>
+	</div>
+</div>

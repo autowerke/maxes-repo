@@ -1,0 +1,465 @@
+/* =============================================================
+   MAXES NAVIGATION — drawers/worktemplates/style.css
+   ============================================================= */
+
+/* ── Global Font Adjustments ── */
+.max-drawer-container {
+    font-size: 10pt !important;
+}
+
+.max-drawer-title {
+    font-size: 13pt !important;
+}
+
+.max-section-label {
+    font-size: 10pt !important;
+    font-weight: 700;
+    margin: 18pt 0 10pt 0;
+    color: var(--max-text-hint);
+    border-bottom: 1pt solid #f0f0f0;
+    padding-bottom: 4pt;
+}
+
+/* ── Grid & Card Styles ── */
+.max-field-label {
+    font-size: 10pt !important;
+}
+
+.max-field-value {
+    font-size: 11pt !important;
+    font-weight: 600;
+}
+
+/* ── Planning Table (BOM / Services / Tools) ── */
+.max-plan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12pt;
+    background: #fff;
+    border: 1pt solid var(--max-border);
+    border-radius: 6pt;
+    overflow: hidden;
+}
+
+.max-plan-table th {
+    background: var(--max-bg-light);
+    font-size: 10pt;
+    color: var(--max-text-hint);
+    text-transform: uppercase;
+    padding: 8pt 10pt;
+    text-align: left;
+    border-bottom: 1pt solid var(--max-border);
+}
+
+.max-plan-table td {
+    padding: 10pt;
+    font-size: 10.5pt;
+    border-bottom: 1pt solid #f8f8f8;
+    vertical-align: top;
+}
+
+.max-plan-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Kolom Identitas (Item#, Tool#, dll) */
+.max-plan-id {
+    font-family: 'Consolas', monospace;
+    font-weight: 700;
+    color: var(--max-primary);
+    font-size: 10pt;
+}
+
+/* ── Labor Planning Card ── */
+.max-labor-card {
+    background: #ffffff;
+    border: 1pt solid var(--max-border);
+    border-left: 4pt solid var(--max-primary);
+    border-radius: 8pt;
+    padding: 12pt;
+    margin-bottom: 10pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.max-labor-info b {
+    font-size: 11pt;
+    display: block;
+    color: var(--max-text-main);
+}
+
+.max-labor-info span {
+    font-size: 10pt;
+    color: var(--max-text-muted);
+}
+
+.max-labor-stats {
+    text-align: right;
+}
+
+.max-labor-hours {
+    font-size: 14pt;
+    font-weight: 800;
+    color: var(--max-text-main);
+}
+
+/* ── Button Styles ── */
+.max-select-btn--md, .max-app-link-trigger {
+    font-size: 10.5pt !important;
+    height: 32pt !important;
+}
+
+.max-page-info {
+    font-size: 10pt !important;
+}
+
+/* ── Badge Overrides ── */
+.max-badge {
+    font-size: 10pt !important;
+    padding: 3pt 8pt !important;
+}
+
+/* --- Mini Pagination for Detail Sections --- */
+.max-mini-pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8pt;
+    padding: 5pt 0;
+    margin-bottom: 15pt;
+}
+
+.max-mini-page-btn {
+    background: #fff;
+    border: 1pt solid var(--max-border);
+    border-radius: 4pt;
+    padding: 2pt 6pt;
+    cursor: pointer;
+    font-size: 10pt;
+}
+
+.max-mini-page-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.max-mini-page-info {
+    font-size: 10pt;
+    color: var(--max-text-muted);
+}
+
+/* --- Work Tasks Checklist Style --- */
+.max-task-row {
+    display: flex;
+    gap: 12pt;
+    padding: 8pt 0;
+    border-bottom: 1pt solid #f0f0f0;
+}
+
+.max-task-number {
+    flex-shrink: 0;
+    width: 24pt;
+    height: 24pt;
+    background: var(--max-bg-light);
+    color: var(--max-text-muted);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 10pt;
+    border: 1pt solid var(--max-border);
+}
+
+.max-task-desc {
+    flex: 1;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    color: var(--max-text-main);
+    padding-top: 4pt;
+}
+
+/* --- Enriched Material Styles --- */
+.max-mat-master-info {
+    font-size: 10pt;
+    color: var(--max-text-muted);
+    margin-top: 2pt;
+}
+
+.max-mat-specs-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4pt;
+    margin-top: 6pt;
+}
+
+.max-mat-spec-tag {
+    font-size: 10pt;
+    background: #f0f4f8;
+    color: #475569;
+    padding: 2pt 6pt;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+}
+
+.max-mat-stock-banner {
+    margin-top: 8pt;
+    padding: 6pt;
+    background: #f6ffed;
+    border: 1px solid #b7eb8f;
+    border-radius: 4px;
+}
+
+.max-mat-stock-title {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #389e0d;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 3pt;
+}
+
+.max-mat-stock-item {
+    font-size: 10pt;
+    display: flex;
+    justify-content: space-between;
+    color: #1b5e20;
+}
+
+.max-mat-stock-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6pt;
+    font-size: 10pt;
+}
+
+
+.max-mat-stock-table th {
+    text-align: left;
+    color: #475569;
+    border-bottom: 1pt solid #cbd5e1;
+    padding: 3pt;
+    font-weight: 700;
+}
+
+.max-mat-stock-table td {
+    padding: 4pt 3pt;
+    border-bottom: 1pt solid #f1f5f9;
+}
+
+/* Alert States */
+.max-mat-stock-banner.insufficient {
+    background: #fff1f0;
+    border-color: #ffa39e;
+}
+
+.max-mat-stock-banner.insufficient .max-mat-stock-title {
+    color: #cf1322;
+}
+
+.max-mat-stock-banner.insufficient .max-mat-stock-item {
+    color: #cf1322;
+}
+
+.max-total-avail {
+    font-size: 10pt;
+    font-weight: 800;
+    margin-top: 6pt;
+    padding-top: 6pt;
+    border-top: 1pt dashed rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* --- Enriched Tool Styles --- */
+.max-tool-spec {
+    font-size: 10pt;
+    color: var(--max-text-muted);
+    margin-top: 2pt;
+}
+
+.max-calibration-banner {
+    display: flex;
+    gap: 10pt;
+    margin-top: 6pt;
+    padding: 6pt 10pt;
+    background: #f8fafc;
+    border-radius: 6pt;
+    border: 1pt solid #e2e8f0;
+}
+
+.max-cal-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.max-cal-label {
+    font-size: 8pt;
+    color: var(--max-text-hint);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.max-cal-value {
+    font-size: 10pt;
+    font-weight: 600;
+}
+
+.max-cal-value.expired {
+    color: #cf1322;
+}
+
+.max-tool-availability {
+    margin-top: 8pt;
+    background: #e6f7ff;
+    border: 1pt solid #91d5ff;
+    padding: 8pt;
+    border-radius: 6pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.max-tool-availability.out {
+    background: #fff1f0;
+    border-color: #ffa39e;
+}
+
+/* --- Tool Location List inside Box --- */
+.max-tool-loc-list {
+    width: 100%;
+    margin-top: 8pt;
+    border-top: 1pt dashed rgba(0,0,0,0.1);
+    padding-top: 8pt;
+}
+
+.max-tool-loc-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10pt;
+    margin-bottom: 4pt;
+}
+
+.max-tool-total-row {
+    margin-top: 5pt;
+    padding-top: 5pt;
+    border-top: 1pt solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    font-size: 10pt;
+    color: var(--max-text-main);
+}
+
+/* =============================================================
+   MAXES NAVIGATION — Work Templates: Labor & Resource UI
+   Unit: pt | Min: 10pt
+   ============================================================= */
+
+/* ── 1. Labor Breakdown Box (The Gray Container) ── */
+.max-labor-breakdown-container {
+    background: #f8fafc;
+    border: 1pt solid #e2e8f0;
+    border-radius: 6pt;
+    padding: 10pt;
+    margin-top: 5pt;
+}
+
+/* ── 2. Individual Person Row ── */
+.max-person-row {
+    display: flex;
+    align-items: center;
+    gap: 10pt;
+    padding: 8pt 0;
+    border-bottom: 0.5pt solid #e2e8f0;
+}
+
+.max-person-row:last-child {
+    border-bottom: none;
+}
+
+.max-person-name {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: var(--max-text-main);
+    display: block;
+    line-height: 1.2;
+}
+
+.max-person-sub {
+    font-size: 10pt;
+    color: var(--max-text-muted);
+}
+
+/* ── 3. Skill & Priority Tags ── */
+.max-priority-label {
+    font-size: 9.5pt; /* Sedikit di bawah 10pt hanya untuk label teknis */
+    color: var(--max-text-hint);
+    font-weight: 400;
+    margin-left: 4pt;
+}
+
+.max-skill-badge {
+    font-size: 9pt;
+    background: #ffffff;
+    border: 1pt solid #cbd5e1;
+    color: #475569;
+    padding: 1pt 4pt;
+    border-radius: 3pt;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* ── 4. Actionable Icons (WhatsApp & Email) ── */
+.max-resource-actions {
+    display: flex;
+    gap: 8pt;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.max-action-btn {
+    text-decoration: none;
+    font-size: 13pt; /* Ikon dibuat agak besar agar gampang di-tap/klik */
+    transition: transform 0.15s ease;
+    display: inline-block;
+}
+
+.max-action-btn:hover {
+    transform: scale(1.2);
+}
+
+.max-action-btn:active {
+    transform: scale(0.9);
+}
+
+/* ── 5. Labor Cost Summary Footer ── */
+.max-labor-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10pt;
+    padding-top: 8pt;
+    border-top: 1pt dashed #cbd5e1;
+}
+
+.max-est-rate {
+    font-size: 10pt;
+    color: var(--max-text-muted);
+}
+
+.max-total-labor-cost {
+    font-size: 11pt;
+    color: var(--max-success);
+}
+
+/* ── 6. Overrides untuk Assignment Badge ── */
+.max-assignment-badge {
+    font-size: 10pt !important;
+    font-weight: 700 !important;
+    padding: 2pt 8pt !important;
+    border-radius: 4pt !important;
+    display: inline-block;
+    margin-bottom: 6pt;
+}

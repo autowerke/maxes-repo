@@ -1,0 +1,390 @@
+#workflow-canvas {
+    position: relative;
+    width: calc(100% - 40px); 
+    box-sizing: border-box; 
+    height: 500px;
+    border: 2px dashed #ccc;
+    background-color: #fff;
+    margin: 20px;
+    overflow: auto; 
+    z-index: 1;
+}
+
+/* Styling dasar untuk semua node */
+.workflow-node {
+    position: absolute;
+    border: 1px solid #346789;
+    border-radius: 5px;
+    padding: 10px;
+    width: 180px;
+    min-height: 50px;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 10;
+    pointer-events: auto;
+    /* ENHANCED: Better spacing for connectors */
+    margin: 5px;
+}
+
+/* Node type specific styling */
+.node-start {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.node-task {
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+
+.node-input {
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    border-style: dashed;
+}
+
+
+
+.node-stop {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* ENHANCED: jsPlumb connector styling for separation */
+.jtk-connector {
+    z-index: 5 !important;
+    /* Enhanced visibility */
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+}
+
+.jtk-connector path {
+    /* Smooth connector lines */
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Different styles for overlapping connectors */
+.jtk-connector:nth-child(2n) {
+    stroke-dasharray: none !important;
+}
+
+.jtk-connector:nth-child(3n) {
+    stroke-width: 3px !important;
+    stroke: #4a90e2 !important;
+}
+
+.jtk-connector:nth-child(4n) {
+    stroke: #f39c12 !important;
+    stroke-width: 2.5px !important;
+}
+
+/* Endpoint styling */
+.jtk-endpoint {
+    z-index: 6 !important;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+}
+
+.jtk-endpoint:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Overlay (arrows and labels) styling */
+.jtk-overlay {
+    z-index: 7 !important;
+}
+
+/* Enhanced connection labels */
+.connection-label {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    padding: 3px 6px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    color: #333 !important;
+    z-index: 15 !important;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    /* Prevent label overlap */
+    white-space: nowrap;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Multiple connection label positioning */
+.connection-label:nth-child(odd) {
+    transform: translateY(-2px);
+}
+
+.connection-label:nth-child(even) {
+    transform: translateY(2px);
+}
+
+/* Hover effects for better visibility */
+.jtk-connector:hover {
+    stroke: #2e6080 !important;
+    stroke-width: 4px !important;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.jtk-connector:hover + .connection-label,
+.jtk-connector:hover ~ .connection-label {
+    background-color: #ffffcc !important;
+    border-color: #ffd700 !important;
+    font-weight: bold !important;
+}
+
+/* Curved connector specific styling */
+.jtk-connector[connector-type="Bezier"] {
+    stroke-width: 2.5px !important;
+}
+
+/* Flowchart connector specific styling */
+.jtk-connector[connector-type="Flowchart"] {
+    stroke-width: 2px !important;
+}
+
+/* Node hover effects */
+.workflow-node:hover {
+    transform: translateY(-2px);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 20;
+}
+
+/* Selection highlighting */
+.workflow-node.selected {
+    border-width: 3px;
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+/* Responsive connector thickness */
+@media (max-width: 768px) {
+    .jtk-connector {
+        stroke-width: 3px !important;
+    }
+    
+    .connection-label {
+        font-size: 10px !important;
+        padding: 2px 4px !important;
+    }
+}
+
+/* Animation for new connections */
+@keyframes connectionDraw {
+    from {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+    }
+    to {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+    }
+}
+
+.jtk-connector.new-connection {
+    animation: connectionDraw 0.8s ease-out;
+}
+
+
+/* ==============================================
+   WORKFLOW BUILDER — Additive CSS
+   ============================================== */
+/* ── Canvas ─────────────────────────────────── */
+#workflow-canvas {
+    height: 700px;
+    overflow: auto;
+    position: relative;
+    background-color: #fdfdfd;
+    /* dot grid */
+    background-image: radial-gradient(circle, #ddd 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* ── Fix: node-condition existing CSS override ─ */
+/* Existing CSS sets width:150px height:150px — reset ke auto */
+.node-condition {
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    align-items: unset !important;
+    justify-content: unset !important;
+    border-radius: 5px !important;
+}
+.node-condition .node-content {
+    position: static !important;
+    z-index: auto !important;
+}
+
+/* ── MULTICONDITION node — abu-abu pastel ───── */
+.node-multicondition {
+    background-color: #e8e8e8;
+    border-color: #b0b0b0;
+    color: #444;
+}
+.node-multicondition .node-content strong { color: #444; }
+
+/* ── jsPlumb managed node: wajib untuk drag ─── */
+/* jsPlumb 6.x inject data-jtk-managed dan class ini */
+.workflow-node[data-jtk-managed] {
+    cursor: move;
+}
+
+/* ── Toolbar ────────────────────────────────── */
+#wf-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+#wf-toolbar .wf-toolbar-sep {
+    width: 1px;
+    height: 20px;
+    background: #ccc;
+    margin: 0 2px;
+    flex-shrink: 0;
+}
+#wf-toolbar .wf-toolbar-label {
+    font-size: 11px;
+    color: #999;
+    margin-left: auto;
+}
+
+/* ── Buttons ─────────────────────────────────── */
+.wf-btn {
+    padding: 4px 12px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 12px;
+    background: #fff;
+    line-height: 1.5;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.wf-btn:hover               { background: #f0f0f0; }
+.wf-btn-primary             { background: #3b82c4; color: #fff; border-color: #2e6da4; font-weight: bold; }
+.wf-btn-primary:hover       { background: #2e6da4; }
+.wf-btn-danger              { color: #c00; border-color: #e0a0a0; }
+.wf-btn-danger:hover        { background: #fff0f0; }
+/* .wf-btn-zoom removed */                { padding: 3px 8px; min-width: 28px; font-size: 15px; font-weight: bold; }
+
+/* ── Zoom label ──────────────────────────────── */
+#wf-zoom-label {
+    font-size: 11px;
+    color: #666;
+    min-width: 36px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* ── Dirty badge ─────────────────────────────── */
+#wf-dirty-badge {
+    display: none;
+    background: #e67e22;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+#wf-dirty-badge.active { display: inline-block; }
+
+/* ── Palette (horizontal strip) ─────────────── */
+#wf-palette {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 8px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+#wf-palette-label {
+    font-size: 10px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.wf-palette-item {
+    padding: 3px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: grab;
+    font-size: 11px;
+    font-weight: bold;
+    user-select: none;
+    background: #fff;
+    white-space: nowrap;
+    transition: box-shadow 0.1s;
+    flex-shrink: 0;
+}
+.wf-palette-item:hover  { box-shadow: 0 2px 5px rgba(0,0,0,0.15); }
+.wf-palette-item:active { cursor: grabbing; opacity: 0.7; }
+
+.wf-palette-item.node-start          { border-color: #c3e6cb; color: #27ae60; }
+.wf-palette-item.node-task           { border-color: #b8daff; color: #1a6db5; }
+.wf-palette-item.node-input          { border-color: #ffeeba; color: #856404; }
+.wf-palette-item.node-condition      { border-color: #ffd080; color: #a06000; }
+.wf-palette-item.node-multicondition { border-color: #b0b0b0; color: #444; }
+.wf-palette-item.node-stop           { border-color: #f5c6cb; color: #c00; }
+
+/* ── Canvas wrapper ──────────────────────────── */
+#wf-canvas-container {
+    border: 1px solid #ddd;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+}
+
+/* ── Node state: dragging ────────────────────── */
+.workflow-node.wf-dragging,
+.workflow-node.jtk-dragging {
+    opacity: 0.85;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25) !important;
+    z-index: 100 !important;
+}
+
+/* ── Node state: selected ────────────────────── */
+.workflow-node.wf-selected {
+    border-color: #f39c12 !important;
+    box-shadow: 0 0 0 3px rgba(243,156,18,0.35);
+}
+
+/* ── Node state: drop hover ──────────────────── */
+.workflow-node.dragHover {
+    box-shadow: 0 0 0 3px rgba(59,130,196,0.45) !important;
+}
+
+/* ── Connection label overlay ─────────────────── */
+.connection-label {
+    background : #fff;
+    border     : 1px solid #5c96bc;
+    border-radius : 3px;
+    padding    : 1px 6px;
+    font-size  : 11px;
+    color      : #2c6a9a;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor     : pointer;
+    box-shadow : 0 1px 3px rgba(0,0,0,0.12);
+}
+.connection-label:hover {
+    background : #eaf3fb;
+}

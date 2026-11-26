@@ -1,0 +1,24 @@
+# Database & Model AI (Ukuran Raksasa)
+*.sql
+mlai/
+mysql/data/
+redis/data/
+unused/
+
+# Server Tomcat / Binaries
+tomcat/
+*.jar
+*.war
+
+# Web project ignores
+/www/maxes/backup/
+/www/maxes/js-src/
+/www/maxes/node_modules/
+/www/maxes/scheduler/
+/www/maxes/tshoot/
+/www/maxes/applications/ui-src/
+
+# File sampah & Environment
+.DS_Store
+*.log
+venv/

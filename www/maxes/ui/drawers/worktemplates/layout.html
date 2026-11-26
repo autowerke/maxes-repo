@@ -1,0 +1,35 @@
+<div class="max-drawer-container">
+    <!-- Header & Tab Nav -->
+    <div class="max-drawer-header">
+        <h2 class="max-drawer-title">Work Template Explorer</h2>
+       
+    </div>
+     <div class="max-tabs-nav">
+            <button class="max-tab-btn active" data-tab="tab-list">List</button>
+            <button class="max-tab-btn" data-tab="tab-detail" id="btn-tab-detail">Detail</button>
+        </div>
+    <!-- Body -->
+    <div class="max-drawer-body">
+        <!-- Tab: List -->
+        <div class="max-tab-content active" id="tab-list">
+            <div class="max-search-wrapper">
+                <span class="max-search-icon">&#9906;</span>
+                <input type="text" id="max-wt-search" placeholder="Search WT#, description, asset, or location...">
+            </div>
+            <div id="max-list-count" class="max-list-count"></div>
+            <div id="max-records-container"></div>
+        </div>
+
+        <div class="max-tab-content" id="tab-detail">
+            <!-- SEARCH BAR KHUSUS DETAIL -->
+            <div class="max-search-wrapper" id="detail-search-container" style="display:none; margin-bottom: 15pt;">
+                <span class="max-search-icon">&#9906;</span>
+                <input type="text" id="max-wt-detail-search" placeholder="Filter materials, services, or tools in this template...">
+            </div>
+            
+            <div id="max-detail-content">
+                <!-- Konten Detail Di sini -->
+            </div>
+        </div>
+    </div>
+</div>

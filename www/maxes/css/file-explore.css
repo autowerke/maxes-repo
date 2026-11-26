@@ -1,0 +1,63 @@
+.file-list, .file-list ul{
+    list-style-type: none;
+    font-size:1em;
+    line-height:1.8em;
+    margin-left:20px;
+    padding-left:18px;
+    border-left:1px dotted #aaa;
+}
+.file-list li{
+    position: relative;
+    padding-left:25px;
+	font-family:calibri;
+}
+.file-list li a{
+    text-decoration: none;
+    color:#000;  
+	font-family:calibri;
+}
+
+.file-list li:before{
+    list-style-type: none;
+    font-family: FontAwesome;
+    display:block;
+    content:'|';
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:20px;
+    height:20px;
+    font-size:1.3em;
+    color:#FFD04E;
+}
+.file-list .folder-root{
+    list-style-type: none;
+}
+.file-list .folder-root a{
+    text-decoration:none;
+}
+.file-list .folder-root:before{
+    color:#FFA14E;
+    content: "\f055";
+}
+.file-list .folder-root.open:before{
+    content: "\f056";
+	color:#FFD04E;
+}
+li.folder-root ul{
+    transition: all .3s ease-in-out;
+    overflow:hidden;
+}
+li.folder-root.closed>ul{
+   opacity:0;
+   max-height:0px;
+}
+li.folder-root.open>ul{
+   opacity:1;
+   display:block;
+   max-height:1000px;
+}
+
+.datadrilldown  {
+	color:red;
+}

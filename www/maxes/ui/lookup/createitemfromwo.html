@@ -1,0 +1,94 @@
+<div id='createnewitemfromwo'>
+    <table id='lookupentry' width=100%>
+        <tr>
+            <tr>
+                <td colspan=3> Create an existing Item?</td>
+                <td>
+                    <input type='checkbox' class='nonpersistent' data-attribute='isexistingitem'>
+                </td>
+                <td></td>
+            </tr>
+			 <tr>
+                <td colspan=3> Use the entire total cost of Resources?
+				<font style='font-size:8pt;'><br><i>If Disabled, it will only use material costs</i></font></td>
+                <td>
+                    <input type='checkbox' class='nonpersistent' data-attribute='usetotalresource' checked>
+                </td>
+                <td></td>
+            </tr>
+			
+           <tr>
+				<td colspan=10 class="maxes_sct_tbl4">Item Description</td>						
+			</tr>
+            <tr>
+                <td> Item </td>
+                <td>
+                    <input type='text' class='nonpersistent' data-attribute='itemnum' data-key='value'> </td>
+                <td> Organization </td>
+                <td>
+                    <input type='text' data-attribute='orgcode' data-input='readonly'> </td>
+            </tr>
+            <tr>
+                <td> Description </td>
+                <td>
+                    <input type='text' class='nonpersistent' data-attribute='description'> </td>
+                <td>Site</td>
+                <td>
+                    <input type='text' data-attribute='sitecode' data-input='readonly' data-key='value'>
+                </td>
+            </tr>
+			 <tr>
+				 <td> Condition Type</td>
+                <td>
+                    <input type='text' class='nonpersistent' data-attribute='newconditiontype' data-lookup='newconditiontype'>
+                </td>
+			 </tr>
+			<tr>
+				<td colspan=5 class="maxes_sct_tbl4">Warehouse</td>						
+			</tr>	
+            <tr>
+                <td> Warehouse </td>
+                <td>
+                    <input type='text' class='nonpersistent' data-attribute='warehouse' data-lookup='warehouse' data-lookupaction='y'> </td>
+                <td> Rack </td>
+                <td>
+                    <input type='text' data-attribute='racknum' data-lookup='racknum|warehouse'> </td>
+            </tr>
+			
+            <tr>
+                <td> Quantity</td>
+                <td>
+                    <input type='text' class='nonpersistent' data-attribute='quantity' data-type='decimal' data-input='required'> </td>
+                
+                <td> Issue Type
+                <td>
+                    <input type='text' class='nonpersistent' data-attribute='issuetype' data-lookup="issuetype">
+                </td>
+                <td></td>
+           
+            </tr>
+			<tr>
+				<td colspan=5 class="maxes_sct_tbl4">Classification</td>						
+			</tr>
+            <tr>
+                <td> Item Group</td>
+                <td>
+                    <input type='text' class='nonpersistent' data-attribute='itemgroup' data-lookup='itemgroup'>
+                </td>
+                <td> Order Unit </td>
+                <td>
+                    <input type='text' data-attribute='orderunit' data-lookup='measureunit'>
+                </td>
+            </tr>
+            <tr>
+				<td>  Stock Type </td>
+                <td>
+                    <input type='text' data-attribute='stocktype' data-lookup='stocktype'>
+                </td>
+                <td> Issue Unit</td>
+                <td>
+                    <input type='text' data-attribute='issueunit' data-lookup='measureunit'>
+                </td>
+            </tr>
+    </table>
+</div>

@@ -1,0 +1,36 @@
+<div class="max-drawer-container">
+    <!-- Header & Tab Nav -->
+    <div class="max-drawer-header">
+        <h2 class="max-drawer-title">Employee Explorer</h2>
+    </div>
+    
+    <div class="max-tabs-nav">
+        <button class="max-tab-btn active" data-tab="tab-list">List</button>
+        <button class="max-tab-btn" data-tab="tab-detail" id="btn-tab-detail">Detail</button>
+    </div>
+
+    <!-- Body -->
+    <div class="max-drawer-body">
+        <!-- Tab: List -->
+        <div class="max-tab-content active" id="tab-list">
+            <div class="max-search-wrapper">
+                <span class="max-search-icon">&#9906;</span>
+                <input type="text" id="max-emp-search" placeholder="Search name, ID, title, or dept...">
+            </div>
+            <div id="max-list-count" class="max-list-count"></div>
+            <div id="max-records-container"></div>
+            <!-- Pagination otomatis di-inject oleh Engine -->
+        </div>
+
+        <!-- Tab: Detail -->
+        <div class="max-tab-content" id="tab-detail">
+            <div id="max-detail-content">
+                <div class="max-placeholder">
+                    <div class="max-placeholder-icon">&#128100;</div>
+                    <div class="max-placeholder-title">No employee selected</div>
+                    <div class="max-placeholder-sub">Select an employee from the list to view profile and workload.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

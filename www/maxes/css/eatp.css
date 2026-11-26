@@ -1,0 +1,93 @@
+@import "paper.css"; 
+.qrtext{
+	font-family:calibri;
+	font-size:5pt;
+	padding:0px;
+	width:100%;
+	margin:0;
+	padding:0;
+}
+
+.qrtext-decimal{
+	text-align:right;
+	
+}
+.qrtext_title{
+	font-size:5pt;
+	font-family:calibri;
+	padding:3px 6px;
+	text-align:center;
+	font-weight:bold;
+	position:relative;
+	top:-3px;
+	margin:0;
+	padding:0;
+}
+.printtable {
+	
+	border-collapse: collapse;
+}
+.printtable td section{
+	margin: 0.1px 0.1mm;
+	padding:0;
+	vertical-align:top;
+}
+#qrtblsection{
+	width:97%;
+	margin:0;
+	padding:0;
+	border-collapse: collapse;
+}
+
+section:hover{
+	opacity:0.5;
+}
+
+#qrtblsection table{
+	border-collapse: collapse;
+}
+
+.labeltitle{
+	font-weight:bold;
+}
+.labelvalue{
+	font-family:calibri;
+}
+
+.label-decimal{
+	float:right;
+}
+
+.barcode_area{
+	padding:2px;
+}
+
+.A4Half .sheet { width: 105mm; height: 148mm }
+.ThermalPage58mm { 
+	width: 58mm; 
+	height: 70mm; 
+	background: #ffffff;
+	padding:10px;
+	text-align:center;
+	margin-bottom:10px
+}
+
+.ThermalPage58mm td{
+	font-family:calibri;
+	font-size:11pt;
+}
+.printpagea4half {
+	margin:6mm;
+	border-collapse: collapse;
+	width:90mm;
+}
+.printpagea4half td{
+	font-family:calibri;
+	font-size:9pt;
+	padding:3px;
+}
+.printbottomline td{
+	border-top:2px solid rgb(0,0,0);
+	height:5px;
+	
+}

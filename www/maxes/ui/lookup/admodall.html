@@ -1,0 +1,69 @@
+<div id="lookupentry" class="col-md-12">
+	<div class="row">
+		<div class="col-md-6">
+			<table id='tbldata' width=100%>
+				<tr>
+					<td>Allowance Code</td>
+					<td>
+						<input type='text' class='nonpersistent' data-attribute='allowancecode' data-type='upper' data-input='required' data-key='value'> </td>
+					
+				</tr>
+				<tr>
+					<td> Description </td>
+					<td>
+						<input type='text' class='nonpersistent' data-attribute='description'> </td>
+					
+				</tr>
+				<tr>
+					<td> GL Account</td>
+					<td>
+						<input type='text' class='nonpersistent' data-input='required' data-attribute='glaccount' data-lookup='glaccount|sitecode'> </td>
+					
+				</tr>
+				
+				
+				<tr>
+					
+					<td>Company</td>
+					<td>
+						<input type='text' data-attribute='orgcode' data-input='reaodnly'> </td>
+				</tr>
+				<tr>
+					
+					<td>Site</td>
+					<td>
+						<input type='text' data-attribute='sitecode' data-input='reaodnly'> </td>
+				</tr>
+				
+				
+				
+			</table>
+		</div>
+		<div class="col-md-6">
+			<table id='tbldata' width=100%>
+				<tr>
+					<td> Cost</td>
+					<td><input type='text' class='nonpersistent' data-input='required' data-attribute='costprice' data-type='decimal'> </td>
+				</tr>
+				<tr><td> Cost (%) </td>
+					<td><input type='text' class='nonpersistent' data-input='required' data-attribute='costpercent' data-type='decimal'> </td>
+				</tr>
+				<tr>
+					<td> Deduction ? </td>
+					<td><input type='checkbox' class='nonpersistent' data-attribute='deduction'> Ya </td>
+				</tr>
+				<tr>
+					<td> Taken From :</td>
+					<td><input type='checkbox' class='nonpersistent' data-attribute='frombasesalary'> Base Salary<br>
+						<input type='checkbox' class='nonpersistent' data-attribute='fromgrossincome'> Gross Revenue</td>
+				</tr>
+				<tr>
+					<td> Maximum Value </td>
+					<td>
+						<input type='text' class='nonpersistent' data-attribute='maximumvalue' data-type='decimal'> </td>
+				</tr>
+			</table>
+		
+		</div>
+	</div>
+</div>

@@ -1,0 +1,35 @@
+<div style="max-width:200px; font-size:10pt; line-height:15pt">
+<div>
+    <div>${originalTask.name} hrs</div>
+</div>
+<div>
+    <div><strong>Hours:</strong> ${originalTask.hours ?? '-'} hrs</div>
+    <div><strong>Team:</strong> ${originalTask.teamnum ?? 'N/A'}</div>
+</div>
+
+<div class="gantt-popup-controls">
+	<table>
+		<tr>
+			<td>Progress</td>
+			<td><input type="number" id="progress-input-${task.id}" value="${originalTask.progress || 0}" min="0" max="100" /> %</td>
+			<td><button data-action="set-progress" data-task-id="${task.id}">Set</button></td>
+		</tr>
+		<tr>
+			<td>Priority</td>
+			<td> <select id="priority-select-${task.id}">
+            <option value="NORMAL" ${originalTask.priority==='low' ? 'selected' : ''}>Low</option>
+            <option value="URGENT" ${originalTask.priority==='medium' ? 'selected' : ''}>Medium</option>
+            <option value="EMERGENCY" ${originalTask.priority==='high' ? 'selected' : ''}>High</option>
+        </select>
+		</td>
+		<td> <button data-action="set-priority" data-task-id="${task.id}">Set</button></td>
+		</tr>
+		<tr>
+			<td>Duration</td>
+			<td><input type="number" id="duration-${task.id}" value="${originalTask.progress || 0}" min="0" max="100" /> Hours</td>
+			<td><button data-action="set-duration" data-task-id="${task.id}">Set</button></td>
+		</tr>
+		
+	</table>
+</div>
+</div>

@@ -1,0 +1,175 @@
+<div id="lookupentry" class="col-md-12">
+	<div class="row eatfix">
+		<div class="col-md-4">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl2">Orderan</td>
+				</tr>
+				
+				<tr>
+					<td>Type </td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="po_linetype" data-lookup="linetype" data-lookupaction="y" data-input="required">
+					</td>
+				</tr>
+				<tr>
+					<td>Item</td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="po_itemnum" data-lookup="item|sitecode" data-lookupaction="y" data-childrentable="item" data-childrencolumn="itemnum">
+					</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="description" data-crossvalue="po_itemnum.description">
+					</td>
+				</tr>
+				<tr>
+					<td>Specification</td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="po_itemnum.spectext" data-input="readonly">
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-4">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl2">Cost</td>
+				</tr>
+				<tr>
+					<td>Unit Cost</td>
+					<td>
+						<input type="text" data-childfld="child" data-type="decimal" data-attribute="unitcost">
+					</td>
+				</tr>
+				<tr>
+					<td>Total Cost</td>
+					<td>
+						<input type="text" data-childfld="child" data-type="decimal" data-attribute="linecost" data-input="readonly">
+					</td>
+				</tr>
+				<tr>
+					<td>Tax</td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="tax" data-lookup="taxpurchasing" data-lookupaction="y">
+					</td>
+				</tr>
+				<tr>
+					<td>Tax Cost</td>
+					<td>
+						<input type="text" data-childfld="child" data-type="decimal" data-attribute="taxcost">
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-4">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl2">Quantity</td>
+				</tr>
+				<tr>
+					<td>Quantity</td>
+					<td>
+						<input type="text" data-childfld="child" data-type="decimal" data-attribute="orderqty">
+					</td>
+				</tr>
+				<tr>
+					<td>Order Unit </td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="orderunit" data-input="required" data-lookup="measureunit" data-crossvalue="po_itemnum.orderunit" data-lookupaction="y">
+					</td>
+				</tr>
+				<tr>
+					<td>Issue Unit</td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="po_itemnum.issueunit" data-input="readonly">
+					</td>
+				</tr>
+				<tr>
+					<td>Conversion Factor</td>
+					<td>
+						<input type="text" data-childfld="child" data-type="decimal" data-attribute="conversionfactor" data-input="required" data-lookupaction="y">
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="row eatfix col-md-12">
+		<div class="col-md-4">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl2">Model</td>
+				</tr>
+				<tr>
+					<td>Manufacturer</td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="po_itemnum.manufacturer" data-input="readonly">
+					</td>
+				</tr>
+				<tr>
+					<td>Part Number</td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="partnum" data-lookup="itempartnum|po_itemnum">
+					</td>
+				</tr>
+				<tr>
+					<td>Category</td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="category">
+					</td>
+				</tr>
+				<tr>
+					<td>Catalog</td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="catalog">
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-4">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl2">Receiving Detail</td>
+				</tr>
+				<tr>
+					<td>Warehouse</td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="warehouse" data-lookup="warehouse|sitecode" data-childrentable="warehouse" data-childrencolumn="warehouse" data-lookupaction="y">
+					</td>
+				</tr>
+				<tr>
+					<td>Work Order</td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="wonum" data-lookup="workorder|orgcode" data-lookupaction="y">
+					</td>
+				</tr>
+				<tr>
+					<td>Required Date</td>
+					<td>
+						<input type="text" data-childfld="child" data-type="date" data-attribute="requireddate">
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-4">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl2">Transactions Account Code</td>
+				</tr>
+				<tr>
+					<td>Credit Account Code</td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="glcreditacct" data-input="required" data-lookup="glaccount|orgcode">
+					</td>
+				</tr>
+				<tr>
+					<td>Debit Account Code</td>
+					<td>
+						<input type="text" data-childfld="child" data-attribute="gldebitacct" data-input="required" data-lookup="glaccount|orgcode" data-crossvalue="warehouse.controlacc">
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

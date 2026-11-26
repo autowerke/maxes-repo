@@ -1,0 +1,374 @@
+/* =============================================================
+   MAXES NAVIGATION — drawers/assets/style.css
+   Style spesifik untuk Assets drawer
+   ============================================================= */
+
+/* ── Asset type color overrides (opsional) ──────────────────── */
+.max-list-record[data-id^="ACR"] .max-record-id,
+.max-list-record[data-id^="LIFT"] .max-record-id {
+    color: #0F6E56;
+}
+
+.max-list-record[data-id^="CRN"] .max-record-id {
+    color: #A32D2D;
+}
+
+.max-list-record[data-id^="PUMP"] .max-record-id {
+    color: #5F5E5A;
+}
+
+/* ── Serial number style di detail ──────────────────────────── */
+.max-detail-content .max-mono {
+    background: #f0f4f8;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* ── Cost value warna berdasarkan nilai ─────────────────────── */
+.max-cost-card:first-child .max-cost-value {
+    color: #185FA5;
+}
+
+.max-cost-card:nth-child(2) .max-cost-value {
+    color: #0F6E56;
+}
+
+.max-cost-card:nth-child(3) .max-cost-value {
+    color: #854F0B;
+}
+
+/* ── Highlight record yang sedang di-select ─────────────────── */
+.max-list-record.max-selected .max-record-id {
+    color: #185FA5;
+}
+
+/* ── Search bar custom untuk assets ─────────────────────────── */
+#max-asset-search:focus {
+    border-color: #185FA5;
+}
+
+/* ── Responsive: jika drawer lebih sempit dari 400px ────────── */
+@media (max-width: 400px) {
+    .max-field-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .max-cost-row {
+        grid-template-columns: 1fr;
+    }
+
+    .max-field-full {
+        grid-column: 1;
+    }
+}
+
+.max-page-btn {
+    background: #ffffff;
+    border: 1px solid #e1e8ed;
+    color: #5c7080;
+    padding: 5px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12pt;
+    transition: all 0.2s;
+}
+
+.max-page-btn:hover:not(:disabled) {
+    background: #f0f7ff;
+    border-color: #185FA5;
+    color: #185FA5;
+}
+
+.max-page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+
+/* --- Dashboard Meter Layout --- */
+.max-meter-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.max-meter-card {
+    background: #ffffff;
+    border: 1px solid var(--max-border);
+    border-radius: 10px;
+    padding: 12px;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.max-meter-card:hover {
+    border-color: var(--max-primary);
+}
+
+.max-meter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.max-meter-title {
+    font-weight: 700;
+    font-size: 11pt;
+    color: var(--max-text-main);
+}
+
+.max-meter-type-badge {
+    font-size: 10pt;
+    background: #f1f3f5;
+    color: #5c7080;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.max-meter-desc {
+    font-size: 10pt;
+    color: var(--max-text-hint);
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* Bagian Angka Utama */
+.max-meter-body {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-top: 1px dashed #f0f0f0;
+    padding-top: 10px;
+}
+
+.max-meter-reading-group {
+    flex: 1;
+}
+
+.max-meter-reading {
+    font-size: 20pt;
+    font-weight: 700;
+    color: var(--max-text-main);
+    line-height: 1;
+}
+
+.max-meter-unit {
+    font-size: 10pt;
+    color: var(--max-text-muted);
+    margin-left: 4px;
+    font-weight: 500;
+}
+
+.max-meter-date {
+    font-size: 10pt;
+    color: var(--max-text-hint);
+    margin-top: 4px;
+}
+
+/* Bagian Analytics (Kanan/Bawah) */
+.max-meter-stats {
+    display: flex;
+    gap: 15px;
+    text-align: right;
+}
+
+.max-stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.max-stat-label {
+    font-size: 10pt;
+    color: var(--max-text-hint);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.max-stat-value {
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--max-primary);
+}
+
+.max-stat-value.urgent {
+    color: var(--max-error);
+}
+
+/* --- Production Log: Activity Cards --- */
+.max-prod-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.max-prod-card {
+    background: #fff;
+    border: 1px solid var(--max-border);
+    border-left: 4px solid var(--max-success);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.max-prod-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.max-prod-itemname {
+    font-weight: 700;
+    color: var(--max-text-main);
+    font-size: 11pt;
+}
+
+.max-prod-qty {
+    font-size: 14pt;
+    font-weight: 700;
+    color: var(--max-text-main);
+}
+
+.max-prod-cost-row {
+    display: flex;
+    justify-content: space-between;
+    background: var(--max-bg-light);
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.max-prod-meta-info {
+    font-size: 10pt;
+    color: var(--max-text-hint);
+}
+
+/* --- Classification: Property Tags --- */
+.max-spec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.max-spec-item {
+    border: 1px solid var(--max-border);
+    background: #fff;
+    border-radius: 6px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.max-spec-label {
+    font-size: 10pt;
+    color: var(--max-text-hint);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 2px;
+}
+
+.max-spec-value {
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--max-primary);
+}
+
+.max-spec-unit {
+    font-size: 10pt;
+    color: var(--max-text-muted);
+    margin-left: 3px;
+    font-weight: 400;
+}
+
+
+/* --- Maintenance History: Performance Cards --- */
+.max-wo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.max-wo-card {
+    background: #fff;
+    border: 1px solid var(--max-border);
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.max-wo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.max-wo-num {
+    font-family: 'Consolas', monospace;
+    font-weight: 700;
+    font-size: 11pt;
+    color: var(--max-primary);
+}
+
+.max-wo-people {
+    display: flex;
+    gap: 10px;
+    font-size: 10pt;
+    color: var(--max-text-muted);
+}
+
+.max-wo-people b { color: var(--max-text-main); }
+
+/* Grid untuk Tanggal & Biaya */
+.max-wo-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 15px;
+}
+
+.max-wo-sub-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.max-wo-label-tiny {
+    font-size: 10pt;
+    text-transform: uppercase;
+    color: var(--max-text-hint);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.max-wo-date-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10pt;
+}
+
+.max-wo-cost-box {
+    background: var(--max-bg-light);
+    padding: 8px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.max-wo-cost-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10pt;
+}
+
+/* Color indicators */
+.text-target { color: var(--max-text-muted); }
+.text-actual { color: var(--max-text-main); font-weight: 600; }
+.cost-actual { color: var(--max-success); font-weight: 700; }
+.cost-planned { color: var(--max-primary); }

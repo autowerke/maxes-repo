@@ -1,0 +1,171 @@
+<div id="lookupentry" class="col-md-12">
+	<div class="row">
+		<div class="col-md-4">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Name package</td>						
+				</tr>
+				<tr>
+					<td>Name package</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='packname'>  </td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Sender</td>						
+				</tr>
+				
+				<tr>
+					<td>Pick Address</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='pickaddress'>  </td>
+				</tr>
+				<tr>
+					<td>Pool?</td>
+					<td><input type="checkbox" class='nonpersistent' data-attribute="pool" checked></td>
+				</tr>
+				
+				<tr>
+					<td>Sender Name</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='sendername'>  </td>
+				</tr>
+				<tr>
+					<td>Sender Phone</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='senderphone' >  </td>
+				</tr>
+				<tr>
+					<td>Pick Price</td>
+					<td><input type='text' class='nonpersistent' data-attribute='pickprice' data-type='decimal'></td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-4">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Penerima</td>						
+				</tr>
+				<tr>
+					<td>Destination Address</td>
+					<td><input type='text' class='nonpersistent' data-attribute='destaddress' ></td>
+				 </tr>
+				 <tr>
+					<td>Pool?</td>
+					<td><input type="checkbox" data-childfld="child" data-attribute="pooldest" checked></td>
+				</tr>
+				 <tr>
+				 <td>Receiver Name</td>
+					<td><input type='text' class='nonpersistent' data-attribute='receivername' ></td>
+				<tr>
+					<td>Receiver Phone</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='receiverphone'>  </td>
+				</tr>
+				<tr>
+					<td>Dest. Price</td>
+					<td><input type='text' class='nonpersistent' data-attribute='destprice' data-type='decimal'></td>
+				</tr>
+			</tr>
+			</table>
+		</div>
+		<div class="col-md-4">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Package Weight & Price</td>						
+				</tr>
+				<tr>
+					<td>Package Weight</td>
+					<td><input type='text' class='nonpersistent' data-attribute='packweight' data-type='decimal'></td>
+				 </tr>
+				  <tr>
+					<td>Price for the first 1KG</td>
+					<td><input type='text' class='nonpersistent' data-attribute='unitprice1' data-type='decimal'></td>
+				</tr>
+				 <tr>
+					<td>Price for the next KG</td>
+					<td><input type='text' class='nonpersistent' data-attribute='unitprice' data-type='decimal'></td>
+				</tr>
+				<tr>
+					<td>Total Additional Price</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='additionalprice' data-type='decimal' data-input='readonly'>  </td>
+				</tr>
+				
+				<tr>
+					<td>Total price</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='lineprice' data-type='decimal' data-input='readonly'>  </td>
+				</tr>
+				
+				<tr>
+					<td>Package Date</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='packdate' data-type='date'>  </td>
+				</tr>
+			
+			</table>
+		</div>
+		
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Remarks</td>						
+				</tr>
+				<tr>
+					<td>Remarks</td>
+					<td><input type='text' class='nonpersistent' data-attribute='description'></td>
+				 </tr>
+				 <tr>
+					<td>Entered By</td>
+					<td> <input type='text' class='nonpersistent' data-attribute="enterby" data-lookup="employees">  </td>
+				</tr>
+				<tr>
+					<td>Entered Date</td>
+					<td><input type="text" data-childfld="child" data-attribute="enterdate" data-type="date"></td>
+				</tr>
+				
+				
+			
+			</table>
+		</div>
+		<div class="col-md-4">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Payment</td>						
+				</tr>
+				<tr>
+					<td>Payment Type</td>
+					<td><input type='text' class='nonpersistent' data-attribute='paymenttype' data-lookup='paymenttype'></td>
+				</tr>	
+				<tr>
+					<td>Dari Bank</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='frombank'>  </td>
+				</tr>
+				
+				 
+				
+			</tr>
+			</table>
+		</div>
+		
+		<div class="col-md-4">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Payment</td>						
+				</tr>
+				<tr>
+					<td>Ke Bank</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='tobankaccount'  data-lookup='orgbankaccount'>  </td>
+				</tr>
+				 
+				<tr>
+					<td>Transactions Num.</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='transnum'>  </td>
+				</tr>
+			</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+	

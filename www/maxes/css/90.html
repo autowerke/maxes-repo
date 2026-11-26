@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+	<title></title>
+	<head>
+		
+		<script text='javascript'>var context='eatcode';</script>
+
+		
+		<script text='javascript'>var mxid="nologin",
+						url = window.location.href,
+						appHost = "localhost",
+						appHost2 = "192.168.43.37",
+						http="http://",
+						wsport="8989",
+						serverport="", 
+						uq_nvs = "nouq";
+			
+			var maxhost ="";			
+			if(url.indexOf(appHost) > -1) maxhost = appHost
+			else maxhost = appHost2	
+			var rootHost = http + maxhost + serverport + "/" + context + "/" 
+			console.log(rootHost+" - "+url)
+			
+			</script>
+
+		
+		<script text='javascript'>var defhomebg='',
+					homebg='',
+					appbg='', 
+					loginbg='', 
+					nologinbg='', 
+					althomebg='',
+					companylogo = ''; </script>
+
+		<script src='http://localhost/eatcode/vendor/jquery/jquery.min.js'></script>
+<script src='http://localhost/eatcode/vendor/jquery/jquery-ui.min.js'></script>
+<script src='http://localhost/eatcode/vendor/jquery/jquery.localScroll.min.js'></script>
+<script src='http://localhost/eatcode/vendor/bootstrap/js/bootstrap.bundle.min.js'></script>
+<script src='http://localhost/eatcode/js/jquery.dataTables.min.js'></script>
+<script src='http://localhost/eatcode/js/jquery.dataTables.editable.min.js'></script>
+<script src='http://localhost/eatcode/js/dataTables.buttons.min.js'></script>
+<script src='http://localhost/eatcode/js/buttons.html5.min.js'></script>
+<script src='http://localhost/eatcode/js/buttons.print.min.js'></script>
+<script src='http://localhost/eatcode/js/pdfmake.min.js'></script>
+<script src='http://localhost/eatcode/js/vfs_fonts.js'></script>
+<script src='http://localhost/eatcode/js/jszip.min.js'></script>
+<script src='http://localhost/eatcode/js/dataTables.select.min.js'></script>
+<script src='http://localhost/eatcode/js/Chart.bundle.js'></script>
+<script src='http://localhost/eatcode/js/lang.js'></script>
+<script src='http://localhost/eatcode/js/eat.js'></script>
+<script src='http://localhost/eatcode/js/jquery.validate.min.js'></script>
+<script src='http://localhost/eatcode/js/jquery.datetimepicker.full.js'></script>
+<script src='http://localhost/eatcode/applications/ui/administration/company/company.js'></script>
+<link href='http://localhost/eatcode/vendor/fa/css/all.min.css' rel='stylesheet'>
+<link href='http://localhost/eatcode/css/sb-admin-2.min.css' rel='stylesheet'>
+<link href='http://localhost/eatcode/css/bootstrap.min.css' rel='stylesheet'>
+<link href='http://localhost/eatcode/css/eat.css' rel='stylesheet'>
+<script src='http://localhost/eatcode/applications/ui/administration/company/company_extends.js'></script>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="">	</head>
+	<body id='page-top' xboset="organization" data-appkeynum = "orgcode">
+		<div id="wrapper">
+			<div id='sidebarmenu'></div>
+			<div id="content-wrapper" class="d-flex flex-column">
+				<div id="content">
+					<div class="eat-toolbars"></div>
+					<div class="container-fluid">
+						<div class="maxes01">
+							<ul class="maxes02">
+								<li id="list" class="maxes02_1"><a href="#maxes02_1_1">Daftar</a></li>
+								<li id="detailrec" class="maxes02_2"><a href="#maxes02_1_2">Perusahaan</a></li>
+								<li class="maxes02_2"><a href="#maxes02_1_3">Daftar Alamat</a></li>
+								<li class="maxes02_2"><a href="#maxes02_1_4">Cabang</a></li>
+							</ul>
+							<div class="maxes04 shadow">
+								<div id="maxes02_1_1" class="tab maxes02_1">
+								
+								  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <div class='eat_apptitle'></div>
+                                </div>
+                                <div class="row eatfix">
+                                    <div class="col-md-12">
+                                        <div class="page-header-list">
+                                            <div class="tablelist">
+                                                <table id="mxtable_organization" class="display"></table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								</div>
+								<div id="maxes02_1_2" class="maxes03">
+									<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <div class='eat_apptitle'></div>
+                                </div>
+									<div class="row eatfix">
+										<div class="col-md-6">
+											<div class="page-header">
+												<table class="tbldata">
+													<tr>
+														<td>Perusahaaan</td>
+														<td><input type="text" data-type="upper" data-attribute="orgcode" data-input="required" data-key="value"></td>
+													</tr>
+													<tr>
+														<td>Nama</td>
+														<td><input type="text" data-attribute="description"></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="row eatfix">
+										<div class="col-md-12">
+											<table width=100%>
+												<tr>
+													<td class="maxes_sct_tbl">Penanggungjawab</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<div class="row eatfix">
+										<div class="col-md-4">
+											<table width=100%>
+												<tr>
+													<td class="maxes_sct_tbl2">Pemimpin Perusahaan
+													</td>
+												</tr>
+											</table>
+											<table class="tbldata">
+												<tr>
+													<td>Nama
+													</td>
+													<td><input type="text" data-attribute="name1" data-lookup="employees" data-childrentable = "employees" data-childrencolumn="personid">
+													</td>
+												</tr>
+												<tr>
+													<td>Jabatan
+													</td>
+													<td><input type="text" data-attribute="name1.title" data-child="childfld" data-input="readonly">
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="col-md-4">
+											<table width=100%>
+												<tr>
+													<td class="maxes_sct_tbl2">Nama Pejabat Penandatangan
+													</td>
+												</tr>
+											</table>
+											<table class="tbldata">
+												<tr>
+													<td>NPWP
+													</td>
+													<td><input type="text" data-attribute="npwp2">
+													</td>
+												</tr>
+												<tr>
+													<td>Nama
+													</td>
+													<td><input type="text" data-attribute="name2" data-lookup="employees" data-childrentable = "employees" data-childrencolumn="personid">
+													</td>
+												</tr>
+												<tr>
+													<td>Jabatan
+													</td>
+													<td><input type="text" data-attribute="name2.title" data-input="readonly">
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="col-md-4">
+											<table width=100%>
+												<tr>
+													<td class="maxes_sct_tbl2">Nama Kuasa Penandatangan
+													</td>
+												</tr>
+											</table>
+											<table class="tbldata">
+												<tr>
+													<td>NPWP
+													</td>
+													<td><input type="text" data-attribute="npwp3">
+													</td>
+												</tr>
+												<tr>
+													<td>Nama
+													</td>
+													<td><input type="text" data-attribute="name3" data-lookup="employees" data-childrentable = "employees" data-childrencolumn="personid">
+													</td>
+												</tr>
+												<tr>
+													<td>Jabatan
+													</td>
+													<td><input type="text" data-attribute="name3.title" data-input="readonly">
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<div class="row eatfix">
+										<div class="col-md-12">
+											<table width=100%>
+												<tr>
+													<td class="maxes_sct_tbl">Detil </td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<div class="row eatfix">
+										<div class="col-md-4">
+											<table class="tbldata">
+												<tr>
+													<td>Clearing Account
+													</td>
+													<td><input type="text" data-attribute="clearingaccount" data-lookup="chartofaccount">
+													</td>
+												</tr>
+												<tr>
+													<td>Base Currency
+													</td>
+													<td><input type="text" data-attribute="basecurrency"  data-input="required" data-lookup="currency">
+													</td>
+												</tr>
+												<tr>
+													<td>Profit/Loss Margin
+													</td>
+													<td><input type="text" data-attribute="costtype"  data-input="required" data-lookup="costtype">
+													</td>
+												</tr>
+												<tr>
+													<td>Active
+													</td>
+													<td><input type="checkbox" data-attribute="active">
+													</td>
+												</tr>
+												<tr>
+													<td>URL Attachment
+													</td>
+													<td><input type="text" data-attribute="urlattach">
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="col-md-4">
+											<table class="tbldata">
+												<tr>
+													<td>NPWP
+													</td>
+													<td><input type="text" data-attribute="npwp">
+													</td>
+												</tr>
+												<tr>
+													<td>Kantor Pelayanan Pajak (KPP)
+													</td>
+													<td><input type="text" data-attribute="kppoffice">
+													</td>
+												</tr>
+												<tr>
+													<td>KLU
+													</td>
+													<td><input type="text" data-attribute="klu">
+													</td>
+												</tr>
+												<tr>
+													<td>Jenis Wajib Pajak
+													</td>
+													<td><input type="text" data-attribute="wptype" data-lookup="wptype">
+													</td>
+												</tr>
+												<tr>
+													<td>Jenis Laporan Keuangan
+													</td>
+													<td><input type="text" data-attribute="finreporttype" data-lookup="finreporttype">
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<div class="row eatfix">
+										<div class="col-md-12">
+											<table width=100%>
+												<tr>
+													<td class="maxes_sct_tbl">Nomor Rekening</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<div class="row eatfix">
+										<div class="col-md-12">
+											<table width=100%>
+												<tr>
+													<td class="maxes_sct_tbl">Nomor Rekening</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<div class="row eatfix">
+										<div class="col-md-4">
+											<table class="tbldata">
+												<tr>
+													<td>Nama Bank
+													</td>
+													<td><input type="text" data-attribute="bankname">
+													</td>
+												</tr>
+												<tr>
+													<td>Nomor Rekening
+													</td>
+													<td><input type="text" data-attribute="bankaccount">
+													</td>
+												</tr>
+												<tr>
+													<td>Pemilik Rekening
+													</td>
+													<td><input type="text" data-attribute="bankholder">
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="col-md-4">
+											<table class="tbldata">
+												<tr>
+													<td>Nama Bank 2
+													</td>
+													<td><input type="text" data-attribute="bankname2">
+													</td>
+												</tr>
+												<tr>
+													<td>Nomor Rekening 2
+													</td>
+													<td><input type="text" data-attribute="bankaccount2">
+													</td>
+												</tr>
+												<tr>
+													<td>Pemilik Rekening2
+													</td>
+													<td><input type="text" data-attribute="bankholder2">
+													</td>
+												</tr>
+											</table>
+										</div>
+										<div class="col-md-4">
+											<table class="tbldata">
+												<tr>
+													<td>Nama Bank 3
+													</td>
+													<td><input type="text" data-attribute="bankname3">
+													</td>
+												</tr>
+												<tr>
+													<td>Nomor Rekening
+													</td>
+													<td><input type="text" data-attribute="bankaccount3">
+													</td>
+												</tr>
+												<tr>
+													<td>Pemilik Rekening
+													</td>
+													<td><input type="text" data-attribute="bankholder3">
+													</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</div>
+								<div id="maxes02_1_3" class="maxes03">
+									<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <div class='eat_apptitle'></div>
+                                </div>
+									<div class="row eatfix">
+										<div class="col-md-6">
+											<div class="page-header">
+												<table class="tbldata">
+													<tr>
+														<td>Perusahaan</td>
+														<td><input type="text" data-type="upper" data-key="value" data-type="upper" data-attribute="orgcode" data-input="required"></td>
+													</tr>
+													<tr>
+														<td>Nama</td>
+														<td><input type="text" data-attribute="description"></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="row eatfix">
+										<div class="col-md-12">
+											<table width=100%>
+												<tr>
+													<td class="maxes_sct_tbl">Alamat</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<div class="row eatfix">
+										<div class="col-md-4">
+											<div class="addrow" id="addcompanyAddress"></div>
+										</div>
+									</div>
+									<div class="row eatfix">
+										<div id="subform-company-addresscode" class="subform" data-child="address" data-table="mxtable_address_child">
+											<div class="row eatfix">
+												<div class="col-md-6">
+													<table class="tbldata">
+														<tr>
+															<td>Kode Alamat
+															</td>
+															<td><input type="text" data-childfld="child" data-attribute="addresscode" data-input="required" data-type="upper" data-childrentable = "address" data-childrencolumn = "orgcode" data-key="value">
+															</td>
+														</tr>
+														<tr>
+															<td>Alamat
+															</td>
+															<td  colspan=2><input data-childfld="child" type="text" data-attribute="address">
+															</td>
+														</tr>
+														<tr>
+															<td>Kota
+															</td>
+															<td  colspan=2><input data-childfld="child" type="text" data-attribute="city">
+															</td>
+														</tr>
+														<tr>
+															<td>Propinsi
+															</td>
+															<td  colspan=2><input data-childfld="child" type="text" data-attribute="stateprovince">
+															</td>
+														</tr>
+													</table>
+												</div>
+												<div class="col-md-6">
+													<table class="tbldata">
+														<tr>
+															<td>Kode Pos
+															</td>
+															<td  colspan=2><input data-childfld="child" type="text" data-attribute="zippostalcode">
+															</td>
+														</tr>
+														<tr>
+															<td>Negara
+															</td>
+															<td colspan=2><input data-childfld="child" type="text" data-attribute="country">
+															</td>
+														</tr>
+														<tr>
+															<td >Catatan </td>
+															<td><input type="text" data-childfld="child" data-attribute="description">
+															</td>
+														</tr>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row eatfix">
+										<div class="col-md-12">
+											<div class="tablelist">
+												<table id="mxtable_address_child" class="display" data-subform="subform-company-addresscode">					
+												</table>
+												<div id="mxtable_address_child_detail" class="mxtable_detail">
+													<div class="row eatfix">
+														<div class="col-md-5">
+															<table class="tableDetailRow">
+																<tbody>
+																	<tr>
+																		<td>Kode Alamat</td>
+																		<td><input type="text" data-childfld="child" data-type="upper" data-attribute="addresscode"  data-childrentable="address" data-childrencolumn="addresscode"  data-input="readonly" data-key="value"> </td>
+																	</tr>
+																	<tr>
+																		<td>Telp. Kantor</td>
+																		<td><input type="text" data-childfld="child" data-attribute="officephone"> </td>
+																	</tr>
+																	<tr>
+																		<td>Fax</td>
+																		<td><input type="text" data-childfld="child" data-attribute="fax"> </td>
+																	</tr>
+																	<tr>
+																		<td>Alamat</td>
+																		<td><input type="text" data-childfld="child" data-attribute="address"> </td>
+																	</tr>
+																	<tr>
+																		<td>Kota</td>
+																		<td><input type="text" data-childfld="child" data-attribute="city" ></td>
+																	</tr>
+																	<tr>
+																		<td>Catatan</td>
+																		<td><input type="text" data-childfld="child" data-attribute="description"> </td>
+																	</tr>
+															</table>
+														</div>
+														<div class="col-md-5">
+															<table class="tableDetailRow">
+																<tbody>
+																	<tr>
+																		<td>Propinsi</td>
+																		<td><input type="text" data-childfld="child" data-attribute="stateprovince"></td>
+																	</tr>
+																	<tr>
+																		<td>Kode Pos</td>
+																		<td><input type="text" data-childfld="child"  data-attribute="zippostalcode" ></td>
+																	</tr>
+																	<tr>
+																		<td>Negara</td>
+																		<td><input type="text" data-childfld="child"  data-attribute="country" ></td>
+																	</tr>
+																	<tr>
+																		<td>KPP Pratama</td>
+																		<td><input type="text" data-childfld="child"  data-attribute="kppoffice" ></td>
+																	</tr>
+																	<tr>
+																		<td>NPWP</td>
+																		<td><input type="text" data-childfld="child"  data-attribute="npwp" ></td>
+																	</tr>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="maxes02_1_4" class="maxes03">
+									<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <div class='eat_apptitle'></div>
+                                </div>
+									<div class="row eatfix">
+										<div class="col-md-4">
+											<div class="page-header">
+												<table class="tbldata">
+													<tr>
+														<td>Perusahaaan</td>
+														<td><input type="text"  data-type="upper" data-key="value" data-type="upper" data-attribute="orgcode" data-input="required"></td>
+													</tr>
+													<tr>
+														<td>Nama</td>
+														<td><input type="text" data-attribute="description"></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="row eatfix">
+										<div class="col-md-12">
+											<table width=100%>
+												<tr>
+													<td class="maxes_sct_tbl">Cabang
+													</td>
+												</tr>
+											</table>
+											<div class="row eatfix">
+												<div class="col-md-4">
+													<div class="addrow" id="addSites"></div>
+												</div>
+											</div>
+											<div class="row eatfix">
+												<div id="subform-company-sites" class="subform" data-child="site" data-table = "mxtable_site_child">
+													<div class="row eatfix">
+														<div class="col-md-12">
+															<table class="tbldata">
+																<tr>
+																	<td>Cabang
+																	</td>
+																	<td><input type="text" data-key = "value" data-childfld="child" data-attribute="sitecode" data-input="required" data-type="upper">
+																	</td>
+																</tr>
+																<tr>
+																	<td>Akun
+																	</td>
+																	<td><input type="text" data-key = "value" data-childfld="child" data-attribute="revenueacct" data-lookup="chartofaccount">
+																	</td>
+																</tr>
+																<tr>
+																	<td>Catatan
+																	</td>
+																	<td><input type="text" data-childfld="child" data-attribute="description">
+																	</td>
+																</tr>
+																<tr>
+																	<td>Kontak Cabang
+																	</td>
+																	<td><input type="text" data-childfld="child" data-attribute="sitecontact" data-lookup="employees">
+																	</td>
+																</tr>
+																<tr>
+																	<td>Aktif </td>
+																	<td><input type="checkbox" data-childfld="child" data-attribute="active">	</td>
+																</tr>
+															</table>
+															
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row eatfix">
+												<div class="tablelist">
+													<table id="mxtable_site_child" class="display"  data-subform="subform-company-sites">
+													</table>
+												</div>
+											</div>
+											<div id="mxtable_site_child_detail" class="mxtable_detail">
+												<div class="row eatfix">
+													<div class="col-md-5">
+														<table class="tableDetailRow">
+															<tbody>
+																<tr>
+																	<td>Kode Cabang</td>
+																	<td><input type="text" data-childfld="child" data-attribute="sitecode"  data-key="value" data-input="readonly" data-type="upper"> </td>
+																</tr>
+																<tr>
+																	<td>Akun Cabang
+																	</td>
+																	<td><input type="text" data-childfld="child" data-attribute="revenueacct" data-lookup="chartofaccount">
+																	</td>
+																</tr>
+																<tr>
+																	<td>Catatan</td>
+																	<td><input type="text" data-childfld="child" data-attribute="description"> </td>
+																</tr>
+																<tr>
+																	<td>Kontak Cabang</td>
+																	<td><input type="text" data-childfld="child" data-attribute="sitecontact" data-lookup="employees"></td>
+																</tr>
+																<tr>
+																	<td>Aktif</td>
+																	<td><input type="checkbox" data-childfld="child" data-attribute="active"></td>
+																</tr>
+														</table>
+													</div>
+													<div class="col-md-5">
+														<table class="tableDetailRow">
+															<tbody>
+																<tr>
+																	<td>Di-entry Oleh</td>
+																	<td><input type="text" data-childfld="child" data-attribute="enterby" class="readonly"></td>
+																</tr>
+																<tr>
+																	<td>Tgl. Entry</td>
+																	<td><input type="text" data-childfld="child"  data-attribute="enterdate" data-type="date" class="readonly"></td>
+																</tr>
+																<tr>
+																	<td>Diubah Oleh</td>
+																	<td><input type="text" data-childfld="child"  data-attribute="changeby"  class="readonly"></td>
+																</tr>
+																<tr>
+																	<td>Tgl. Ubah</td>
+																	<td><input type="text" data-childfld="child" data-attribute="changedate" data-type="date" class="readonly" ></td>
+																</tr>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row eatfix">
+										<div class="col-md-12">
+											<table width=100%>
+												<tr>
+													<td class="maxes_sct_tbl">Alamat Cabang <span id="mxtable_siteAddress_child_title"></span>
+													</td>
+												</tr>
+											</table>
+											<div class="row eatfix">
+												<div class="col-md-4">
+													<div class="addrow" id="addSiteAddress"></div>
+												</div>
+											</div>
+											<div class="row eatfix">
+												<div id="subform-company-siteaddress" class="subform" data-child="siteaddress" data-table="mxtable_siteAddress_child" data-pk="sitecode">
+													<div class="col-md-4">
+														<table class="tbldata">
+															<tr>
+																<td>Kode Cabang</td>
+																<td> <input type="text" size=6 data-childfld="child" data-attribute="sitecode" data-childrentable="site" data-childrencolumn="sitecode" data-key="value" data-lookup="site"> 
+																	<input type="text" data-childfld="child" data-attribute="sitecode.description"  data-input="readonly"> 
+																</td>
+															</tr>
+															<tr>
+																<td>Alamat
+																</td>
+																<td>
+																	<input type="text" data-childfld="child" data-attribute="siteaddresscode" data-childrentable="address" data-childrencolumn="addresscode" data-input="required" data-key="value" data-lookup="address">
+																	<input type="text" data-childfld="child" data-attribute="siteaddresscode.description" data-input="readonly">
+																</td>
+															</tr>
+															<tr>
+																<td>Kontak Tagihan
+																</td>
+																<td>
+																	<input type="text" data-childfld="child" data-attribute="billcontact" data-lookup="employees" data-childrentable="employees" data-childrencolumn="personid">
+																	<input type="text" data-childfld="child" data-attribute="billcontact.fullname" data-input="readonly">
+																</td>
+															</tr>
+															<tr>
+																<td>Kontak Kirim
+																</td>
+																<td><input type="text" data-childfld="child" data-attribute="shipcontact" data-lookup="employees"  data-childrentable="employees"  data-childrencolumn="personid">
+																	<input type="text" data-childfld="child" data-attribute="shipcontact.fullname" data-input="readonly">
+																</td>
+															</tr>
+														</table>
+													</div>
+													<div class="col-md-2">
+														<table class="tbldata">
+															<tr>
+																<td>Tagihan Default</td>
+																<td><input type="checkbox" data-childfld="child" data-attribute="billtodefault">	</td>
+															</tr>
+															<tr>
+																<td>Pengiriman Default </td>
+																<td><input type="checkbox" data-childfld="child"  data-attribute="shiptodefault">	</td>
+															</tr>
+														</table>
+													</div>
+												</div>
+											</div>
+											<div class="row eatfix">
+												<div class="tablelist">
+													<table id="mxtable_siteAddress_child" class="display" data-subform="subform-company-siteaddress" data-link="mxtable_site_child">
+													</table>
+												</div>
+											</div>
+											<div id="mxtable_siteAddress_child_detail" class="mxtable_detail">
+												<div class="row eatfix">
+													<div class="col-md-4">
+														<table class="tableDetailRow">
+															<tbody>
+																<tr>
+																	<td>Kode Cabang</td>
+																	<td><input type="text" size=6 data-childfld="child" data-attribute="sitecode"   data-childrentable="site" data-childrencolumn="sitecode" data-key="value" data-input="readonly"> 
+																		<input type="text" data-childfld="child" data-attribute="sitecode.description"  data-input="readonly"> 
+																	</td>
+																</tr>
+																<tr>
+																	<td>Cabang Kode Alamat</td>
+																	<td><input type="text" size=6 data-childfld="child" data-attribute="siteaddresscode"  data-childrentable="address" data-childrencolumn="addresscode" data-key="value" data-lookup="address"> 
+																		<input type="text" data-childfld="child" data-attribute="siteaddresscode.address"  data-input="readonly"> 
+																	</td>
+																</tr>
+														</table>
+													</div>
+													<div class="col-md-8">
+														<table class="tableDetailRow">
+															<tr>
+																<td>Tagihan Default </td>
+																<td><input type="checkbox" data-childfld="child" data-attribute="billtodefault"> </td>
+															</tr>
+															<tr>
+																<td>Pengiriman Default</td>
+																<td><input type="checkbox" data-childfld="child" data-attribute="shiptodefault" > </td>
+															</tr>
+														</table>
+													</div>
+												</div>
+												<div class="row eatfix">
+													<div class="col-md-4">
+														<table class="tableDetailRow">
+															<tr>
+																<td>Kontak Kirim</td>
+																<td><input type="text" size=6 data-childfld="child" data-attribute="shipcontact" data-lookup="employees"   data-childrentable="employees" data-childrencolumn="personid"> 
+																	<input type="text" data-childfld="child" data-attribute="shipcontact.fullname"  data-input="readonly"  >
+																</td>
+															</tr>
+															<tr>
+																<td>Telp. Utama </td>
+																<td> <input type="text" data-childfld="child" data-attribute="shipcontact.primaryphone"  data-input="readonly"></td>
+															</tr>
+															<td>PIN BB </td>
+															<td> <input type="text" data-childfld="child" data-attribute="shipcontact.blackberrypin"  data-input="readonly" > </td>
+															<tr>
+																<td>Nomor WA: </td>
+																<td> <input type="text" data-childfld="child" data-attribute="shipcontact.wanum"  data-input="readonly" > </td>
+															</tr>
+															<tr>
+																<td>Nomor</td>
+																<td> <input type="text" data-childfld="child" data-attribute="shipcontact.lineid"  data-input="readonly" > </td>
+															</tr>
+															<tr>
+																<td></td>
+																<td></td>
+															</tr>
+														</table>
+													</div>
+													<div class="col-md-4">
+														<table class="tableDetailRow">
+															<tr>
+																<td>Kontak Tagihan</td>
+																<td><input type="text" size=6 data-childfld="child" data-attribute="billcontact"  data-childrentable="employees" data-childrencolumn="personid" data-lookup="employees" > 
+																	<input type="text" data-childfld="child" data-attribute="billcontact.fullname"  data-input="readonly"  >
+																</td>
+															</tr>
+															<tr>
+																<td>Telp. Utama </td>
+																<td> <input type="text" data-childfld="child" data-attribute="billcontact.primaryphone"  data-input="readonly"></td>
+															</tr>
+															<td>PIN BB </td>
+															<td> <input type="text" data-childfld="child" data-attribute="billcontact.blackberrypin"  data-input="readonly" > </td>
+															<tr>
+																<td>Nomor WA: </td>
+																<td> <input type="text" data-childfld="child" data-attribute="billcontact.wanum"  data-input="readonly" > </td>
+															</tr>
+															<tr>
+																<td>Nomor</td>
+																<td> <input type="text" data-childfld="child" data-attribute="billcontact.lineid"  data-input="readonly" > </td>
+															</tr>
+															<tr>
+																<td></td>
+																<td></td>
+															</tr>
+														</table>
+													</div>
+													<div class="col-md-4">
+														<table class="tableDetailRow">
+															<tbody>
+																<tr>
+																	<td>Di-entry Oleh</td>
+																	<td><input type="text" data-childfld="child" data-attribute="enterby" class="readonly"></td>
+																</tr>
+																<tr>
+																	<td>Tgl. Entry</td>
+																	<td><input type="text" data-childfld="child"  data-attribute="enterdate" data-type="date" class="readonly"></td>
+																</tr>
+																<tr>
+																	<td>Diubah Oleh</td>
+																	<td><input type="text" data-childfld="child"  data-attribute="changeby"  class="readonly"></td>
+																</tr>
+																<tr>
+																	<td>Tgl. Ubah</td>
+																	<td><input type="text" data-childfld="child" data-attribute="changedate" data-type="date" class="readonly" ></td>
+																</tr>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

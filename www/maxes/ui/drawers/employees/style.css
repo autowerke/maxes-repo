@@ -1,0 +1,97 @@
+/* --- Employee Specific Styles --- */
+
+/* Badge untuk status Cuti */
+.max-badge-leave { background: #FFF7E6; color: #D48806; border: 1px solid #FFE58F; }
+
+/* Styling untuk Team Chips */
+.max-team-container { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px; }
+.max-team-chip { 
+    background: #E6F7FF; color: #1890FF; border: 1px solid #91D5FF;
+    padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600;
+}
+.max-team-chip.is-leader { background: #F9F0FF; color: #722ED1; border-color: #D3ADF7; }
+
+/* Workload Card Highlight */
+.max-workload-running { border-left: 4px solid var(--max-primary) !important; }
+.max-workload-planning { border-left: 4px solid #8a9ba8 !important; }
+
+/* Employee Avatar lg size tweak */
+.max-record-avatar.lg { font-size: 20px; font-weight: 700; }
+
+
+/* --- Qualification Cards Style --- */
+.max-qual-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.max-qual-card {
+    background: #ffffff;
+    border: 1px solid var(--max-border);
+    border-radius: 8px;
+    padding: 12px;
+    transition: border-color 0.2s;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.max-qual-card:hover {
+    border-color: var(--max-primary);
+}
+
+.max-qual-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+}
+
+.max-qual-name {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--max-text-main);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Label Skill (e.g., Expert, Intermediate) */
+.max-qual-skill-tag {
+    font-size: 10px;
+    background: #e6f7ff;
+    color: #1890ff;
+    border: 1px solid #91d5ff;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.max-qual-description {
+    font-size: 12px;
+    color: var(--max-text-muted);
+    line-height: 1.4;
+}
+
+/* Badge Sertifikat */
+.max-qual-cert-badge {
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: var(--max-success);
+    background: #f6ffed;
+    border: 1px solid #b7eb8f;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.max-qual-no-cert {
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--max-text-hint);
+    font-style: italic;
+}

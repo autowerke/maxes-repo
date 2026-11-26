@@ -1,0 +1,60 @@
+<table id='lookupentry'>
+	<tr>
+		<td>Person ID</td>
+		<td>
+			<input type='text' class='nonpersistent' data-attribute='personid' data-type='upper' data-key='value' disabled data-input='readonly'>
+		</td>
+	</tr>
+	<tr>
+		<td>Start Date</td>
+		<td>
+			<input type='text' class='nonpersistent' data-attribute='startdate' data-type='date'>
+		</td>
+	</tr>
+	<tr>
+		<td>End Date</td>
+		<td>
+			<input type='text' class='nonpersistent' data-attribute='enddate' data-type='date'>
+		</td>
+	</tr>
+	<tr>
+		<td>Description</td>
+		<td>
+			<input type='text' class='nonpersistent' data-attribute='description'>
+		</td>
+	</tr>
+	<tr>
+		<td>Leave Type</td>
+		<td>
+			<select id="leavetype" data-attribute="leavetype" name="leavetype" required>
+			<option value="" disabled selected>-- Select Leave Type --</option>
+
+			<optgroup label="Paid Leave">
+				<option value="ANNUAL">Annual Leave</option>
+				<option value="SICK">Sick Leave</option>
+				<option value="MATERNITY">Maternity Leave</option>
+				<option value="PATERNITY">Paternity Leave</option>
+				<option value="MARRIAGE">Marriage Leave</option>
+				<option value="BEREAVEMENT">Bereavement Leave</option>
+				<option value="TRAINING">Training / Study Leave</option>
+				<option value="HOLIDAY">Public Holiday</option>
+				<option value="WORKACCIDENT">Work Accident Leave</option>
+			</optgroup>
+
+			<optgroup label="Unpaid Leave">
+				<option value="UPL">Unpaid Leave</option>
+				<option value="PERSONAL">Personal Leave</option>
+				<option value="LONGSICK">Long Sick Leave</option>
+			</optgroup>
+
+			<optgroup label="Other / Status">
+				<option value="RESIGN">Resigned / Offboarding</option>
+				<option value="TERMINATION">Termination</option>
+				<option value="SUSPENSION">Suspension</option>
+				<option value="FORCEMAJEURE">Force Majeure Leave</option>
+			</optgroup>
+		</select>
+
+		</td>
+	</tr>
+</table>

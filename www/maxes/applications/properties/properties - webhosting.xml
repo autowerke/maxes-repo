@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+  <contextPath>breg</contextPath>
+  <host>javarave.com</host>
+  <dbhost>javarave.com</dbhost>
+  <remotehost>javarave.com</remotehost>
+  <domainhost>javarave.com</domainhost>
+  <internetrequired>yes</internetrequired>
+  <wsport>8989</wsport>
+  <attachFolder>/home/k0004902/public_html/breg/attachments/</attachFolder>
+  <excelFolder>/home/k0004902/public_html/breg/applications/importdata/</excelFolder>
+  <thumbsfolder>/home/k0004902/public_html/breg/attachments/thumbs/</thumbsfolder>
+  <reportURL>http://localhost:8080/breg/</reportURL>
+  <reportFolder>D:\xampp\tomcat\webapps\javarave\</reportFolder>
+</properties>

@@ -1,0 +1,91 @@
+<div id="lookupentry" class="col-md-12">
+	<div class="row">
+		<div class="col-md-6">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Issue or Return?
+					</td>
+				</tr>
+				<tr>
+					<td>Transaction Type</td>
+					<td><input type='text' data-attribute='wotranstype' class='nonpersistent' data-lookup='wotranstype' data-lookupaction='y'> </td>
+				</tr>
+				
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Item</td>
+				</tr>
+				<tr>
+					<td>Item </td>
+					<td> <input type='text' class='nonpersistent' data-attribute='itemnum' data-input='readonly'> </td>
+				</tr>
+				<tr>
+					<td>Condition Type</td>
+					<td><input type='text' class='nonpersistent' data-attribute='conditiontype' data-lookup='itemcondition|itemnum,warehouse'> </td>
+				</tr>
+				<tr>
+					<td>Quantity</td>
+					<td><input type='text' class='nonpersistent' data-attribute='quantity' data-type='decimal'></td>
+				</tr>
+				<tr>
+					<td>Remarks</td>
+					<td><input type='text' class='nonpersistent' data-attribute='remarks'></td>
+				</tr>
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Warehouse</td>
+				</tr>
+				<tr>
+					<td>Warehouse </td>
+					<td> <input type='text' class='nonpersistent' data-attribute='warehouse' data-input='readonly' data-key='value'> </td>
+				</tr>
+				<tr>
+					<td>Rack</td>
+					<td><input type='text' data-attribute='racknum' class='nonpersistent' data-lookup='racknum|itemnum,warehouse' data-key='value'> </td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-6">
+			<table class="tbldata">
+				<tr>
+					<td>Company</td>
+					<td><input type='text' class='nonpersistent' data-attribute='orgcode' data-input='readonly'></td>
+				</tr>
+				<tr>
+					<td>Site</td>
+					<td><input type='text' class='nonpersistent' data-attribute='sitecode' data-input='readonly'> </td>
+				</tr>
+				
+				<tr>
+					<td colspan=5 class="maxes_sct_tbl4">Issued for</td>
+				</tr>
+				<tr>
+					<td>WO</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='wonum' data-lookupaction='y' data-lookup='workorder|orgcode'> </td>
+				</tr>
+				<tr>
+					<td>Date of Issued</td>
+					<td><input type='text' class='nonpersistent' data-attribute='issuedate' data-type='date'></td>
+				</tr>
+				<tr>
+					<td>Requested by</td>
+					<td><input type='text' class='nonpersistent' data-attribute='requestedby' data-lookup='employees'></td>
+				</tr>
+				<tr>
+					<td>Asset</td>
+					<td><input type='text' class='nonpersistent' data-attribute='assetnum' data-lookup='assets' data-lookupaction='y'></td>
+				</tr>
+				<tr>
+					<td>Location</td>
+					<td><input type='text' class='nonpersistent' data-attribute='location' data-lookup='locations' data-lookupaction='y'></td>
+				</tr>
+				<tr>
+					<td>Debit Account Code</td>
+					<td><input type='text' data-attribute='gldebitacct' class='nonpersistent' data-lookup='chartofaccount|orgcode' data-key='value'></td>
+				</tr>
+				<tr>
+					<td>Credit Account Code</td>
+					<td><input type='text' data-attribute='glcreditacct' class='nonpersistent' data-lookup='chartofaccount|orgcode' data-key='value'></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

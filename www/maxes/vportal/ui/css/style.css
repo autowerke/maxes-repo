@@ -1,0 +1,78 @@
+
+.dialog-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+}
+
+.dialog-box {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 600px;
+    overflow: hidden;
+    transform: scale(0.95);
+    transition: transform 0.2s ease-in-out;
+}
+
+.dialog-backdrop.show .dialog-box {
+    transform: scale(1);
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.dialog-header h2 {
+    margin: 0;
+    font-size: 1.25em;
+}
+
+#dialog-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #888;
+    padding: 0;
+    line-height: 1;
+}
+
+.dialog-content {
+    padding: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.dialog-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #e5e5e5;
+    text-align: right;
+}
+
+/* Style untuk tabel di dalam dialog */
+.attachment-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.attachment-table th, .attachment-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+.attachment-table th {
+    background-color: #f9f9f9;
+}

@@ -1,0 +1,53 @@
+<table id='lookupentry' width = 100%>
+	<tr>
+		<td colspan=5 class="maxes_sct_tbl4">Consignment Period</td>						
+	</tr>
+	<tr>
+		<td> From Date </td><td> <input type='text' class='nonpersistent' data-attribute='fromdate' data-type='date'> </td>
+		<td> To Date </td><td><input type='text' class='nonpersistent' data-attribute='todate' data-type='date'> </td> 
+	</tr> 
+	<tr>
+		<td colspan=5 class="maxes_sct_tbl4">Item Location</td>						
+	</tr>
+	<tr>
+		<td> Item </td><td> <input type='text' class='nonpersistent' data-attribute='itemnum' data-input='readonly' data-key='value'> </td>
+		<td>Warehouse</td><td><input type='text' class='nonpersistent' data-attribute='fromwarehouse' data-input='readonly'> </td>
+		
+	</tr> 
+	<tr>
+		<td>Description</td><td><input type='text' class='nonpersistent' data-attribute='itemnum.description' data-input='readonly'></td>
+		<td>Site</td><td><input type='text' class='nonpersistent' data-attribute='sitecode' data-input='readonly'></td>
+	</tr>
+	<tr>
+		<td>Company</td><td><input type='text' class='nonpersistent' data-attribute='orgcode'> </td>
+	</tr> 
+	<tr>
+		<td colspan=5 class="maxes_sct_tbl4">Quantity</td>						
+	</tr>
+	<tr>
+		<td>Condition Type </td><td><input type='text' data-attribute='conditiontype' class='nonpersistent' data-lookup='itemcondition|itemnum' data-key='value' data-lookupaction='y'> </td>
+		<td>Quantity</td><td><input type='text' class='nonpersistent' data-input='readonly' data-attribute='consignqty' data-type='decimal'></td> 
+	</tr>
+	<tr>
+		<td colspan=4 id = "call_update_button"></td>
+	</tr> 
+	<tr>
+		<td colspan=5 class="maxes_sct_tbl4">Charge to Invoice</td>						
+	</tr>
+	<tr>
+		<td>Invoice Num </td><td> <input type='text' class='nonpersistent' data-attribute='invoicenum' data-lookup='consinvoice|sitecode' data-lookupaction='y'> </td>
+		<td>Tax</td> <td><input type='text' class='nonpersistent' data-attribute='tax' data-lookup='tax'></td> 
+	</tr> 
+	<tr>
+		<td colspan=5 class="maxes_sct_tbl4">Consignment Type</td>						
+	</tr>
+	<tr>	
+		<td>Consignment Type </td><td><input type='text' data-attribute='consignmenttype' class='nonpersistent' data-lookup='consignmenttype' data-lookupaction='y'> </td>
+		<td>Customer Code</td><td><input type='text' class='nonpersistent' data-attribute='customercode' data-lookup='customer'></td>
+		
+	</tr>
+	<tr>
+		<td>Vendor</td><td><input type='text' class='nonpersistent' data-attribute='vendorcode' data-lookup='vendor'></td>
+		<td>Price Code</td><td><input type='text' class='nonpersistent' data-attribute='pricecode' data-lookup='invprice|itemnum,conditiontype,fromwarehouse'></td>
+	</tr> 
+</table>

@@ -1,0 +1,71 @@
+<div id='createnewitemfromwo'>
+    <table id='lookupentry'>
+        <tr>
+            <tr>
+                <td> Create Existing Item?</td>
+                <td>
+                    <input type='checkbox' class=\nonpersistent\ data-attribute='isexistingitem'>
+                </td>
+                <td> </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan=4>
+                    <hr> </td>
+            </tr>
+            <tr>
+                <td> Item </td>
+                <td>
+                    <input type='text' class=\nonpersistent\ data-attribute='itemnum' data-key='value'> </td>
+                <td> Organization </td>
+                <td>
+                    <input type='text' data-attribute='orgcode' data-input='readonly'> </td>
+            </tr>
+            <tr>
+                <td> Description </td>
+                <td>
+                    <input type='text' class=\nonpersistent\ data-attribute='description'> </td>
+                <td>Site</td>
+                <td>
+                    <input type='text' data-attribute='sitecode' data-input='readonly' data-key='value'>
+                </td>
+            </tr>
+            <tr>
+                <td> Warehouse </td>
+                <td>
+                    <input type='text' class=\nonpersistent\ data-attribute='warehouse' data-lookup='warehouse'> </td>
+                <td> Rack </td>
+                <td>
+                    <input type='text' data-attribute='racknum' data-lookup='racknum|warehouse'> </td>
+            </tr>
+            <tr>
+                <td> Quantity</td>
+                <td>
+                    <input type='text' class=\nonpersistent\ data-attribute='quantity' data-type='decimal' data-input='required'> </td>
+                <td> Stock Type </td>
+                <td>
+                    <input type='text' data-attribute='stocktype' data-lookup='stocktype'>
+                </td>
+            </tr>
+            <tr>
+                <td> Item Group</td>
+                <td>
+                    <input type='text' class=\nonpersistent\ data-attribute='itemgroup' data-lookup='itemgroup'>
+                </td>
+                <td> Order Unit </td>
+                <td>
+                    <input type='text' data-attribute='orderunit' data-lookup='measureunit'>
+                </td>
+            </tr>
+            <tr>
+                <td> Condition Type</td>
+                <td>
+                    <input type='text' class=\nonpersistent\ data-attribute='newconditiontype' data-lookup='newconditiontype'>
+                </td>
+                <td> Issue/Sale Unit </td>
+                <td>
+                    <input type='text' data-attribute='issueunit' data-lookup='measureunit'>
+                </td>
+            </tr>
+    </table>
+</div>

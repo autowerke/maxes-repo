@@ -1,0 +1,64 @@
+<div id="lookupentry" class="col-md-12">
+	<div class="row">
+		<div class="col-md-6">
+			<table id='tbldata' width=100%>
+				
+				<tr>
+					<td> Item </td>
+					<td> <input type='text' class='nonpersistent' data-attribute='itemnum' data-input='readonly' data-key='value'> </td>					
+				</tr> 
+				<tr>
+					<td> Description </td><td> <input type='text' class='nonpersistent' data-attribute='itemnum.description' data-input='readonly'> </td>
+				</tr>
+				<tr>
+					<td> Condition </td>
+					<td><input type='text' data-attribute='conditiontype' data-lookup='itemcondition|itemnum' data-key='value'> </td>
+				</tr>
+				
+				<tr>
+					<td> Quantity </td>
+					<td><input type='text' data-attribute='qty' data-type='decimal'> </td> 
+				</tr>
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Company</td>
+				</tr>
+				<tr>
+					<td>Company</td>	
+					<td> <input type='text' data-attribute='orgcode' data-input='readonly'> </td>  
+				</tr>
+				<tr>
+					<td>Site</td> 
+					<td><input type='text' data-attribute='sitecode' data-input='readonly' data-key='value'> </td>  
+				</tr>
+				
+			</table>
+		</div>
+		<div class="col-md-6">
+			<table id='tbldata' width=100%>
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Dari Lokasi</td>
+				</tr>
+				<tr>
+					<td> From Warehouse </td>
+					<td> <input type='text' class='nonpersistent' data-attribute='fromwarehouse' data-input='readonly'> </td>
+				</tr>
+				<tr>
+					<td> From Rack/Bin </td>
+					<td> <input type='text' class='nonpersistent' data-attribute='fromrack' data-lookup='racknum|fromwarehouse'> </td> 
+				</tr>
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">To Location</td>
+				</tr>
+				<tr>
+					<td>To Warehouse </td>	
+					<td> <input type='text' class='nonpersistent' data-attribute='towarehouse' data-lookup='warehouse'> </td> 
+				</tr>
+				<tr>
+					<td> To Rack </td>
+					<td> <input type='text' class='nonpersistent' data-attribute='torack' data-lookup='racknum|towarehouse'> </td> 
+				</tr>
+				
+			</table>
+		</div>	
+		
+</div>

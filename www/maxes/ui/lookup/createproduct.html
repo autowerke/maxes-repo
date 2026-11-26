@@ -1,0 +1,163 @@
+<style>
+    /* Menggunakan class .create-product-modal sebagai root untuk styling */
+    .create-product-modal * {
+        box-sizing: border-box;
+    }
+
+    .create-product-modal {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        width: 100%;
+        background-color: #ffffff;
+        /* Hapus properti yang mungkin bertentangan dengan bingkai dialog utama */
+    }
+
+    /* Header, Body, Footer di dalam konten */
+    .create-product-modal .modal-header {
+        background-color: #f8f9fa;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid #dee2e6;
+    }
+    .create-product-modal .modal-header h4 {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+
+    .create-product-modal .modal-body {
+        padding: 1.5rem;
+    }
+
+    .create-product-modal .modal-footer {
+        background-color: #f8f9fa;
+        padding: 1rem 1.5rem;
+        text-align: right;
+        border-top: 1px solid #dee2e6;
+    }
+
+    /* Styling spesifik untuk elemen di dalam modal ini */
+    .create-product-modal .info-block {
+        background-color: #e9ecef;
+        padding: 0.75rem 1rem;
+        border-radius: 6px;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+    }
+    .create-product-modal .info-block strong {
+        color: #212529;
+    }
+    .create-product-modal .result-display {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #e9f5ff;
+        border-left: 5px solid #007bff;
+        font-size: 1.1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .create-product-modal .result-display .cost-value {
+        font-weight: bold;
+        font-size: 1.3rem;
+        color: #0056b3;
+    }
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+    .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    .form-control {
+        width: 100%;
+        padding: 0.65rem 0.75rem;
+        font-size: 1rem;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+    }
+    .btn {
+        font-weight: 600;
+        cursor: pointer;
+        border: 1px solid transparent;
+        padding: 0.65rem 1.25rem;
+        font-size: 1rem;
+        border-radius: 6px;
+    }
+    .btn-secondary {
+        background-color: #e9ecef;
+        border-color: #ced4da;
+        margin-right: 0.5rem;
+    }
+    .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+	#form_itemnum, #form_location, #form_warehouse{
+		display:none;
+	}
+	
+	.form-control.is-invalid {
+		border-color: #dc3545; /* Border merah */
+		box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+	}
+
+</style>
+
+<div id="lookupentry" class="col-md-12">
+<div id="createProductForm" class="create-product-modal">
+
+    <!-- DIALOG BODY -->	
+    <div class="modal-body">
+        
+        <!-- Static Information Block (to be filled by JavaScript) -->
+        <div class="info-block">
+            <p class="mb-1"><strong>Selected Asset:</strong> <span id="modalAsetName">[Asset Name]</span></p>
+            <p class="mb-1"><strong>Total Roll-up Cost:</strong> <span id="modalTotalCost" class="fw-bold">[Total Cost]</span></p>
+            <p class="mb-0"><strong>Period:</strong> <span id="modalPeriod">[Time Period]</span></p>
+        </div>
+
+        <hr>
+
+        <div class="form-group">
+            <label for="outputTypeSelect"><strong>Output Type:</strong></label>
+            <select class="form-control" id="outputTypeSelect">
+                <option value="item" selected>Produced Item</option>
+                <option value="asset">New Asset</option>
+            </select>
+        </div>
+		
+		<div class="form-group" id="form_itemnum">
+            <label for="newItemnum"><strong id="itemnum">Item Num</strong></label>
+            <input type="text" class="form-control" id="itemnum" data-attribute="newItemnum" data-lookup="item">
+        </div>
+
+		<div class="form-group" id="form_warehouse">
+            <label for="newWarehouse"><strong id="itemnum">Warehouse</strong></label>
+            <input type="text" class="form-control" id="warehouse" data-attribute="newWarehouse" data-lookup="warehouse">
+        </div>
+		
+		<div class="form-group" id="form_location">
+            <label for="newLocnum"><strong id="itemnum">Locations</strong></label>
+            <input type="text" class="form-control" id="locnum" data-attribute="newLocnum" data-lookup="locations">
+        </div>
+		
+        <div class="form-group">
+            <label for="quantityInput"><strong id="quantityLabel">Quantity of Items Produced:</strong></label>
+            <input type="number" class="form-control" id="quantityInput" placeholder="Enter quantity..." min="1">
+        </div>
+
+        <!-- Calculation Result (to be filled by JavaScript) -->
+        <div class="result-display">
+            <span id="unitCostLabel">Cost per Item:</span>
+            <span id="unitCostResult" class="cost-value">$0.00</span>
+        </div>
+    </div>
+
+    <!-- DIALOG FOOTER -->
+    <div class="modal-footer">
+        <button type="button" class="general-button" id="cancelCostButton">Cancel</button>
+        <button type="button" class="general-button" id="saveCostButton">Create</button>
+    </div>
+</div>
+</div>

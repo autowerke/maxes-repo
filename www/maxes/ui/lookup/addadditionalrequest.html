@@ -1,0 +1,150 @@
+<div id="lookupentry" class="col-md-12">
+	<div class="row eatfix">
+		<div class="col-md-4">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2>
+						<div class="maxes_sct_tbl3">Detail</div>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>Line Type
+					</td>
+					<td><input type="text" data-childfld="child" data-attribute="linetype" data-input="required" data-lookup="linetype" data-lookupaction="y">
+					</td>
+				</tr>
+				<tr>
+					<td>Item
+					</td>
+					<td><input type="text" data-childfld="child" data-attribute="itemnum" data-childrentable="item" data-childrencolumn="itemnum" data-lookup="itemsellable|orgcode" data-lookupaction="y">
+					</td>
+				</tr>
+				<tr>
+					<td>Description </td>
+					<td><input type="text" data-childfld="child" data-attribute="description" data-crossvalue="itemnum.description">
+					</td>
+				</tr>
+				<tr>
+					<td>Condition Type </td>
+					<td><input type="text" data-childfld="child" data-attribute="conditiontype" data-input="readonly">
+					</td>
+				</tr>
+				<tr>
+					<td>Part Number </td>
+					<td><input type="text" data-childfld="child" data-attribute="partnum" data-lookup="itempartnum|itemnum">
+					</td>
+				</tr>
+				<tr>
+					<td>From Warehouse</td>
+					<td><input type="text" data-childfld="child" data-attribute="warehouse" data-input="readonly">
+					</td>
+				</tr>
+				<tr>
+					<td>From Rack/Bin</td>
+					<td><input type="text" data-childfld="child" data-attribute="racknum" data-input="readonly">
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-8">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2>
+						<div class="maxes_sct_tbl3">Price</div>
+					</td>
+				</tr>
+			</table>
+			<div class="row eatfix">
+				<div class="col-md-6">
+					<table class="tbldata">
+						<tr>
+							<td>Quantity
+							</td>
+							<td><input type="text" data-childfld="child" data-type="decimal" data-attribute="sellqty" data-lookupaction="y">
+							</td>
+						</tr>
+						<tr>
+							<td>Measure Unit
+							</td>
+							<td><input type="text" data-childfld="child" data-attribute="itemnum.issueunit" data-input="readonly">
+							</td>
+						</tr>
+						<tr>
+							<td>Harga per Unit
+							</td>
+							<td><input type="text" data-childfld="child" data-type="decimal" data-attribute="unitprice">
+							</td>
+						</tr>
+						<tr>
+							<td>Total Price
+							</td>
+							<td><input type="text" data-childfld="child" data-type="decimal" data-input="readonly" data-attribute="lineprice">
+							</td>
+						</tr>
+						<tr>
+							<td>Tax
+							</td>
+							<td><input type="text" data-childfld="child" data-attribute="taxcode" data-lookup="tax" data-lookupaction="y">
+							</td>
+						</tr>
+						<tr>
+							<td>Sales Tax</td>
+							<td><input type="text" data-childfld="child" data-type="decimal" data-attribute="taxprice" data-input="readonly"></td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-md-6">
+					<table class="tbldata">
+						<tr>
+							<td>Discount Price per Unit</td>
+							<td><input type="text" data-childfld="child" data-type="decimal" data-attribute="unitpricediscount" data-input="readonly"></td>
+						</tr>
+						<tr>
+							<td>Total Price discount</td>
+							<td><input type="text" data-childfld="child" data-type="decimal" data-attribute="linepricediscount" data-input="readonly"></td>
+						</tr>
+						<tr>
+							<td>Tax after discount</td>
+							<td><input type="text" data-childfld="child" data-type="decimal" data-attribute="taxpricediscount" data-input="readonly"></td>
+						</tr>
+						<tr>
+							<td>Cost Type
+							</td>
+							<td><input type="text" data-childfld="child" data-attribute="costtype" data-lookup="costtype" data-lookupaction="y">
+							</td>
+						</tr>
+						<tr>
+							<td>Price Code</td>
+							<td><input type="text" data-childfld="child" data-attribute="pricecode" data-lookup="invprice|itemnum,warehouse,conditiontype" data-lookupaction="y">
+							</td>
+						</tr>
+						
+						<tr>
+							<td>Debit Account Code</td>
+							<td><input type="text" data-childfld="child" data-attribute="gldebitacct" data-lookup="chartofaccount">
+							</td>
+						</tr>
+						<tr>
+							<td>Credit Account Code</td>
+							<td><input type="text" data-childfld="child" data-attribute="glcreditacct" data-lookup="chartofaccount">
+							</td>
+						</tr>
+						<tr>
+							<td>Entered By</td>
+							<td><input type="text" data-childfld="child" data-attribute="enterby" data-input="readonly">
+						</tr>
+						<tr>
+							<td>Entered Date</td>
+							<td><input type="text" data-childfld="child" data-type="date" data-attribute="enterdate" data-input="readonly"></td>
+						</tr>
+						<tr>
+							<td>Status Pengiriman</td>
+							<td><input type="text" data-childfld="child" data-attribute="sentstatus"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

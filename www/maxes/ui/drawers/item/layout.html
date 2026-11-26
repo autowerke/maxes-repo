@@ -1,0 +1,30 @@
+<div class="max-drawer-container">
+    <div class="max-drawer-header">
+        <h2 class="max-drawer-title">Item Explorer</h2>
+        
+    </div>
+    <div class="max-tabs-nav">
+        <button class="max-tab-btn active" data-tab="tab-list">List</button>
+        <button class="max-tab-btn" data-tab="tab-detail" id="btn-tab-detail">Detail</button>
+    </div>
+    <div class="max-drawer-body">
+        <div class="max-tab-content active" id="tab-list">
+            <div class="max-search-wrapper">
+                <span class="max-search-icon">&#9906;</span>
+                <input type="text" id="max-item-search" placeholder="Search item ID, description, brand...">
+            </div>
+            <div id="max-list-count" class="max-list-count"></div>
+            <div id="max-records-container"></div>
+        </div>
+
+        <div class="max-tab-content" id="tab-detail">
+            <div id="max-detail-content">
+                <div class="max-placeholder">
+                    <div class="max-placeholder-icon">&#128230;</div>
+                    <div class="max-placeholder-title">No item selected</div>
+                    <div class="max-placeholder-sub">Select an item from the list to view stock, assembly, and purchase history.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

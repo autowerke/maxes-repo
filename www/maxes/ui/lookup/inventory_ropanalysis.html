@@ -1,0 +1,210 @@
+<!-- Mulai Copy-Paste dari sini -->
+
+<style>
+    /* --- Main Modal Container --- */
+    .rop-analysis-modal {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: #ffffff;
+        border: 1px solid #e9ecef;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        max-width: 750px;
+        margin: auto;
+        color: #343a40;
+    }
+
+    /* --- Header --- */
+    .rop-modal-header {
+        background-color: #007bff; /* Biru korporat */
+        color: white;
+        padding: 20px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .rop-modal-header h4 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .rop-modal-header .item-code {
+        font-family: "Courier New", monospace;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 1.1rem;
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+    /* --- Body & Content --- */
+    .rop-modal-body {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    /* --- Analysis Metrics Section --- */
+    .analysis-metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #e9ecef;
+    }
+    .metric-item {
+        text-align: center;
+    }
+    .metric-label {
+        font-size: 0.8rem;
+        color: #6c757d;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+    .metric-value {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #007bff;
+    }
+
+    /* --- Recommendation Table --- */
+    .recommendation-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .recommendation-table th, .recommendation-table td {
+        border: 1px solid #dee2e6;
+        padding: 15px;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    .recommendation-table th {
+        background-color: #f8f9fa;
+    }
+    .recommendation-table .parameter-name {
+        text-align: left;
+        font-weight: 500;
+    }
+    .recommendation-table .current-value {
+        font-size: 1.3rem;
+    }
+    .recommendation-table .recommended-value {
+        font-size: 1.5rem;
+        font-weight: bold;
+        background-color: #eaf6ec; /* Latar hijau untuk rekomendasi */
+    }
+
+    /* --- Impact Summary Section --- */
+    .impact-summary {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    .impact-item {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+    }
+    .impact-label {
+        font-size: 0.9rem;
+        color: #6c757d;
+        margin-bottom: 5px;
+    }
+    .impact-value {
+        font-size: 2rem;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .impact-value.negative { color: #e74c3c; } /* Merah untuk penurunan */
+    .impact-value.positive { color: #2ecc71; } /* Hijau untuk kenaikan */
+    .impact-value span { margin-left: 8px; font-size: 1.5rem; } /* Untuk ikon panah */
+
+    /* --- Justification Section --- */
+    .justification-section {
+        font-size: 0.85rem;
+        color: #6c757d;
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        border-top: 3px solid #007bff;
+    }
+    .justification-section strong {
+        color: #343a40;
+    }
+
+</style>
+
+<div id="rop-analysis-modal" class="rop-analysis-modal">
+    <div class="rop-modal-header">
+        <h4>ROP & Safety Stock Recommendation</h4>
+        <div id="rop-rec-itemnum" class="item-code">23231513</div>
+		<div id="rop-rec-itemdesc">Item Description</div>
+		<div id="rop-rec-warehouse">Warehouse</div>
+    </div>
+
+    <div class="rop-modal-body">
+        
+        <div class="analysis-metrics">
+            <div class="metric-item">
+                <div class="metric-label">Avg. Monthly Usage</div>
+                <div id="rop-rec-avg-usage" class="metric-value">0</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-label">Avg. Lead Time</div>
+                <div id="rop-rec-lead-time" class="metric-value">0 days</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-label">Analysis Period</div>
+                <div id="rop-rec-period" class="metric-value">0 months</div>
+            </div>
+        </div>
+
+        <table class="recommendation-table">
+            <thead>
+                <tr>
+                    <th style="width: 40%;">Parameter</th>
+                    <th style="width: 30%;">Current</th>
+                    <th style="width: 30%;">Recommended</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="parameter-name">Reorder Point (ROP)</td>
+                    <td id="rop-current-rop" class="current-value">0</td>
+                    <td id="rop-recommended-rop" class="recommended-value">0</td>
+                </tr>
+                <tr>
+                    <td class="parameter-name">Safety Stock</td>
+                    <td id="rop-current-ss" class="current-value">0</td>
+                    <td id="rop-recommended-ss" class="recommended-value">0</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="impact-summary">
+            <div class="impact-item">
+                <div class="impact-label">ROP Change</div>
+                <div id="rop-impact-rop" class="impact-value">0</div>
+				 <button class="general-button" id="applyroprecom">Apply ROP Recommendation</button>
+            </div>
+            <div class="impact-item">
+                <div class="impact-label">Safety Stock Change</div>
+                <div id="rop-impact-ss" class="impact-value">0</div>
+				 <button class="general-button" id="applysafetyrecom">Apply Safety Stock Recommendation</button>
+            </div>
+        </div>
+
+        <div class="justification-section">
+            <p><strong>Justification (ROP):</strong> <span id="rop-rec-rop-justification"></span></p>
+            <p><strong>Justification (Safety Stock):</strong> <span id="rop-rec-ss-justification"></span></p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Selesai Copy-Paste di sini -->

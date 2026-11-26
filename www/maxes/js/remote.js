@@ -1,0 +1,1 @@
+var remoteurl = ["https://javarave.com"]

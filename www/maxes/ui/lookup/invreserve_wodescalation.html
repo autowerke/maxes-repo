@@ -1,0 +1,158 @@
+<!-- Mulai Copy-Paste dari sini -->
+
+<style>
+    /* --- Main Container Styling --- */
+    .deescalation-container {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background-color: #ffffff;
+        padding: 0; /* Padding diatur di child */
+        border-radius: 8px;
+        max-width: 750px;
+        margin: auto;
+        border: 1px solid #e0e0e0;
+    }
+
+    /* --- Header Styling --- */
+    .deescalation-header {
+        background-color: #f8f9fa;
+        padding: 15px 20px;
+        border-bottom: 1px solid #e9ecef;
+    }
+    .deescalation-header h4 {
+        margin: 0;
+        font-size: 1.3rem;
+        color: #343a40;
+    }
+    .deescalation-header p {
+        margin: 5px 0 0 0;
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+
+    /* --- Content Styling --- */
+    .deescalation-content {
+        padding: 20px;
+    }
+
+    /* --- Selected WO List Styling --- */
+    .wo-list {
+        margin-bottom: 25px;
+    }
+    .wo-list-header {
+        font-weight: bold;
+        color: #495057;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        border-bottom: 1px solid #e9ecef;
+        padding-bottom: 5px;
+    }
+    .wo-item {
+        background-color: #f9f9f9;
+        border: 1px solid #e0e0e0;
+        border-left: 4px solid #007bff; /* Biru sebagai penanda */
+        border-radius: 4px;
+        padding: 10px 15px;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .wo-details .wonum {
+        font-weight: bold;
+        color: #333;
+    }
+    .wo-details .item-info {
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+
+    /* --- Action Section Styling --- */
+    .action-section {
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        padding: 20px;
+    }
+    .action-section label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #343a40;
+    }
+    .action-section textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        font-size: 0.95rem;
+        resize: vertical;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+    }
+    .action-buttons {
+        display: flex;
+        justify-content: space-between; /* Memisahkan tombol */
+        align-items: center;
+    }
+    
+    .action-buttons button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: background-color 0.2s ease;
+    }
+
+    #sendInquiryBtn {
+        background-color: #007bff; /* Biru - Diplomat */
+        color: white;
+    }
+    #sendInquiryBtn:hover {
+        background-color: #0056b3;
+    }
+
+    #forceDeescalateBtn {
+        background-color: #dc3545; /* Merah - Komandan */
+        color: white;
+    }
+    #forceDeescalateBtn:hover {
+        background-color: #c82333;
+    }
+    
+</style>
+
+<div id="deescalation-modal-content" class="deescalation-container">
+    <div class="deescalation-header">
+        <h4>Review & De-escalate Work Orders</h4>
+        <p>You have selected the following Work Order reservations to review. Choose an action below.</p>
+    </div>
+
+    <div class="deescalation-content">
+        <div class="wo-list">
+            <div class="wo-list-header">Selected Reservations:</div>
+            <!-- Daftar WO akan diisi oleh JavaScript di sini -->
+            <div id="selected-wo-list">
+                <!-- Contoh Tampilan Baris (akan digenerate oleh JS) -->
+                <!--
+                <div class="wo-item">
+                    <div class="wo-details">
+                        <div class="wonum">WO-202401-001-3</div>
+                        <div class="item-info">Item: RAG-COTTON (Cotton Rags)</div>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+
+        <div class="action-section">
+            <label for="deescalationMessage">Compose Inquiry Message (Optional):</label>
+            <textarea id="deescalationMessage" placeholder="A default message will be used if left blank..."></textarea>
+            
+            
+        </div>
+    </div>
+</div>
+
+<!-- Selesai Copy-Paste di sini -->

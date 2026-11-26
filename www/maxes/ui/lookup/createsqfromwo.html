@@ -1,0 +1,45 @@
+<div class='col-md-12'>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="tbldata" id='lookupentry'>
+                <tr>
+                    <td colspan=2 class="maxes_sct_tbl4">Create SQ From Work Order</td>
+                </tr>
+                <tr>
+                    <td>Work Order</td>
+                    <td>
+                        <input type='text' class='nonpersistent' data-attribute="wonum" data-input="readonly" readonly><br>
+                    </td>
+					
+                </tr>
+				<tr>
+                    <td>Line Type</td>
+                    <td>
+						 <label>
+                            <input type="radio" name="linetype" value="item" class='nonpersistent' data-attribute='linetype' checked> Item
+                        </label><br>
+                        <label>
+                            <input type="radio" name="linetype" value="services" class='nonpersistent' data-attribute='linetype'> Services
+                        </label><br>
+						<label>
+                            <input type="radio" name="linetype" value="item_services" class='nonpersistent' data-attribute='linetype'> Item & Services
+                        </label>
+                    </td>
+                </tr>
+				<tr>
+					<td>Sales Quotation</td>
+                    <td>
+                        <input type='text' class='nonpersistent' data-attribute="sqnum"><br>
+                    </td>
+				</tr>
+                <tr>
+                    <td>Comments (SQ Description)</td>
+                    <td>
+                        <textarea class='nonpersistent' data-attribute='comments' rows="3" cols="30" style="padding:10px"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+  
+</div>

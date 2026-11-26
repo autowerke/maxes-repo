@@ -1,0 +1,49 @@
+.mxsgantt-container{
+	width:100%;
+	margin: 0 auto;
+	
+}
+.timeliner-container {
+	background: #fff;
+	border:2px solid rgb(89,89,89);
+	padding:3px;
+	width:350px;
+	box-shadow:0px 0px 6px 1px rgba(150,150,150,0.9);
+}
+
+.timeliner-header{
+	font-family:cambria;
+	font-size:11pt;
+	color:#000;
+	border-bottom:1px solid #000;
+	font-weight:bold;
+}
+.timeliner-title{
+	font-family:cambria;
+	font-size:10pt;
+	color:#000;
+	font-weight:bold;
+	letter-spacing:0px;
+}
+
+.timeliner-container td{
+	font-family:calibri;
+	font-size:10pt;
+	color:#000;
+}
+
+.mxsgantt-canvas{
+	width:95%;
+	margin: 0 auto;
+	margin-top:10px;
+	border:2px solid rgb(150,150,150);
+	display:block;
+	
+}
+#showtoolbars{
+	display:none;
+}
+.gantt-toolbars{
+	z-index:10;
+	display:block;
+}

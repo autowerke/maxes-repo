@@ -1,0 +1,392 @@
+
+:root {
+  --pt-bg: #ffffff;
+  --pt-surface: #fcfcf5;
+  --pt-surface-hover: #ebebeb;
+  --pt-border: #e4e6ff;
+  --pt-border-strong: #a0a09a;
+  --pt-accent: #1a5fa8;
+  --pt-accent-light: #dceaf9;
+  --pt-accent-mid: #3b82c4;
+  --pt-text: #1a1a18;
+  --pt-text-muted: #464646;
+  --pt-text-subtle: #757575;
+  --pt-selected: #fff3cd;
+  --pt-selected-border: #d4a017;
+  --pt-sort-bg: rgba(26, 95, 168, 0.06);
+  --pt-font-ui: "blinker", "Segoe UI", sans-serif;
+  --pt-font-blinker: "blinker", "Consolas", "Menlo", monospace;
+  --pt-radius: 5px;
+}
+
+/* --- General Layout and Wrapper --- */
+.dataTables_wrapper{
+  background: linear-gradient(to bottom, #f1f1f1 , #fcfcf5);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top: 1px solid #d8d8d8;
+  border-left: 1px solid #cecece;
+  border-right: 1px solid #cecece;
+  border-bottom: 1px solid #d1d1d1;
+  height:45px !important;
+  position:relative;
+  top:-9px;
+}
+.dataTables_wrapper table:not(.tableDetailRow){
+  position: relative;
+  top:-7px;
+  border-top: 1px solid #dddddd !important;
+  border-bottom: 1px solid #dddddd !important;
+}
+
+
+.dataTables_wrapper thead th, .dataTables_wrapper tfoot th{
+  border-left: 1px solid #cecece;
+  border-right: 1px solid #d6d6d6 !important;
+}
+
+
+.dataTables_processing {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--pt-bg);
+  border: 1px solid var(--pt-border);
+  border-radius: var(--pt-radius);
+  padding: 8px 16px;
+  font-size: 12px;
+  color: var(--pt-text-muted);
+  font-family: var(--pt-font-ui);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.02em;
+}
+
+/* --- Table Container --- */
+.dataTables_wrapper .dt-table-wrap{
+  border: 1px solid var(--pt-border);
+  border-radius: var(--pt-radius);
+  overflow: hidden;
+}
+
+/* --- Table Styling --- */
+table.display {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--pt-font-ui);
+  font-size: 13px;
+}
+
+/* --- Header --- */
+table.display thead th {
+  padding: 9px 24px 9px 12px; /* right padding for sort icon */
+  background: var(--pt-surface);
+  color: var(--pt-text);
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 1px solid var(--pt-border);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  position: relative;
+}
+
+table.display thead th:last-child {
+  border-right: none;
+}
+
+table.display thead th:hover {
+  background: var(--pt-surface-hover);
+}
+
+/* --- Sort Icons (pure CSS, no image URLs) --- */
+table.display thead th.sorting::after,
+table.display thead th.sorting_asc::after,
+table.display thead th.sorting_desc::after {
+  content: '';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  
+}
+
+table.display thead th.sorting::after {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 5px solid var(--pt-text-subtle);
+  opacity: 0.4;
+  
+}
+
+table.display thead th.sorting_asc::after {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 5px solid var(--pt-accent);
+  opacity: 1;
+}
+
+table.display thead th.sorting_desc::after {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--pt-accent);
+  opacity: 1;
+}
+
+/* --- Body Cells --- */
+table.display tbody td {
+  padding: 8px 12px;
+  border-right: 1px solid var(--pt-border);
+  color: var(--pt-text);
+  vertical-align: middle;
+  font-variant-numeric: tabular-nums;
+}
+
+table.display tbody td:last-child {
+  border-right: none;
+}
+
+table.display tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* --- Row Striping --- */
+table.display tbody tr.even {
+  background: var(--pt-bg);
+}
+
+table.display tbody tr.odd {
+  background: #f5f8fd;
+}
+
+/* --- Row Hover --- */
+table.display tbody tr:hover td {
+  background: var(--pt-accent-light) !important;
+  transition: background 0.1s ease;
+}
+
+/* --- Row / Cell Selection --- */
+table.display tbody tr.selected td,
+table.display tbody tr:hover.selected td {
+  background: var(--pt-selected) !important;
+  border-left: 2px solid var(--pt-selected-border);
+}
+
+/* --- Column Sort Highlighting --- */
+table.display tbody td.sorting_1 {
+  background: var(--pt-sort-bg);
+  border-left: 2px solid var(--pt-accent);
+}
+
+table.display tbody td.sorting_2 {
+  background: rgba(26, 95, 168, 0.04);
+}
+
+table.display tbody td.sorting_3 {
+  background: rgba(26, 95, 168, 0.03);
+}
+
+/* --- Footer Search Inputs --- */
+table.display tfoot input {
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px solid var(--pt-border);
+  border-radius: var(--pt-radius);
+  background: var(--pt-bg);
+  color: var(--pt-text);
+  font-size: 12px;
+  font-family: var(--pt-font-ui);
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.1s, box-shadow 0.1s;
+}
+
+table.display tfoot input:focus {
+  border-color: var(--pt-accent);
+  box-shadow: 0 0 0 2px rgba(26, 95, 168, 0.15);
+}
+
+tfoot input.search_init {
+  color: var(--pt-text-subtle);
+}
+
+/* --- Pagination --- */
+.dataTables_paginate {
+  float: right;
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.paging_full_numbers .ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  font-size: 10pt;
+  font-family: var(--pt-font-ui);
+  border: 1px solid var(--pt-border);
+  border-radius: var(--pt-radius);
+  background: var(--pt-bg);
+  color: var(--pt-text-muted) !important;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none !important;
+  transition: background 0.1s;
+}
+
+.paging_full_numbers .ui-button:hover {
+  background: var(--pt-surface);
+  color: var(--pt-text) !important;
+}
+
+.paging_full_numbers a.paginate_active {
+  background: var(--pt-accent) !important;
+  border-color: var(--pt-accent) !important;
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+/* --- Info and Length Menu --- */
+.dataTables_info {
+  float: left;
+  font-size: 10pt;
+  color: var(--pt-text-subtle) !important;
+  font-family: var(--pt-font-ui);
+  padding:0 10px;
+  display: flex; 
+  position:relative;
+  top:-10px;
+}
+
+
+.dataTables_length {
+  float: left;
+  margin-right: 20px;
+  font-size: 10pt;
+  color: var(--pt-text-muted);
+  font-family: var(--pt-font-ui);
+}
+
+.dataTables_filter {
+  float: right;
+  font-size: 13px;
+  color: var(--pt-text-muted);
+  font-family: var(--pt-font-ui);
+}
+
+.dataTables_length label,
+.dataTables_filter label {
+  font-weight: normal;
+}
+
+.dataTables_length select,
+.dataTables_filter input {
+  border: 1px solid var(--pt-border);
+  border-radius: var(--pt-radius);
+  background: var(--pt-bg);
+  color: var(--pt-text);
+  padding:5px !important;
+  margin:0 5px !important;
+  font-size: 10pt !important;
+  font-family: var(--pt-font-ui);
+  outline: none;
+  position:relative;
+  top:7px;
+}
+
+.dataTables_length select:focus,
+.dataTables_filter input:focus {
+  border-color: var(--pt-accent);
+  box-shadow: 0 0 0 2px rgba(26, 95, 168, 0.15);
+}
+
+.dataTables_length,
+.dataTables_filter {
+  margin-bottom: 12px;
+}
+
+/* --- Toolbar --- */
+.dataTables_wrapper .ui-toolbar {
+  padding: 12px 0;
+  border: none;
+}
+
+/* --- Scrollable Table --- */
+.dataTables_scroll {
+  clear: both;
+}
+
+.dataTables_scrollBody {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- Empty Table Message --- */
+.dataTables_empty {
+  text-align: center;
+  padding: 2rem;
+  font-size: 13px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  color: var(--pt-text-subtle);
+}
+
+/* --- Grouping and Details Rows --- */
+td.group {
+  background: var(--pt-surface);
+  border-bottom: 1px solid var(--pt-border);
+  border-top: 1px solid var(--pt-border);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pt-text-muted);
+  padding: 6px 12px;
+}
+
+td.details {
+  background: var(--pt-bg);
+  border: 1px solid var(--pt-border);
+  padding: 12px;
+  font-size: 13px;
+  color: var(--pt-text-muted);
+}
+
+/* --- Clearfix --- */
+.clear {
+  clear: both;
+}
+
+/* --- Utility: Selection --- */
+.selected {
+  background: var(--pt-selected);
+}
+
+
+table.display tbody tr:hover td {
+  background: var(--pt-accent-light) !important;
+  transition: background 0.1s ease;
+}
+
+/* --- Row Hover --- */
+table.display tbody tr:hover td {
+  background: var(--pt-accent-light) !important;
+  transition: background 0.1s ease;
+}
+
+/* Exclude breakdown detail row dari hover */
+
+
+table.display tbody tr[id*="showtoggleTR"] td {
+  background: #ffffff !important;
+  transition: none;
+}
+
+

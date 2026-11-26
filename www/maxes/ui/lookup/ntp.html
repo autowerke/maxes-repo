@@ -1,0 +1,146 @@
+<style>
+
+    .corp-container {
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: #2b2b2b;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .corp-title {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 25px;
+        color: #1f1f1f;
+    }
+
+    /* ----- Corporate Table ----- */
+    .corp-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        background: #ffffff;
+    }
+
+    .corp-table th {
+        background: #f4f6f8;
+        text-align: left;
+        padding: 10px;
+        border: 1px solid #d8dde1;
+        font-weight: 600;
+        width: 30%;
+    }
+
+    .corp-table td {
+        background: #ffffff;
+        padding: 10px;
+        border: 1px solid #d8dde1;
+    }
+
+    /* ----- Inputs ----- */
+    .corp-input, .corp-textarea {
+        width: 100%;
+        padding: 8px 10px;
+        border: 1px solid #c9ced3;
+        border-radius: 4px;
+        background: #fafbfc;
+        font-size: 14px;
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+    }
+
+    .corp-input:focus,
+    .corp-textarea:focus {
+        border-color: #0062ff;
+        background: #ffffff;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0, 118, 255, 0.15);
+    }
+
+    .corp-textarea {
+        height: 80px;
+        resize: vertical;
+    }
+
+    /* ----- Buttons ----- */
+    .corp-btn-primary {
+        padding: 10px 18px;
+        background: #0062ff;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background 0.2s ease;
+    }
+
+    .corp-btn-primary:hover {
+        background: #004bcc;
+    }
+
+    .corp-section-title {
+        font-size: 16px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #1e1e1e;
+    }
+
+     .error-message {
+        color: red;
+        font-size: 13px;
+        margin-top: 4px;
+        display: none; /* default hidden */
+    }
+
+    .error-input {
+        border-color: red !important;
+        background-color: #ffe6e6;
+    }
+
+</style>
+
+
+<div id="lookupentry">
+
+    <div class="corp-container">
+    <h2 class="corp-title">NOTICE TO PROCEED (NTP) FORM</h2>
+
+    <form id="ntpForm">
+        <table class="corp-table">
+            <tr><th>NTP Number</th><td><input class="corp-input" type="text" data-attribute="ntp_number"></td></tr>
+            <tr><th>Issue Date</th><td><input class="corp-input" type="text" data-type="date" data-attribute="issue_date"></td></tr>
+            <tr><th>Vendor Code</th><td><input class="corp-input" type="text" data-attribute="vendor_name" data-lookup="rfqvendor|rfqnum" data-lookupaction="y"></td></tr>
+            <tr><th>Work Title</th><td><input class="corp-input" type="text" data-attribute="work_title"></td></tr>
+            <tr><th>Contract Number</th><td><input class="corp-input" type="text" data-attribute="contract_number"></td></tr>
+            <tr><th>Contract Value</th><td><input class="corp-input" type="text" data-type="decimal" data-attribute="contract_value"></td></tr>
+            <tr><th>Commencement Date</th><td><input class="corp-input" type="text" data-type="date" data-attribute="start_date"></td></tr>
+            <tr><th>Completion Date</th><td><input class="corp-input" type="text" data-type="date"  data-attribute="end_date"></td></tr>
+            <tr><th>Project Location</th><td><input class="corp-input" type="text" data-attribute="project_location"></td></tr>
+            <tr><th>Owner’s PIC</th><td><input class="corp-input" type="text" data-attribute="owner_pic"></td></tr>
+            <tr><th>Owner’s Contact</th><td><input class="corp-input" type="text" data-attribute="owner_contact"></td></tr>
+            <tr><th>Remarks</th><td><textarea class="corp-textarea" data-attribute="notes"></textarea></td></tr>
+        </table>
+
+        <div class="corp-section-title">Signatures</div>
+
+        <table width="100%" cellpadding="8">
+            <tr>
+                <td width="50%">
+                    <input class="corp-input" type="text" data-attribute="approver_name" placeholder="Approved By (Name)">
+                    <br><br>
+                    <input class="corp-input" type="text" data-attribute="approver_position" placeholder="Position">
+                </td>
+                <td width="50%">
+                    <input class="corp-input" type="text" data-attribute="recipient_name" placeholder="Received By (Name)">
+                    <br><br>
+                    <input class="corp-input" type="text" data-attribute="recipient_position" placeholder="Position">
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</div>
+</div>

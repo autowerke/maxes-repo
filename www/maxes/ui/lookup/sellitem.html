@@ -1,0 +1,124 @@
+<div id="lookupentry" class="col-md-12">
+	<div class="row">
+		<div class="col-md-6">
+			<table id='tbldata' width=100%>
+				<tr>
+					<td colspan=2 style='font-family:calibri; font-size:9pt;'> ** Please inform the Customer so that this Transactions number (bond) is stored properly.** </td>
+				</tr>
+				<tr>
+					<td>Transactions Num.</td>
+					<td> <input type='text' data-attribute='transnum'></td>
+				</tr>
+				<tr>
+					<td>Date Sales</td>
+					<td> <input type='text' data-attribute='selldate' data-type="date"></td>
+				</tr>
+				
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl2">Transaction Type</td>
+				</tr>
+				<tr>
+					<td>Transaction Type </td>
+					<td> <input type='text' data-attribute='transtype' data-lookup='transtype' data-input='required' data-lookupaction='y'> </td>
+				</tr>
+				<tr>
+					<td>Refund ?</td>
+					<td> <input class='nonpersistent' type='checkbox' data-attribute='refund' > </td>
+				</tr>
+				<tr>
+					<td>Invoice </td>
+					<td> <input type='text' class='nonpersistent' data-attribute='refinvoicenum' data-lookup='invoicetrans'  data-lookupaction='y'></td>
+				</tr>
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl2">Item</td>
+				</tr>
+				<tr>
+					<td>Item </td>
+					<td> <input type='text' class='nonpersistent' data-attribute='itemnum' data-input='readonly' data-key='value'> </td>
+				</tr>
+				<tr>
+					<td>Description </td>
+					<td> <input type='text' class='nonpersistent' data-attribute='itemnum.description' data-input='readonly'> </td>
+				</tr>
+				<tr>
+					<td>Item Condition</td>
+					<td> <input type='text' data-attribute='conditiontype' data-lookup='itemcondition|itemnum'></td>
+				</tr>
+				<tr>
+					<td>Quantity</td>
+					<td>  <input type='text' class='nonpersistent' data-attribute='sellqty' data-type='decimal' data-input='required'> </td>
+				</tr>
+				<tr>
+					<td>Remarks</td>
+					<td> <input type='text' data-attribute='remarks'> </td>
+				</tr>
+				
+				
+			</table>
+		</div>
+		<div class="col-md-6">
+			<table id='tbldata' width=100%>
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl2">Location of goods/warehouse</td>
+				</tr>
+				<tr>
+					<td>Company</td>
+					<td><input type='text' data-attribute='orgcode' data-input='readonly'> </td>
+				</tr>
+				<tr>
+					<td>Site</td>
+					<td><input type='text' data-attribute='sitecode' data-input='readonly' data-key='value'></td>
+				</tr>
+				<tr>
+					<td>Warehouse </td>
+					<td> <input type='text' class='nonpersistent' data-attribute='warehouse' data-input='readonly'> </td>
+				</tr>
+				<tr>
+					<td>Rack </td>
+					<td> <input type='text' data-attribute='racknum' data-lookup='racknum|itemnum,warehouse'> </td>
+				</tr>
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl2">Payment</td>
+				</tr>
+				<tr>
+					<td>Payment</td>
+					<td style="font-size:9pt; font-family:calibri"><br><input type='radio' class='nonpersistent' name = 'paymenttype' value="kredit">  CREDIT/DEBT <br>
+						<input type='radio' class='nonpersistent' name = 'paymenttype' value ="cashonbank"> Cash Bank Transfer <br>
+						<input type='radio' class='nonpersistent' name = 'paymenttype' value ="cashonhand"> Cash
+						<br>
+					</td>
+				</tr>
+				<tr>
+					<td>Bank Account Number </td>
+					<td><input type='text' class='nonpersistent' data-attribute='bankaccount' data-lookup='orgbankaccount'> </td>
+					
+				</tr>
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl2">Price</td>
+				</tr>
+				<tr>
+					<td>Price Code </td>
+					<td> <input type='text' class='nonpersistent' data-attribute='pricecode' data-lookup='invprice|itemnum,warehouse,conditiontype' data-input='required'> </td>
+				</tr>
+				<tr>
+					<td>Tax</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='taxcode' data-lookup='tax'> </td>
+				</tr>
+				<tr>
+					<td>Customer</td>
+					<td>  <input type='text' class='nonpersistent' data-attribute='customercode' data-lookup='customer'> </td>
+				</tr>
+				<tr>
+					<td>Issue Type</td>
+					<td>  <input type='text' class='nonpersistent' data-attribute='costtype' data-lookup='issuetype'> </td>
+				</tr>
+				<tr>
+					<td>Salesman</td>
+					<td>  <input type='text' class='nonpersistent' data-attribute='salesman' data-lookup='employees'> </td>
+				</tr>
+			</table>
+		</div>
+		</table>		
+	</div>
+</div>
+</table>

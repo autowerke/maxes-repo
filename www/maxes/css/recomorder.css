@@ -1,0 +1,147 @@
+/* Gaya Umum */
+#inventoryTable {
+    width: 100% !important; /* Penting untuk memastikan lebar penuh */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font modern */
+    font-size: 0.9em;
+    color: #333; /* Warna teks yang lebih lembut */
+    border-collapse: collapse; /* Menghilangkan spasi antara sel */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Efek bayangan halus */
+    border-radius: 8px; /* Sudut membulat */
+    overflow: hidden; /* Mencegah bayangan keluar dari sudut */
+    margin-bottom: 1em; /* Spasi di bawah tabel */
+}
+
+/* Header Tabel */
+#inventoryTable thead th {
+    background-color: #f2f2f2; /* Warna latar belakang header yang lebih terang */
+    color: #555; /* Warna teks header yang lebih gelap */
+    font-weight: 600; /* Lebih tebal, tapi tidak terlalu mencolok */
+    text-align: left; /* Rata kiri untuk keterbacaan */
+    padding: 0.75em 1em; /* Padding yang lebih nyaman */
+    border-bottom: 2px solid #ddd; /* Garis bawah header yang lebih tipis */
+    text-transform: capitalize; /* Huruf kapital di awal kata */
+	font-size: 0.9em;
+}
+
+/* Isi Tabel */
+#inventoryTable tbody td {
+    padding: 0.75em 1em;
+    border-bottom: 1px solid #eee; /* Garis pemisah baris yang lebih halus */
+}
+
+#inventoryTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Warna latar belakang baris genap sedikit berbeda */
+}
+
+#inventoryTable tbody tr:hover {
+    background-color: #f5f5f5; /* Efek hover yang halus */
+}
+
+/* Footer Tabel */
+#inventoryTable tfoot th {
+    background-color: #f2f2f2;
+    color: #555;
+    font-weight: 600;
+    padding: 0.75em 1em;
+    border-top: 2px solid #ddd;
+    text-align: left;
+	font-size: 0.9em;
+}
+
+/* Gaya untuk link dalam tabel (jika ada) */
+#inventoryTable a {
+    color: #007bff; /* Warna biru standar untuk tautan */
+    text-decoration: none; /* Menghilangkan garis bawah default */
+}
+
+#inventoryTable a:hover {
+    text-decoration: underline; /* Garis bawah saat dihover */
+}
+
+/* Pagination (DataTables) */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0.5em 0.75em;
+    margin: 0 0.25em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+    color: #999 !important;
+    border-color: #ddd !important;
+    background-color: #fff !important;
+    cursor: not-allowed !important;
+}
+
+/* Input Pencarian */
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5em;
+    margin-left: 0.5em;
+}
+
+/* Select Panjang Entri */
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5em;
+    margin-left: 0.5em;
+}
+
+/* Informasi Tabel */
+.dataTables_info {
+    padding-top: 0.75em;
+    color: #777;
+}
+
+/* Responsif (opsional, jika ingin tabel responsif) */
+@media (max-width: 768px) {
+    #inventoryTable {
+        border: 0;
+    }
+
+    #inventoryTable thead {
+        display: none;
+    }
+
+    #inventoryTable tr {
+        margin-bottom: 1em;
+        display: block;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    #inventoryTable td {
+        display: block;
+        border: none;
+        padding: 0.5em;
+        text-align: right;
+    }
+
+    #inventoryTable td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    #inventoryTable td:last-child {
+        border-bottom: 0;
+    }
+}

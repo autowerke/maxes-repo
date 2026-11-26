@@ -1,0 +1,39 @@
+<div class="max-drawer-container">
+
+    <!-- Header & Tab Nav -->
+    <div class="max-drawer-header">
+        <h2 class="max-drawer-title">Assets Explorer</h2>
+    </div>
+    
+    <div class="max-tabs-nav">
+        <button class="max-tab-btn active" data-tab="tab-list">List</button>
+        <button class="max-tab-btn" data-tab="tab-detail" id="btn-tab-detail">Detail</button>
+    </div>
+    <!-- Body -->
+    <div class="max-drawer-body">
+
+        <!-- Tab: List -->
+        <div class="max-tab-content active" id="tab-list">
+            <div class="max-search-wrapper">
+                <span class="max-search-icon">&#9906;</span>
+                <input type="text"
+                       id="max-asset-search"
+                       placeholder="Search asset ID, description, category...">
+            </div>
+            <div id="max-list-count" class="max-list-count"></div>
+            <div id="max-records-container"></div>
+        </div>
+
+        <!-- Tab: Detail -->
+        <div class="max-tab-content" id="tab-detail">
+            <div id="max-detail-content">
+                <div class="max-placeholder">
+                    <div class="max-placeholder-icon">&#128196;</div>
+                    <div class="max-placeholder-title">No asset selected</div>
+                    <div class="max-placeholder-sub">Select an asset from the list to view details</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

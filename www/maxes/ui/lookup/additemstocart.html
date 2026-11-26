@@ -1,0 +1,160 @@
+<!-- additemstocart.html -->
+
+<style>
+    /* Menggunakan kembali style yang sama dari dialog service, diawali dengan 'aic' (Add Item to Cart) */
+    .aic-dialog-container {
+        padding: 20px;
+        background-color: #f8f9fc;
+        font-family: "blinker", "sans-serif";
+    }
+
+    .aic-header {
+        margin-bottom: 15px;
+    }
+
+    .aic-title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: #005B9A; /* Maxes Corporate Blue */
+    }
+
+    .aic-subtitle {
+        font-size: 0.9rem;
+        color: #5a5c69;
+        margin-top: -5px;
+    }
+
+    .aic-section {
+        background-color: #ffffff;
+        border: 1px solid #e3e6f0;
+        border-radius: .35rem;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .aic-section-title {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #4a4a4a;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #f0f2f5;
+        padding-bottom: 8px;
+    }
+    
+    .aic-details p {
+        margin: 0 0 5px 0;
+        font-size: 0.85rem;
+    }
+    
+    .aic-details strong {
+        display: inline-block;
+        width: 100px;
+        color: #5a5c69;
+    }
+    
+    .aic-charge-options .aic-radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .aic-radio-group label {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: border-color 0.2s, background-color 0.2s;
+    }
+    
+    .aic-radio-group label:hover {
+        border-color: #007bff;
+    }
+    
+    .aic-radio-group input[type="radio"]:checked + .aic-radio-text {
+        font-weight: bold;
+    }
+    
+    .aic-radio-group label.selected {
+        border-color: #007bff;
+        background-color: #f0f8ff;
+    }
+
+    .aic-customer-lookup, .aic-vendor-lookup {
+        margin-top: 10px;
+        padding-left: 25px;
+        display: none;
+    }
+
+</style>
+
+
+<!-- === ROOT DIV CONTAINER === -->
+<div id="addItemToCartRoot" class="aic-dialog-container">
+    
+    <!-- Header Dialog -->
+    <div class="aic-header">
+        <h3 class="aic-title">Add Item to Procurement Cart</h3>
+        <p class="aic-subtitle">Specify how to charge this material requirement.</p>
+    </div>
+
+    <!-- Detail Item (diisi oleh JS) -->
+    <div class="aic-section aic-details">
+        <h6 class="aic-section-title">Item Details</h6>
+        <p><strong>Item #:</strong> <span id="aic-itemnum">-</span></p>
+        <p><strong>Description:</strong> <span id="aic-description">-</span></p>
+        <p><strong>Shortage Qty:</strong> <span id="aic-shortage-qty">-</span> <span id="aic-measure-unit">-</span></p>
+        <p><strong>Est. Cost:</strong> <span id="aic-total-cost">-</span></p>
+        <p><strong>Remarks:</strong> <span id="aic-remarks">-</span></p>
+    </div>
+
+    <!-- Opsi Pembebanan (PR vs SQ) -->
+    <div class="aic-section aic-charge-options">
+        <h6 class="aic-section-title">Charge To</h6>
+        <div class="aic-radio-group">
+            <label id="label-pr-item">
+                <input type="radio" name="itemChargeType" value="PR" checked>
+                <div class="aic-radio-text">
+                    <strong>Purchase Requisition (PR)</strong>
+                    <small style="display: block; color: #6c757d;">Procure as an internal project cost.</small>
+                </div>
+            </label>
+            <label id="label-sq-item">
+                <input type="radio" name="itemChargeType" value="SQ">
+                <div class="aic-radio-text">
+                    <strong>Sales Quotation (SQ)</strong>
+                    <small style="display: block; color: #6c757d;">Bill material cost to an external customer.</small>
+                </div>
+            </label>
+        </div>
+
+        <div id ="lookupentry"> 
+            <div class="aic-customer-lookup" id="itemCustomerLookupContainer">
+                <table class="tbldata">
+                    <tr>
+                        <td>Customer</td>
+                        <td><input type="text" id="aic-customer" data-attribute="aic-customer" data-lookup="customer" placeholder="Select a customer..."></td>
+                    </tr>
+                    <tr>
+                        <td>Profit Margin (%) </td>
+                        <td><input type="text" id="aic-margin" data-attribute="aic-margin" data-type="decimal"></td>
+                    </tr>
+
+                </table>
+           </div>
+
+            <div class="aic-vendor-lookup" id="itemVendorLookupContainer">
+                <table class="tbldata">
+                    <tr>
+                        <td>Vendor</td>
+                        <td><input type="text" id="aic-vendor" data-attribute="aic-vendor" data-lookup="vendor" placeholder="Select a Vendor..."></td>
+                    </tr>
+                </table>
+           </div>
+
+        </div>
+       
+    </div>
+
+</div>

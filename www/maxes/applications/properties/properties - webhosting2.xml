@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+  <contextPath>eat</contextPath>
+  <host>javarave.com</host>
+  <dbhost>javarave.com</dbhost>
+  <remotehost></remotehost>
+  <domainhost></domainhost>
+  <internetrequired>yes</internetrequired>
+  <wsport>8989</wsport>
+  <attachFolder>/home/k0004902/public_html/attachments/</attachFolder>
+  <excelFolder>/home/k0004902/public_html/eat/applications/importdata/</excelFolder>
+  <thumbsfolder>/home/k0004902/public_html/eat/attachments/thumbs/</thumbsfolder>
+  <reportURL>http://localhost:8080/eat/</reportURL>
+  <reportFolder>D:\xampp\tomcat\webapps\eat\</reportFolder>
+</properties>

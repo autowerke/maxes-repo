@@ -1,0 +1,90 @@
+<div id="lookupentry" class="col-md-12">
+<form id="inputpsgrform" method="post" enctype="multipart/form-data">  
+	<div class="row">
+		<div class="col-md-6">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Input Data Penumpang</td>						
+				</tr>
+							
+				 <tr>
+					<td>Name</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='fullname'>  </td>
+				</tr>
+				 <tr>
+					<td>Num. Telp/HP</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='phone' >  </td>
+				</tr>
+				 <tr>
+					<td>Num.ID/KTP</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='customercode' >  </td>
+				</tr>	
+				 <tr>
+					<td>Address Jemput</td>
+					<td> <textarea class='nonpersistent letextarea' data-attribute='pickaddress'  cols=31 rows=4></textarea></td>
+				</tr>
+				<tr>
+					<td>Address Tujuan</td>
+					<td><textarea  class='nonpersistent letextarea'  data-attribute='destaddress' cols=31 rows=4> </textarea> </td>
+				</tr>
+				<tr>
+					<td>Tambahan Harga</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='additionalprice' data-type='decimal'>  </td>
+				</tr>
+				
+			</table>	
+		</div>
+		<div class="col-md-6">
+			<table class="tbldata">
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Input Data Pembayaran</td>						
+				</tr>
+				
+				 <tr>
+					<td>Payment Type</td>
+					<td> 
+						<input type='radio' class='nonpersistent' name = 'paymenttype' value="CASH-OUTLET">  Cash Outlet<br>
+						<input type='radio' class='nonpersistent' name = 'paymenttype' value ="BANKTRANSFER"> Transfer Bank <br>
+						<input type='radio' class='nonpersistent' name = 'paymenttype' value="TRAVELOKA">  Traveloka<br>
+						<input type='radio' class='nonpersistent' name = 'paymenttype' value="REDBUS">  Red Bus<br>
+						<input type='radio' class='nonpersistent' name = 'paymenttype' value="DRIVER">  Titip Driver<br>
+					</td>
+				</tr>
+				 <tr>
+					<td>Transaction Num.</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='transnum' >  </td>
+				</tr>
+				 <tr>
+					<td>Dari Bank</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='frombank'>  </td>
+				</tr>
+				 <tr>
+					<td>Ke Bank</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='tobank' data-lookup='orgbankaccount'>  </td>
+				</tr>
+				<tr>
+					<td colspan=2 class="maxes_sct_tbl4">Informasi Kursi</td>						
+				</tr>
+				 <tr>
+					<td>Line Num. Kursi</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='seatnum' data-input='readonly'>  </td>
+				</tr>
+				<tr>
+					<td>Posisi Kursi</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='seatposition' data-input='readonly'>  </td>
+				</tr>
+				<tr>
+					<td>Di Entry oleh</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='enterby' data-lookup='employees'>  </td>
+				</tr>
+				<tr>
+					<td>Entered Date</td>
+					<td> <input type='text' class='nonpersistent' data-attribute='enterdate' data-type="date">  </td>
+				</tr>
+			</table>	
+		</div>
+		
+	</div>
+</form>		
+</div>
+

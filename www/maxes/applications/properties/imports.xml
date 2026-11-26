@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imports>
+	<path id="icon">
+		<url type="icon">icons/maxes.ico</url>
+	</path>
+	<path id="jquery">
+		<url type="script">vendor/jquery/jquery.min.js</url>
+	</path>
+	<path id="jquery-ui">
+		<url type="script">vendor/jquery/jquery-ui.min.js</url>
+	</path>
+	<path id="jquery-localScroll">
+		<url type="script">vendor/jquery/jquery.localScroll.min.js</url>
+	</path>
+	<path  id="jquery-easing">
+		<url type="script">vendor/jquery-easing/jquery.easing.min.js</url>
+	</path>
+	<path id="bootstrapjs">
+		<url type="script">vendor/bootstrap/js/bootstrap.bundle.min.js</url>
+	</path>
+	<path id="jquery-datatables">
+		<url type="script">js/jquery.dataTables.min.js</url>
+	</path>
+	<path  id="jquery-editables">
+		<url type="script">js/jquery.dataTables.editable.min.js</url>
+	</path>
+	<path  id="jquery-buttons">
+		<url type="script">js/dataTables.buttons.min.js</url>
+	</path>
+	<path  id="buttons.html5">
+		<url type="script">js/buttons.html5.min.js</url>
+	</path>
+	<path id="buttons.print">
+		<url type="script">js/buttons.print.min.js</url>
+	</path>
+	<path id="pdfmake">
+		<url type="script">js/pdfmake.min.js</url>
+	</path>
+	<path id="vfs_fonts">
+		<url type="script">js/vfs_fonts.js</url>
+	</path>
+	<path id="jszip">
+		<url type="script">js/jszip.min.js</url>
+	</path>
+	<path id="datatables-select">
+		<url type="script">js/dataTables.select.min.js</url>
+	</path>
+	<path id="jquery-qrcode">
+		<url type="script">js/jquery-qrcode-0.18.0.min.js</url>
+	</path>
+	<path id="qrcodelib">
+		<url type="script">js/qrcodelib.js</url>
+	</path>
+	<path id="lang">
+		<url type="script">js/lang.js</url>
+	</path>
+	<path id="drawers">
+		<url type="script">js/drawers.js</url>
+	</path>
+	<path id="eat">
+		<url type="script">js/eat.min.js</url>
+	</path>
+	<path id="eat">
+		<url type="script">js/orion.min.js</url>
+	</path>
+	<path id="validate">
+		<url type="script">js/jquery.validate.min.js</url>
+	</path>
+	<path id="datetimepicker">
+		<url type="script">js/jquery.datetimepicker.full.js</url>
+	</path>
+	<path id="home">
+		<url type="script" path="/ui/home/home/">applications/ui/home/home/home_light.min.js</url>
+	</path>
+	<path id="home-style">
+		<url type="css" path="/ui/home/home/">ui/home/home/style_light.css</url>
+	</path>
+	<path id="teams">
+		<url type="script" path="/ui/resources/teams/">applications/ui/resources/teams/teams.min.js</url>
+	</path>
+	<path id="echarts">
+		<url type="script">js/echarts.min.js</url>
+	</path>
+	<path id="inventory">
+		<url type="script" path="/ui/inventory/inventory/">applications/ui/inventory/inventory/inventory.min.js</url>
+	</path>
+	<path id="appmodules">
+		<url type="script" path="/ui/configuration/appmodules/">applications/ui/configuration/appmodules/appmodules.min.js</url>
+	</path>
+	<path id="aigraph">
+		<url type="script" path="/ui/configuration/aigraph/">applications/ui-src/configuration/aigraph/aigraph.js</url>
+	</path>
+	<path id="company">
+		<url type="script" path="/ui/administration/company/">applications/ui/administration/company/company.min.js</url>
+	</path>
+	<path id="hazard">
+		<url type="script" path="/ui/planning/hazard/">applications/ui/planning/hazard/hazard.min.js</url>
+	</path>
+	<path id="pm">
+		<url type="script" path="/ui/planning/pm/">applications/ui/planning/pm/pm.min.js</url>
+	</path>
+	<path id="worktemplates">
+		<url type="script" path="/ui/planning/worktemplates/">applications/ui/planning/worktemplates/worktemplates.min.js</url>
+	</path>
+	<path id="serviceitems">
+		<url type="script" path="/ui/planning/serviceitems/">applications/ui/planning/serviceitems/serviceitems.min.js</url>
+	</path>
+	<path id="pmcampaign">
+		<url type="script" path="/ui/planning/pmcampaign/">applications/ui/planning/pmcampaign/pmcampaign.min.js</url>
+	</path>
+	<path id="frappe-gantt">
+		<url type="css" path="/ui/planning/pmcampaign/">applications/ui/planning/pmcampaign/dist/frappe-gantt.css</url>
+	</path>
+	<path id="frappe-gantt-js">
+		<url type="script" path="/ui/planning/pmcampaign/">applications/ui/planning/pmcampaign/dist/frappe-gantt.umd.js</url>
+	</path>
+	<path id="precautions">
+		<url type="script" path="/ui/planning/precautions/">applications/ui/planning/precautions/precautions.min.js</url>
+	</path>
+	<path id="safetyplans">
+		<url type="script" path="/ui/planning/safetyplans/">applications/ui/planning/safetyplans/safetyplans.min.js</url>
+	</path>
+	<path id="procedures">
+		<url type="script" path="/ui/documents/procedures/">applications/ui/documents/procedures/procedures.min.js</url>
+	</path>
+	<path id="workinstr">
+		<url type="script" path="/ui/documents/workinstr/">applications/ui/documents/workinstr/workinstr.min.js</url>
+	</path>
+	<path id="docform">
+		<url type="script" path="/ui/documents/docform/">applications/ui/documents/docform/docform.min.js</url>
+	</path>
+	<path id="docticket">
+		<url type="script" path="/ui/documents/docticket/">applications/ui/documents/docticket/docticket.min.js</url>
+	</path>
+	<path id="documents">
+		<url type="script" path="/ui/documents/integmanual/">applications/ui/documents/integmanual/integmanual.min.js</url>
+	</path>
+	<path id="teamdecree">
+		<url type="script" path="/ui/documents/teamdecree/">applications/ui/documents/teamdecree/teamdecree.min.js</url>
+	</path>
+
+	<path id="bulletinboard">
+		<url type="script" path="/ui/administration/bulletinboard/">applications/ui/administration/bulletinboard/bulletinboard.min.js</url>
+	</path>
+	<path id="pmholiday">
+		<url type="script" path="/ui/administration/pmholiday/">applications/ui/administration/pmholiday/pmholiday.min.js</url>
+	</path>
+	<path id="salestracking">
+		<url type="script" path="/ui/purchasing/salestracking/">applications/ui/purchasing/salestracking/salestracking.min.js</url>
+	</path>
+	<path id="currencycodes">
+		<url type="script" path="/ui/financial/currency/">applications/ui/financial/currency/currencycodes.min.js</url>
+	</path>
+	<path id="exchangerates">
+		<url type="script" path="/ui/financial/exchangerates/">applications/ui/financial/exchangerates/exchangerates.min.js</url>
+	</path>
+	<path id="chartofaccounts">
+		<url type="script" path="/ui/financial/chartofaccounts/">applications/ui/financial/chartofaccounts/chartofaccounts.min.js</url>
+	</path>
+	<path id="budget-style">
+		<url type="css" path="/ui/financial/budget/">applications/ui/financial/budget/style.css</url>
+	</path>
+	<path id="budget">
+		<url type="script" path="/ui/financial/budget/">applications/ui/financial/budget/budget.min.js</url>
+	</path>
+	<path id="budgettransfer">
+		<url type="script" path="/ui/financial/budgettransfer/">applications/ui/financial/budgettransfer/budgettransfer.min.js</url>
+	</path>
+	<path id="annualbudgetalloc">
+		<url type="script" path="/ui/financial/annualbudgetalloc/">applications/ui/financial/annualbudgetalloc/annualbudgetalloc.min.js</url>
+	</path>
+	<path id="ledger">
+		<url type="script" path="/ui/financial/ledger/">applications/ui/financial/ledger/ledger.min.js</url>
+	</path>
+	<path id="taxreceipt">
+		<url type="script" path="/ui/tax/taxreceipt/">applications/ui/tax/taxreceipt/taxreceipt.min.js</url>
+	</path>
+	<path id="taxgroup">
+		<url type="script" path="/ui/tax/taxgroup/">applications/ui/tax/taxgroup/taxgroup.min.js</url>
+	</path>
+	<path id="pettycash">
+		<url type="script" path="/ui/financial/pettycash/">applications/ui/financial/pettycash/pettycash.min.js</url>
+	</path>
+	<path id="cashreceipt">
+		<url type="script" path="/ui/financial/cashreceipt/">applications/ui/financial/cashreceipt/cashreceipt.min.js</url>
+	</path>
+	<path id="employees">
+		<url type="script" path="/ui/resources/employees/">applications/ui/resources/employees/employees.min.js</url>
+	</path>
+	<path id="qualifications">
+		<url type="script" path="/ui/resources/qualifications/">applications/ui/resources/qualifications/qualifications.min.js</url>
+	</path>
+	<path id="vendors">
+		<url type="script" path="/ui/purchasing/vendors/">applications/ui/purchasing/vendors/vendors.min.js</url>
+	</path>
+	<path id="purchaseorders">
+		<url type="script" path="/ui/purchasing/purchaseorders/">applications/ui/purchasing/purchaseorders/purchaseorders.min.js</url>
+	</path>
+	<path id="purchasecontract">
+		<url type="script" path="/ui/purchasing/purchcontract/">applications/ui/purchasing/purchcontract/purchcontract.min.js</url>
+	</path>
+
+	<path id="pr">
+		<url type="script" path="/ui/purchasing/pr/">applications/ui/purchasing/pr/pr.min.js</url>
+	</path>
+	<path id="refund">
+		<url type="script" path="/ui/purchasing/refund/">applications/ui/purchasing/refund/refund.min.js</url>
+	</path>
+	<path id="invoice">
+		<url type="script" path="/ui/purchasing/invoice/">applications/ui/purchasing/invoice/invoice.min.js</url>
+	</path>
+	<path id="myallowance">
+		<url type="script" path="/ui/resources/myallowance/">applications/ui/resources/myallowance/myallowance.min.js</url>
+	</path>
+	<path id="rfs">
+		<url type="script" path="/ui/purchasing/rfs/">applications/ui/purchasing/rfs/rfs.min.js</url>
+	</path>
+	<path id="sri">
+		<url type="script" path="/ui/purchasing/sri/">applications/ui/purchasing/sri/sri.min.js</url>
+	</path>
+	<path id="rfq">
+		<url type="script" path="/ui/purchasing/rfq/">applications/ui/purchasing/rfq/rfq.min.js</url>
+	</path>
+	<path id="file-explore-css">
+		<url type="css" path="/ui/workorder/workorder/">css/file-explore.css</url>
+	</path>
+	<path id="file-explore-js">
+		<url type="script" path="/ui/workorder/workorder/">js/file-explore.js</url>
+	</path>
+	<path id="assets-style_dark">
+		<url type="css" path="/ui/workorder/workorder/">ui/workorder/workorder/style.css</url>
+	</path>
+	<path id="workorder">
+		<url type="script" path="/ui/workorder/workorder/">applications/ui-src/workorder/workorder/workorder.js</url>
+	</path>
+	<path id="mr">
+		<url type="script" path="/ui/workorder/mr/">applications/ui/workorder/mr/mr.min.js</url>
+	</path>
+	<path id="file-explore">
+		<url type="css" path="/ui/assets/assets/">css/file-explore.css</url>
+	</path>
+	<path id="assets-style_dark">
+		<url type="css" path="/ui/assets/assets/">ui/assets/assets/style_dark.css</url>
+	</path>
+	<path id="assets-file-explore">
+		<url type="script" path="/ui/assets/assets/">js/file-explore.js</url>
+	</path>
+	<path id="fleet-susage">
+		<url type="script" path="/ui/assets/fleetusage/">applications/ui/assets/fleetusage/fleetusage.min.js</url>
+	</path>
+	<path id="jquery.seat-charts">
+		<url type="script" path="/ui/assets/fleetusage/">js/jquery.seat-charts.min.js</url>
+	</path>
+	<path id="jquery.seat-charts-css">
+		<url type="css" path="/ui/assets/fleetusage/">css/jquery.seat-charts.css</url>
+	</path>
+	<path id="jsc">
+		<url type="css" path="/ui/assets/fleetusage/">css/jsc.css</url>
+	</path>
+	<path id="fleetroute">
+		<url type="script" path="/ui/assets/fleetroute/">applications/ui/assets/fleetroute/fleetroute.min.js</url>
+	</path>
+	<path id="seat-charts">
+		<url type="script" path="/ui/assets/assets/">js/jquery.seat-charts.min.js</url>
+	</path>
+	<path id="seat-charts">
+		<url type="css" path="/ui/assets/assets/">css/jquery.seat-charts.css</url>
+	</path>
+	<path id="jsc">
+		<url type="css" path="/ui/assets/assets/">css/jsc.css</url>
+	</path>
+	<path id="leaflet-assets-css">
+		<url type="css" path="/ui/assets/assets/">applications/ui/assets/assets/leaflet/leaflet.css</url>
+	</path>
+	<path id="leaflet-assets">
+		<url type="script" path="/ui/assets/assets/">applications/ui/assets/assets/leaflet/leaflet.min.js</url>
+	</path>
+	<path id="assets">
+		<url type="script" path="/ui/assets/assets/">applications/ui/assets/assets/assets.min.js</url>
+	</path>
+	<path id="loader">
+		<url type="script" path="/ui/assets/assets/">applications/ui/assets/assets/loader.min.js</url>
+	</path>
+	<path id="meters">
+		<url type="script" path="/ui/assets/meters/">applications/ui/assets/meters/meters.min.js</url>
+	</path>
+	<path id="metergroups">
+		<url type="script" path="/ui/assets/metergroups/">applications/ui/assets/metergroups/metergroups.min.js</url>
+	</path>
+	<path id="leaflet-locations-css">
+		<url type="css" path="/ui/assets/locations/">applications/ui/assets/locations/leaflet/leaflet.css</url>
+	</path>
+	<path id="leaflet">
+		<url type="script" path="/ui/assets/locations/">applications/ui/assets/locations/leaflet/leaflet.js</url>
+	</path>
+	<path id="leaflet-locations-draw-css">
+		<url type="css" path="/ui/assets/locations/">applications/ui/assets/locations/leaflet/leaflet.draw.css</url>
+	</path>
+	<path id="leaflet-location-draw">
+		<url type="script" path="/ui/assets/locations/">applications/ui/assets/locations/leaflet/leaflet.draw.js</url>
+	</path>
+	<path id="locations">
+		<url type="script" path="/ui/assets/locations/">applications/ui/assets/locations/locations.min.js</url>
+	</path>
+	<path id="notification">
+		<url type="script" path="/ui/administration/notification/">applications/ui/administration/notification/notification.min.js</url>
+	</path>
+	<path id="term">
+		<url type="script" path="/ui/purchasing/term/">applications/ui/purchasing/term/term.min.js</url>
+	</path>
+	<path id="customer">
+		<url type="script" path="/ui/customer/customer/">applications/ui/customer/customer/customer.min.js</url>
+	</path>
+	<path id="custinventory">
+		<url type="script" path="/ui/customer/custinventory/">applications/ui/customer/custinventory/custinventory.min.js</url>
+	</path>
+	<path id="billing">
+		<url type="script" path="/ui/customer/billing/">applications/ui/customer/billing/billing.min.js</url>
+	</path>
+	<path id="emailsubs">
+		<url type="script" path="/ui/customer/emailsubs/">applications/ui/customer/emailsubs/emailsubs.min.js</url>
+	</path>
+	<path id="donationtype">
+		<url type="script" path="/ui/customer/donationtype/">applications/ui/customer/donationtype/donationtype.min.js</url>
+	</path>
+	<path id="salesorders">
+		<url type="script" path="/ui/purchasing/salesorders/">applications/ui/purchasing/salesorders/salesorders.min.js</url>
+	</path>
+	<path id="salesquotation">
+		<url type="script" path="/ui/purchasing/salesquotation/">applications/ui/purchasing/salesquotation/salesquotation.min.js</url>
+	</path>
+	<path id="preorder">
+		<url type="script" path="/ui/purchasing/preorder/">applications/ui/purchasing/preorder/preorder.min.js</url>
+	</path>
+	<path id="classification">
+		<url type="script" path="/ui/administration/classification/">applications/ui/administration/classification/classification.min.js</url>
+	</path>
+	
+	<path id="item-style">
+		<url type="css" path="/ui/inventory/itemcatalog/">ui/inventory/itemcatalog/style.css</url>
+	</path>
+	<path id="itemcatalog">
+		<url type="script" path="/ui/inventory/itemcatalog/">applications/ui/inventory/itemcatalog/itemcatalog.min.js</url>
+	</path>
+	<path id="jsBarcode-inventory">
+		<url type="script" path="/ui/inventory/inventory/">scripts/js/jsBarcode.all.min.js</url>
+	</path>
+	<path id="conditiontype">
+		<url type="script" path="/ui/inventory/conditiontype/">applications/ui/inventory/conditiontype/conditiontype.min.js</url>
+	</path>
+	<path id="warehouse">
+		<url type="script" path="/ui/inventory/warehouse/">applications/ui/inventory/warehouse/warehouse.min.js</url>
+	</path>
+	<path id="pricegroup">
+		<url type="script" path="/ui/inventory/pricegroup/">applications/ui/inventory/pricegroup/pricegroup.min.js</url>
+	</path>
+	<path id="users">
+		<url type="script" path="/ui/security/users/">applications/ui/security/users/users.min.js</url>
+	</path>
+	<path id="reportadministration">
+		<url type="script" path="/ui/configuration/reportadministration/">applications/ui/configuration/reportadministration/reportadministration.min.js</url>
+	</path>
+	<path id="jsplumbtoolkit">
+		<url type="css" path="/ui/configuration/workflow/">applications/ui/configuration/workflow/dist/jsplumbtoolkit.css</url>
+	</path>
+	<path id="jsplumb">
+		<url type="script" path="/ui/configuration/workflow/">applications/ui/configuration/workflow/dist/jsplumb.browser-ui.umd.js</url>
+	</path>
+	<path id="mxsworkflow-wfbuilder">
+		<url type="script" path="/ui/configuration/workflow/">applications/ui/configuration/workflow/wfbuilder.min.js</url>
+	</path>
+	<path id="mxsworkflow">
+		<url type="script" path="/ui/configuration/workflow/">applications/ui/configuration/workflow/mxsworkflow.min.js</url>
+	</path>
+	<path id="attributevalue">
+		<url type="script" path="/ui/configuration/attributevalue/">applications/ui/configuration/attributevalue/attributevalue.min.js</url>
+	</path>
+	<path id="rfidmap">
+		<url type="script" path="/ui/configuration/rfidmap/">applications/ui/configuration/rfidmap/rfidmap.min.js</url>
+	</path>
+	<path id="mxschart">
+		<url type="script" path="/ui/configuration/chartregistration/">applications/ui/configuration/chartregistration/mxschart.min.js</url>
+	</path>
+	
+	<path id="mxgantt-css">
+		<url type="css" path="/ui/workorder/timeliner/">applications/ui/workorder/timeliner/dist/mxgantt.css</url>
+	</path>
+	<path id="timeliner-frappe-css">
+		<url type="css" path="/ui/workorder/timeliner/">applications/ui/workorder/timeliner/dist/frappe-gantt.css</url>
+	</path>
+	<path id="timeliner-frappe-js">
+		<url type="script" path="/ui/workorder/timeliner/">applications/ui/workorder/timeliner/dist/frappe-gantt.js</url>
+	</path>
+	<path id="timeline">
+		<url type="script" path="/ui/workorder/timeliner/">applications/ui/workorder/timeliner/timeline.min.js</url>
+	</path>
+	<path id="groups">
+		<url type="script" path="/ui/security/groups/">applications/ui/security/groups/groups.min.js</url>
+	</path>
+	<path id="ticket">
+		<url type="script" path="/ui/workorder/ticket/">applications/ui/workorder/ticket/ticket.min.js</url>
+	</path>
+	<path id="socialreservation">
+		<url type="script" path="/ui/workorder/socialreservation/">applications/ui/workorder/socialreservation/socialreservation.min.js</url>
+	</path>
+	<path id="tools">
+		<url type="script" path="/ui/tools/tools/">applications/ui/tools/tools/tools.min.js</url>
+	</path>
+	<path id="toolstock">
+		<url type="script" path="/ui/tools/toolstock/">applications/ui/tools/toolstock/toolstock.min.js</url>
+	</path>
+	<path id="fontawesome-ss">
+		<url type="css">vendor/fa/css/all.min.css</url>
+	</path>
+	<path id="sb-admin-2-css">
+		<url type="css">css/sb-admin-2.css</url>
+	</path>
+	<path id="bootstrapcss">
+		<url type="css">css/bootstrap.min.css</url>
+	</path>
+	<path id="eat_css">
+		<url type="css">css/eat.css</url>
+	</path>
+</imports>

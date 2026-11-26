@@ -1,0 +1,122 @@
+services:
+  # 1. NGINX
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "90:80" 
+      - "9443:443" 
+    volumes:
+      - ./www:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+    depends_on:
+      - php
+      - tomcat
+    networks:
+      - maxnet
+
+  # 2. PHP-FPM
+  php:
+    build: ./php
+    volumes:
+      - ./www:/var/www/html
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./php/www.conf:/usr/local/etc/php-fpm.d/www.confd
+      - ./tomcat/webapps:/usr/local/tomcat/webapps
+    networks:
+      - maxnet
+
+  # 3. TOMCAT
+  tomcat:
+    build:
+      context: ./tomcat
+      args:
+        BUILDKIT_INLINE_CACHE: "1"
+    ports:
+      - "9090:8080"
+    volumes:
+      - ./tomcat/webapps:/usr/local/tomcat/webapps
+      - ./www:/var/www/html
+    networks:
+      - maxnet
+
+  # 4. DATABASE
+  mariadb:
+    image: mariadb:10.11
+    ports:
+      - "127.0.0.1:3308:3306" # Geser ke 3308
+    environment:
+      MYSQL_ROOT_PASSWORD: arilasso
+      MYSQL_DATABASE: maxes_pusharlis
+      MYSQL_USER: maxes
+      MYSQL_PASSWORD: pusharlis~12345
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    networks:
+      - maxnet
+
+  # 5. REDIS (Untuk Session PHP)
+  redis:
+    image: redis:alpine
+    container_name: maxes-redis-1
+    command: redis-server --appendonly yes
+    ports:
+      - "127.0.0.1:6380:6379" # Geser ke 6380
+    volumes:
+      - ./redis/data:/data
+    networks:
+      - maxnet
+
+  # 6. PHPMYADMIN
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - "127.0.0.1:9091:80"   # Geser ke 9091
+    environment:
+      PMA_HOST: mariadb
+      PMA_USER: root
+      PMA_PASSWORD: arilasso
+    depends_on:
+      - mariadb
+    networks:
+      - maxnet
+
+
+
+# 7. AI ENGINE (FastAPI + LLM)
+  mlai:
+    build:
+      context: ./mlai
+      dockerfile: Dockerfile
+    container_name: maxes-ai-1
+    volumes:
+      - ./mlai:/app
+      - ./mlai/models_cache:/app/models_cache
+    environment:
+      # Sesuai dengan dbo.php
+      - DATABASE_URL=mysql+mysqlconnector://root:arilasso@mariadb:3306/maxes_db
+      - REDIS_URL=redis://redis:6379/0
+    ports:
+      - "8000:8000" # Terbuka untuk IP luar (seperti port 9443 nya Nginx)
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - maxnet
+    depends_on:
+      - mariadb
+      - redis
+
+#taruh networks paling bawah     
+networks:
+  maxnet:
+    driver: bridge
+
+
+
+#docker compose build --build-arg BUILDKIT_INLINE_CACHE=1 mlai

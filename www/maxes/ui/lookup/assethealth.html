@@ -1,0 +1,213 @@
+<style>
+    /* Basic font and box-sizing reset for consistency */
+    .asset-health-modal * {
+        box-sizing: border-box;
+    }
+
+    /* Main dialog container */
+    .asset-health-modal {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        overflow: hidden; /* Ensures the border-radius clips the header/footer */
+        border: 1px solid #dee2e6;
+    }
+
+    /* Modal Header */
+    .modal-header {
+        background-color: #f8f9fa;
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #dee2e6;
+    }
+    .modal-header h4 {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: #343a40;
+    }
+
+    /* Modal Body - where the form lives */
+    .modal-body {
+        padding: 1.5rem;
+    }
+    .modal-body .context-info {
+        background-color: #e9ecef;
+        padding: 0.75rem 1rem;
+        border-radius: 6px;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+        color: #495057;
+    }
+    .context-info strong {
+        color: #212529;
+    }
+
+    /* Form Group - container for a label and its input */
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+    .form-group label {
+        display: block;
+        font-weight: 600;
+        color: #495057;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+    }
+    .form-group label.required::after {
+        content: " *";
+        color: #dc3545;
+    }
+    
+    /* Shared style for all input controls */
+    .form-control {
+        width: 100%;
+        padding: 0.65rem 0.75rem;
+        font-size: 1rem;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        background-color: #fff;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    .form-control:focus {
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+    .form-control[readonly] {
+        background-color: #e9ecef;
+        cursor: not-allowed;
+    }
+    textarea.form-control {
+        resize: vertical;
+        min-height: 80px;
+    }
+
+    /* Modal Footer */
+    .modal-footer {
+        background-color: #f8f9fa;
+        padding: 1rem 1.5rem;
+        text-align: right;
+        border-top: 1px solid #dee2e6;
+    }
+    
+    /* Button Styles */
+    .btn {
+        display: inline-block;
+        font-weight: 600;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: 0.65rem 1.25rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        transition: all 0.2s ease-in-out;
+    }
+    .btn-secondary {
+        color: #212529;
+        background-color: #e9ecef;
+        border-color: #ced4da;
+        margin-right: 0.5rem;
+    }
+    .btn-secondary:hover {
+        background-color: #d3d9df;
+    }
+    .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+	.form-control.is-invalid {
+        border-color: #dc3545; /* Red border for invalid fields */
+        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+    }	
+</style>
+
+
+<div id='lookupentry' class="asset-health-modal">
+    <!-- DIALOG HEADER -->
+    <div class="modal-header">
+        <h4>Record New Asset Condition</h4>
+    </div>
+
+    <!-- DIALOG BODY -->
+    <div class="modal-body">
+        
+        <!-- Contextual Info (Read-Only) -->
+        <div class="context-info">
+            <strong>Asset:</strong> <span id="assetnum"></span> 
+            <strong>Current Health Rate:</strong> <span id="current_health_rate"></span>
+        </div>
+
+        <!-- New Health Rate -->
+        <div class="form-group">
+            <label for="newHealthRate" class="required">New Health Rate (%)</label>
+            <input type="number" id="newHealthRate" class="form-control" min="0" max="100" placeholder="e.g., 75" required>
+        </div>
+
+        <!-- Assessment Date -->
+        <div class="form-group">
+            <label for="assessmentDate" class="required">Assessment Date</label>
+            <input type="date" id="assessmentDate" class="form-control" required>
+        </div>
+
+        <!-- Basis of Assessment (The full dropdown!) -->
+        <div class="form-group">
+            <label for="basisOfAssessment" class="required">Basis of Assessment</label>
+            <select id="basisOfAssessment" class="form-control" required>
+                <option value="" disabled selected>-- Select a basis --</option>
+                
+                <optgroup label="Post-Maintenance Activities">
+                    <option value="POST_EMERGENCY">POST_EMERGENCY - Post-Emergency Repair</option>
+                    <option value="POST_CORRECTIVE">POST_CORRECTIVE - Post-Corrective Maintenance</option>
+                    <option value="POST_PREVENTIVE">POST_PREVENTIVE - Post-Preventive Maintenance</option>
+                    <option value="POST_OVERHAUL">POST_OVERHAUL - Post-Major Overhaul</option>
+                </optgroup>
+                
+                <optgroup label="Condition Monitoring & Inspection">
+                    <option value="VIB_ANALYSIS">VIB_ANALYSIS - Vibration Analysis</option>
+                    <option value="THERMOGRAPHY">THERMOGRAPHY - Thermal Imaging</option>
+                    <option value="OIL_ANALYSIS">OIL_ANALYSIS - Oil Analysis</option>
+                    <option value="ULTRASONIC">ULTRASONIC - Ultrasonic Testing</option>
+                    <option value="NDT">NDT - Non-Destructive Testing</option>
+                    <option value="VISUAL_INSPECT">VISUAL_INSPECT - Visual Inspection</option>
+                </optgroup>
+
+                <optgroup label="Operational & Lifecycle Events">
+                    <option value="OPERATOR_FEEDBACK">OPERATOR_FEEDBACK - Operator Feedback / Daily Rounds</option>
+                    <option value="ENG_ASSESSMENT">ENG_ASSESSMENT - Engineering Assessment</option>
+                    <option value="POST_INSTALL">POST_INSTALL - Post-Installation / Commissioning</option>
+                    <option value="POST_MODIFICATION">POST_MODIFICATION - Post-Modification / Upgrade</option>
+                </optgroup>
+
+                <optgroup label="General / Other">
+                    <option value="MANUAL_OVERRIDE">MANUAL_OVERRIDE - Manual Override / Ad-Hoc</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <!-- Notes / Justification -->
+        <div class="form-group">
+            <label for="justificationNotes" class="required">Notes / Justification</label>
+            <textarea id="justificationNotes" class="form-control" placeholder="Explain why the health rate is being set to this value..." required></textarea>
+        </div>
+        
+        <!-- Assessed By (Read-Only) -->
+        <div class="form-group">
+            <label for="assessedBy">Assessed By</label>
+            <input type="text" id="assessedBy" class="form-control" readonly>
+        </div>
+
+    </div>
+
+  
+</div>

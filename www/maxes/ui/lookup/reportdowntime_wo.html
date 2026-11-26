@@ -1,0 +1,58 @@
+<div class='col-md-12'>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="tbldata" id='lookupentry'>
+                <tr>
+                    <td colspan=2 class="maxes_sct_tbl4">Downtime Details</td>
+                </tr>
+                <tr>
+                    <td>Asset Number</td>
+                    <td>
+                        <input type='text' class='nonpersistent' data-attribute="assetnum" data-input="readonly" readonly><br>
+                    </td>
+					
+                </tr>
+				<tr>
+                    <td>Asset State</td>
+                    <td>
+						 <label>
+                            <input type="radio" name="assetstate" value="DOWN" class='nonpersistent' data-attribute='assetstate' checked> DOWN
+                        </label>
+                        <label>
+                            <input type="radio" name="assetstate" value="UP" class='nonpersistent' data-attribute='assetstate'> UP
+                        </label>
+                       
+                    </td>
+                </tr>
+				<tr>
+					<td>Report Date</td>
+                    <td>
+                        <input type='text' class='nonpersistent' data-attribute="reportdate" data-type="date" ><br>
+                    </td>
+				</tr>
+                <tr  data-label="failurecode">
+                    <td>Failure Code</td>
+                    <td>
+                        <select class='nonpersistent' data-attribute='failurecode'>
+                            <option value="">-- Select Reason --</option>
+                        </select>
+                    </td>
+                </tr>
+				
+                <tr data-label="wonum">
+                    <td>Work Order Number</td>
+                    <td>
+                         <input type='text' class='nonpersistent' data-attribute='wonum' data-input='readonly'>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Comments</td>
+                    <td>
+                        <textarea class='nonpersistent' data-attribute='comments' rows="3" cols="30" style="padding:10px"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+  
+</div>

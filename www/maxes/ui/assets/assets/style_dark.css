@@ -1,0 +1,574 @@
+#assetHealthWidget {
+  display: none;
+}
+#meterchart,
+#mtbfchart,
+#mttrchart,
+#dipfChartContainer {
+  width: 100%;
+  height: 350px;
+  margin: 0 auto;
+}
+.button-container {
+  text-align: center;
+  padding: 15px 0;
+}
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn .fa-solid {
+  margin-right: 8px;
+}
+.btn-downtime {
+  background-color: #d9534f;
+  box-shadow: 0 4px #b54541;
+}
+.btn-downtime:hover {
+  background-color: #c9302c;
+  box-shadow: 0 0 5px rgba(80, 80, 80, 0.8);
+  transform: translateY(2px);
+  color: white;
+}
+.btn-downtime:active {
+  box-shadow: none;
+  box-shadow: 0 0 3px rgba(80, 80, 80, 0.9);
+  transform: translateY(4px);
+}
+/* ACCORDION HEALTH */
+
+.guidance-header {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e3e6f0;
+}
+.guidance-title {
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+.guidance-content {
+  padding: 0 1.25rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+.hmr-accordion {
+  font-size: 10pt;
+  border-radius: 0.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.hmr-accordion.active .guidance-content {
+  max-height: 1000px; /* Nilai besar agar cukup untuk konten */
+  padding: 1.25rem;
+  transition: max-height 0.5s ease-in, padding 0.5s ease-in;
+}
+.guidance-toggle-icon {
+  transition: transform 0.3s ease;
+}
+.hmr-accordion.active .guidance-toggle-icon {
+  transform: rotate(180deg);
+}
+.zone-explanation {
+  margin-bottom: 1rem;
+}
+.zone-explanation h6 {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.zone-dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+.zone-dot.normal {
+  background-color: #28a745;
+}
+.zone-dot.warning {
+  background-color: #ffc107;
+}
+.zone-dot.limit {
+  background-color: #dc3545;
+}
+
+/* Gauge Chart */
+.page-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+#gaugeChartContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1400px;
+}
+.gauge-ready text {
+  font-size: 10pt !important;
+  fill: #555 !important;
+  font-family: "blinker", "sans-serif";
+}
+.gauge-wrapper {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border-radius: 100%;
+  margin: 0 auto;
+  background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(189, 189, 189, 1) 51%, rgba(179, 179, 179, 1) 100%);
+}
+.gauge-wrapper:hover {
+  transform: translateY(-5px); /* Angkat sedikit ke atas */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Buat shadow lebih jelas */
+}
+
+/* Fleet Map */
+
+.map-accordion-wrapper {
+  margin-bottom: 1.5rem;
+  /*border: 1px solid #e3e6f0;*/
+  border-radius: 0.35rem;
+  background-color: #fff;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+}
+.map-accordion-header {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fc;
+  /*border-bottom: 1px solid #e3e6f0;*/
+}
+.map-accordion-title {
+  font-weight: 600;
+  color: var(--primary-dark) 
+}
+.map-accordion-title .fas {
+  margin-right: 8px;
+  
+}
+.fas{
+color: var(--gold-light) !important;
+}	
+.map-accordion-content {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+.map-accordion-wrapper.active .map-accordion-content {
+  max-height: 80vh; /* Tinggi maksimal peta */
+  transition: max-height 0.5s ease-in;
+}
+.map-accordion-toggle-icon {
+  transition: transform 0.3s ease;
+}
+.map-accordion-wrapper.active .map-accordion-toggle-icon {
+  transform: rotate(180deg);
+}
+#assetHealthWidget {
+  display: none;
+}
+#meterchart,
+#mtbfchart,
+#mttrchart,
+#dipfChartContainer {
+  width: 100%;
+  height: 350px;
+  margin: 0 auto;
+}
+.button-container {
+  text-align: center;
+  padding: 15px 0;
+}
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn .fa-solid {
+  margin-right: 8px;
+}
+.btn-downtime {
+  background-color: #d9534f;
+  box-shadow: 0 4px #b54541;
+}
+.btn-downtime:hover {
+  background-color: #c9302c;
+  box-shadow: 0 0 5px rgba(80, 80, 80, 0.8);
+  transform: translateY(2px);
+  color: white;
+}
+.btn-downtime:active {
+  box-shadow: none;
+  box-shadow: 0 0 3px rgba(80, 80, 80, 0.9);
+  transform: translateY(4px);
+}
+/* ACCORDION HEALTH */
+
+.guidance-header {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fc;
+  border-bottom: 1px solid #e3e6f0; 
+}
+.guidance-title {
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+.guidance-content {
+  padding: 0 1.25rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+.hmr-accordion {
+  font-size: 10pt;
+  /*border: 1px solid #e3e6f0;*/
+  border-radius: 0.35rem;
+  margin-bottom: 1.5rem;
+  background-color: #fff;
+}
+
+.hmr-accordion.active .guidance-content {
+  max-height: 1000px; /* Nilai besar agar cukup untuk konten */
+  padding: 1.25rem;
+  transition: max-height 0.5s ease-in, padding 0.5s ease-in;
+}
+.guidance-toggle-icon {
+  transition: transform 0.3s ease;
+}
+.hmr-accordion.active .guidance-toggle-icon {
+  transform: rotate(180deg);
+}
+.zone-explanation {
+  margin-bottom: 1rem;
+}
+.zone-explanation h6 {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.zone-dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+.zone-dot.normal {
+  background-color: #28a745;
+}
+.zone-dot.warning {
+  background-color: #ffc107;
+}
+.zone-dot.limit {
+  background-color: #dc3545;
+}
+
+/* Gauge Chart */
+.page-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+#gaugeChartContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1400px;
+}
+.gauge-ready text {
+  font-size: 10pt !important;
+  fill: #555 !important;
+  font-family: "blinker", "sans-serif";
+}
+.gauge-wrapper {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border-radius: 100%;
+  margin: 0 auto;
+  box-shadow:1px 1px 18px -2px rgba(0,0,0,0.8);
+  border:2px solid #555;
+  background:  linear-gradient(271deg,rgba(240, 240, 240, 1) 0%, rgba(244, 244, 244, 1) 18%, rgba(224, 224, 224, 1) 21%, rgba(242, 242, 242, 1) 24%, rgba(232, 232, 232, 1) 27%, rgba(248, 248, 248, 1) 33%, rgba(224, 224, 224, 1) 53%, rgba(207, 207, 207, 1) 58%, rgba(237, 237, 237, 1) 83%, rgba(255, 255, 255, 1) 88%);
+
+}
+
+.gauge-wrapper:hover {
+  transform: translateY(-5px); /* Angkat sedikit ke atas */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Buat shadow lebih jelas */
+}
+
+/* Fleet Map */
+
+.map-accordion-wrapper {
+  margin-bottom: 1.5rem;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  background-color: #fff;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+}
+.map-accordion-header {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fc;
+  border-bottom: 1px solid #e3e6f0;
+}
+.map-accordion-title {
+  font-weight: 600;
+  color: var(--primary-dark) 
+}
+.map-accordion-title .fas {
+  margin-right: 8px;
+}
+.map-accordion-content {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+.map-accordion-wrapper.active .map-accordion-content {
+  max-height: 80vh; /* Tinggi maksimal peta */
+  transition: max-height 0.5s ease-in;
+}
+.map-accordion-toggle-icon {
+  transition: transform 0.3s ease;
+}
+.map-accordion-wrapper.active .map-accordion-toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Asset TTF widget */
+.asset-ttf-widget {
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 420px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.asset-ttf-widget .label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #0077b6;
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+}
+
+.ttf_table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.ttf_table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.ttf_table tr:last-child td {
+    border-bottom: none;
+}
+
+.ttf_table td:first-child {
+    font-weight: 600;
+    color: #444;
+    width: 55%;
+}
+
+.ttf_table td:last-child {
+    text-align: right;
+    color: #0077b6;
+    font-weight: 500;
+}
+
+
+
+/* Asset Health Rate Widget */
+.asset-health-widget {
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 20px;
+    width: 260px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* Hover soft, corporate */
+.asset-health-widget:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Corporate top accent line */
+.asset-health-widget::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #0077b6; /* biru corporate */
+    border-radius: 8px 8px 0 0;
+}
+
+.asset-health-widget .label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 14px;
+    border-bottom: 2px solid #0077b6;
+    padding-bottom: 4px;
+}
+
+/* Health Score */
+.health-score {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #0077b6;
+}
+
+/* --- COLOR CODING (tetap sama, hanya dibersihkan sedikit) --- */
+
+.health-score[data-rate^="0"],
+.health-score[data-rate^="1"],
+.health-score[data-rate^="2"] {
+    color: #dc2626;
+}
+
+.health-score[data-rate^="3"],
+.health-score[data-rate^="4"],
+.health-score[data-rate^="5"] {
+    color: #ea580c;
+}
+
+.health-score[data-rate^="6"],
+.health-score[data-rate^="7"] {
+    color: #d97706;
+}
+
+.health-score[data-rate^="8"],
+.health-score[data-rate^="9"],
+.health-score[data-rate="100"] {
+    color: #16a34a;
+}
+
+/* Indicator dot */
+.health-score::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    background-color: currentColor;
+}
+
+/* Pulse animation soft */
+@keyframes pulse {
+    0%   { opacity: 1; transform: scale(1); }
+    50%  { opacity: 0.65; transform: scale(1.15); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Compact version */
+.asset-health-widget.compact {
+    padding: 15px;
+    width: 190px;
+}
+
+.asset-health-widget.compact .label {
+    font-size: 13px;
+}
+
+.asset-health-widget.compact .health-score {
+    font-size: 30px;
+}
+
+/* Dark Corporate Theme */
+.asset-health-widget.dark {
+    background: #1e293b;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+.asset-health-widget.dark .label {
+    color: #cbd5e1;
+    border-bottom-color: #60a5fa;
+}
+
+.asset-health-widget.dark::before {
+    background: #60a5fa;
+}
+
+/* Progress bar variant */
+.asset-health-widget.with-progress {
+    padding-bottom: 28px;
+}
+
+.asset-health-widget.with-progress::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    height: 4px;
+    background-color: #e5e5e5;
+    border-radius: 2px;
+}
+
+.asset-health-widget.with-progress .health-score::before {
+    content: '';
+    position: absolute;
+    bottom: -32px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #dc2626, #ea580c, #d97706, #16a34a);
+    width: var(--progress-width, 25%);
+    transition: width 0.6s ease;
+}
+

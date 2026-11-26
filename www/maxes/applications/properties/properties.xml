@@ -1,0 +1,62 @@
+<properties>
+    <!-- Ganti Context Path sesuai nama folder -->
+    <contextPath>maxes</contextPath>
+    <host>10.164.236.208</host>
+    <dbhost>localhost</dbhost>
+    <remotehost></remotehost>
+    <domainhost></domainhost>
+    <internetrequired/>
+    <!-- Ganti Port Websocket (Biar gak bentrok sama maxes 8989) -->
+    <wsport>8990</wsport>
+    <appport>9443</appport>.
+    <!-- activate in  New-NetFirewallRule -DisplayName "Maxes Lite HTTPS (9443)" -Direction Inbound -LocalPort 9443 -Protocol TCP -Action Allow -->
+	<!-- PATH LINUX (Ganti 'maxtest' jadi 'maxes') -->
+    <attachFolder>/var/www/html/maxes/attachments/</attachFolder>
+    <excelFolder>/var/www/html/maxes/applications/importdata/</excelFolder>
+    <thumbsfolder>/var/www/html/maxes/attachments/thumbs/</thumbsfolder>
+    <androiderrorfolder>/var/www/html/maxes/errorlog/android/</androiderrorfolder>
+    
+    <!-- URL REPORT (PENTING!) -->
+    <!-- Akses via Nginx HTTPS di Port 9443 -->
+    <reportURL>http://10.164.236.208:9090/report/</reportURL>
+	
+    
+    <!-- FOLDER TOMCAT -->
+    <!-- PHP menulis report ke folder ini (Shared Volume) -->
+    <reportFolder>/usr/local/tomcat/webapps/report/</reportFolder>
+    <!-- BARCODE (Perbaiki path Windows ke Linux) -->
+    <barcodeFolder>/var/www/html/maxes/attachments/barcodes/</barcodeFolder>
+    <maximoIntegration>false</maximoIntegration>
+    
+    
+    <aiServer>http://localhost:8000</aiServer>
+    <docker_aiServer>http://mlai:8000</docker_aiServer>
+    
+    <!-- Jika ke server lain
+    
+    <aiServer>http://192.168.1.50:8000</aiServer>
+    <docker_aiServer>http://192.168.1.50:8000</docker_aiServer>
+    
+    -->
+
+    <client_id>MAXES</client_id>
+    <lcs>onetime</lcs>
+    
+    <comments>
+       
+    </comments>
+	<ssl_config_comments>
+        cd /d D:\maxes\nginx\ssl
+        mkcert -key-file server.key -cert-file server.crt 10.164.236.208 localhost 127.0.0.1
+        
+    </ssl_config_comments>
+    <sql_views_if_access_denied>
+    SELECT
+    TABLE_NAME,
+    DEFINER,
+    SECURITY_TYPE
+FROM information_schema.VIEWS
+WHERE TABLE_SCHEMA = 'maxesid_maxesdb';
+
+</sql_views_if_access_denied>
+</properties>

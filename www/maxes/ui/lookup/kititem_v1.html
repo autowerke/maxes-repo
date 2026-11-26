@@ -1,0 +1,40 @@
+	
+<table>
+<tr>
+		<td colspan=5 class="maxes_sct_tbl4">Assemble or Disassemble ?</td>						
+	</tr>
+	<tr>
+		<td><input type='radio' name='assembly' value='disasemble'> </td> <td> Disassemble</td>
+	</tr>
+	<tr>	
+		<td><input type='radio' name='assembly' value='assemble'>  </td> <td> Assemble</td>
+	</tr>	
+<table>
+
+<table id='lookupentry' width=100%>
+	
+	<tr>
+		<td colspan=5 class="maxes_sct_tbl4">Item Location</td>						
+	</tr>
+	<tr>
+		<td>Item </td><td> <input type='text' class='nonpersistent' data-attribute='itemnum' data-input='readonly'> </td>
+		<td>Warehouse </td><td> <input type='text' class='nonpersistent' data-attribute='warehouse' data-input='readonly' data-key='value'> </td>
+	</tr> 
+		
+	<tr>
+		<td>Company</td><td><input type='text' class='nonpersistent' data-attribute='orgcode' data-input='readonly'></td>
+		<td>Rack</td><td><input type='text' data-attribute='racknum' class='nonpersistent' data-lookup='racknum|itemnum,warehouse' data-key='value'> </td>
+	</tr>
+	<tr>
+		<td>Site</td><td><input type='text' class='nonpersistent' data-attribute='sitecode' data-input='readonly'></td>
+
+	</tr>
+	<tr>
+		<td colspan=5 class="maxes_sct_tbl4">Quantity to Assemble/Disassemble</td>						
+	</tr>
+	<tr>
+		<td>Condition Type</td><td><input type='text' class='nonpersistent' data-attribute='conditiontype' data-lookup='itemcondition|itemnum,warehouse'> </td> 
+		<td>Quantity</td><td><input type='text' data-attribute='quantity' class='nonpersistent' data-type='decimal'> </td>
+	</tr> 
+	
+</table>

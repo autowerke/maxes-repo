@@ -1,0 +1,24 @@
+<?php 
+include ("../eat.php");
+
+class InspectionType extends Xbo {
+
+	public function __destruct()
+    {
+		return null;
+    }
+	public static function displayData(){
+		
+		Xbo::select("Inspection Type", "value");
+		Xbo::select("Description", "valuetext");
+		Xbo::select("Remarks",  "remarks");
+		XboSet::getXboSet("mxsattrvalue", "name='inspectiontype'");
+		XboSet::displayData();
+	}
+	public static function init(){
+		InspectionType::displayData();
+	}
+	
+}
+InspectionType::init();
+?>

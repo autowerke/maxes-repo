@@ -1,0 +1,164 @@
+<!-- addservicetocart.html -->
+
+<style>
+    /* === Add Service to Cart Dialog Style === */
+    .asc-dialog-container {
+        padding: 20px;
+        background-color: #f8f9fc;
+        font-family: "blinker", "sans-serif";
+    }
+
+    .asc-header {
+        margin-bottom: 15px;
+    }
+
+    .asc-title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: #005B9A; /* Maxes Corporate Blue */
+    }
+
+    .asc-subtitle {
+        font-size: 0.9rem;
+        color: #5a5c69;
+        margin-top: -5px;
+    }
+
+    .asc-section {
+        background-color: #ffffff;
+        border: 1px solid #e3e6f0;
+        border-radius: .35rem;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .asc-section-title {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #4a4a4a;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #f0f2f5;
+        padding-bottom: 8px;
+    }
+    
+    .asc-details p {
+        margin: 0 0 5px 0;
+        font-size: 0.85rem;
+    }
+    
+    .asc-details strong {
+        display: inline-block;
+        width: 100px; /* Lebar label yang konsisten */
+        color: #5a5c69;
+    }
+    
+    .asc-charge-options .asc-radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .asc-radio-group label {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: border-color 0.2s, background-color 0.2s;
+    }
+    
+    .asc-radio-group label:hover {
+        border-color: #007bff;
+    }
+    
+    .asc-radio-group input[type="radio"] {
+        margin-right: 10px;
+    }
+    
+    .asc-radio-group input[type="radio"]:checked + .asc-radio-text {
+        font-weight: bold;
+    }
+    
+    .asc-radio-group label.selected {
+        border-color: #007bff;
+        background-color: #f0f8ff;
+    }
+
+    .asc-customer-lookup, .asc-vendor-lookup {
+        margin-top: 10px;
+        padding-left: 25px; /* Indentasi di bawah opsi SQ */
+        display: none; /* Sembunyikan secara default */
+    }
+
+</style>
+
+
+<!-- === ROOT DIV CONTAINER === -->
+<div id="addServiceToCartRoot" class="asc-dialog-container">
+    
+    <!-- Header Dialog -->
+    <div class="asc-header">
+        <h3 class="asc-title">Add Service to Procurement Cart</h3>
+        <p class="asc-subtitle">Specify how to charge this service requirement.</p>
+    </div>
+
+    <!-- Detail Jasa (diisi oleh JS) -->
+    <div class="asc-section asc-details">
+        <h6 class="asc-section-title">Service Details</h6>
+        <p><strong>Service #:</strong> <span id="asc-servicenum">-</span></p>
+        <p><strong>Description:</strong> <span id="asc-description">-</span></p>
+        <p><strong>Total Need:</strong> <span id="asc-total-need">-</span> <span id="asc-measure-unit">-</span></p>
+        <p><strong>Est. Cost:</strong> <span id="asc-total-cost">-</span></p>
+        <p><strong>Remarks:</strong> <span id="asc-remarks">-</span></p>
+    </div>
+
+    <!-- Opsi Pembebanan (PR vs SQ) -->
+    <div class="asc-section asc-charge-options">
+        <h6 class="asc-section-title">Charge To</h6>
+        <div class="asc-radio-group">
+            <label id="label-pr">
+                <input type="radio" name="chargeType" value="PR" checked>
+                <div class="asc-radio-text">
+                    <strong>Purchase Requisition (PR)</strong>
+                    <small style="display: block; color: #6c757d;">Charge as an internal project cost. Will be sent to the procurement team.</small>
+                </div>
+            </label>
+            <label id="label-sq">
+                <input type="radio" name="chargeType" value="SQ">
+                <div class="asc-radio-text">
+                    <strong>Sales Quotation (SQ)</strong>
+                    <small style="display: block; color: #6c757d;">Bill to an external customer. Will be sent to the sales/commercial team.</small>
+                </div>
+            </label>
+        </div>
+
+        <!-- Lookup Pelanggan (hanya muncul jika SQ dipilih) -->
+        <div id ="lookupentry">
+            <div class="asc-customer-lookup" id="customerLookupContainer">
+                <table class="tbldata">
+                    <tr>
+                        <td>Customer</td>
+                        <td><input type="text" id="asc-customer" data-attribute="asc-customer" data-lookup="customer" placeholder="Select a customer..."></td>
+                    </tr>
+                    <tr>
+                        <td>Profit Margin (%) </td>
+                        <td><input type="text" id="asc-margin" data-attribute="asc-margin" data-type="decimal"></td>
+                    </tr>
+                 </table>
+            </div>
+
+
+            <div class="asc-vendor-lookup" id="VendorLookupContainer">
+                <table class="tbldata">
+                    <tr>
+                        <td>Vendor</td>
+                        <td><input type="text" id="asc-vendor" data-attribute="asc-vendor" data-lookup="vendor" placeholder="Select a Vendor..."></td>
+                    </tr>
+                </table>
+           </div>
+
+        </div>
+    </div>
+
+</div>

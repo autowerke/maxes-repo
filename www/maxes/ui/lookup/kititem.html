@@ -1,0 +1,109 @@
+<div id="lookupentry">
+	<table>
+		<tr>
+			<td>Item</td>
+			<td>
+				<input
+					type="text"
+					class="nonpersistent"
+					data-attribute="itemnum"
+					data-input="readonly"
+					id="itemnum"
+					/> 
+				<input
+					type="text"
+					class="nonpersistent"
+					data-attribute="itemdesc"
+					data-input="readonly"
+					id="itemdesc"
+					size="60"
+					/>
+		</tr>
+	</table>
+	<div class="row eatfix">
+		<div class="col-md-12">
+			<div id="action_selection">
+				<input
+					type="radio"
+					id="assemble_radio"
+					name="action"
+					value="assemble"
+					checked
+					/>
+				<label for="assemble_radio">Assemble Item</label>, Maximum Qty to be assembled: <span id="max_assemble_qty"></span> pcs.
+				<br>
+				<input
+					type="radio"
+					id="disassemble_radio"
+					name="action"
+					value="disassemble"
+					/>
+				<label for="disassemble_radio">Disassemble Item</label>, Maximum Qty to be disassembled: <span id="max_disassemble_qty"></span> pcs.
+			</div>
+		</div>
+	</div>
+	<hr>
+	<!-- Assemble Content (Show when "Assemble Item" is selected) -->
+	<div id="assemble_content">
+		<div class="row eatfix">
+			<div class="col-md-4">
+				<h4>Assembly Requirements</h4>
+				This item requires the following components to be assembled:
+				<hr>
+				<div id='subitemnums'></div>
+			</div>
+			<div class="col-md-8">
+				<h4>Assembly Components</h4>
+				Select items to be assembled
+				<hr>
+				<div id='lookupentryTable'>
+					<div class="tablelist">
+						<table id="mxtable_lookupEntry_kitassemble" class="display"></table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Number of Kits to Assemble -->
+	</div>
+	
+	
+	<!-- Disassemble Content (Show when "Disassemble Item" is selected) -->
+	<div id="disassemble_content">
+		<div class="tablelist">
+			<h4>Assembly Components</h4>
+			This item will be disassembled into the following components:
+			<table id="mxtable_lookupEntry_kitdisassemble" class="display"></table>
+		</div>
+		<br><br>
+		<hr>
+		<div class="row eatfix">
+			<div class="col-md-12">
+				<h4>Storage</h4>
+					This item will be disassembled into the following components:<br>
+				<div class="col-md-12">
+					<!-- Warehouse and Rack Number for Disassemble Location  -->
+				
+					<ul>
+					<li><label for="disassemble_warehouse">Select a warehouse to store the assembled item:</label>
+						<select id="disassemble_warehouse" data-attribute="disassemble_warehouse"></select>
+					</li>
+					<li>
+						<label for="disassemble_racknum">Rack Number:</label>
+						<input type="text" data-attribute="disassemble_racknum" data-lookup="rack|disassemble_warehouse" data-lookupaction="y"/>
+					</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div id='lookupentryTable'>
+			<br>
+			<div class="tablelist">
+				<h4>Kit Item</h4>
+				Which item do you want to disassemble?
+				<table id="mxtable_lookupEntry_kitinvfifolifo" class="display"></table>
+			</div>
+		</div>
+		<br><br>
+	</div>
+</div>

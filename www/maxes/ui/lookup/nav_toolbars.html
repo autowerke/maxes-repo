@@ -1,0 +1,282 @@
+<div class='maintoolbars'>
+	<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow maintoolbars_bg">
+		<!-- Sidebar Toggle (Topbar) -->
+		<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+			<i class="fa fa-bars"></i>
+		</button>
+		<!-- Topbar Search -->
+		<div class="row eatfix toolbarbg">
+			<div class="col-md-2 fxsearch" data-id='searchbar'>
+				<div class="d-none d-md-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+					<div class="input-group">
+						<input type="search" class="form-control" data-id='fixedsearch' placeholder="Search Data.." aria-label="Search" aria-describedby="basic-addon2">
+						<div class="input-group-append">
+							<button class="btn toolbarsearchbtn" type="button" data-id='runsearch'>
+								<i class="fas fa-search fa-sm"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+					<div class="col-md-10">
+						<div class="input-group eat-ss">
+							<div class="eat_actions"></div>
+								<button type="button" class="btn btn-light btn-circle" data-id='newrec'>
+								<i class="fa fa-file"></i>
+							</button>
+							<button type="button" class="btn btn-light btn-circle" data-id='saverec'>
+								<i class="fa fa-save"></i>
+							</button>
+							<button type="button" class="btn btn-light btn-circle" data-id='prevrec'>
+								<i class="fa fa-arrow-left"></i>
+							</button>
+							<button type="button" class="btn btn-light btn-circle" data-id='nextrec'>
+								<i class="fa fa-arrow-right"></i>
+							</button>
+							
+							<div class="dropdown no-arrow">
+								<a class="dropdown-toggle" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<button type="button" class="btn btn-light btn-circle" data-id='attrec'>
+										<i class="fa fa-folder"></i>
+									</button>
+								</a>
+								<div class="dropdown-menu" >
+									<table class='tbldata'>
+										<tr>
+											<td class='eatfixtable'>
+												<i class='fa fa-file-upload'></i>
+											</td>
+											<td>
+												<div class='sidebar-link' data-id='uploadatt'>
+													<a>Upload File</a>
+												</div>
+											</td>
+										</tr>
+										
+										<tr>
+											<td class='eatfixtable'>
+												<i class='fa fa-trash'></i>
+											</td>
+											<td>
+												<div class='sidebar-link' data-id='deleteatt'>
+													<a>Delete File</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class='eatfixtable'>
+												<i class='fa fa-file-download'></i>
+											</td>
+											<td>
+												<div class='sidebar-link'  data-id="downloadloader">
+													<a>Download Loader</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class='eatfixtable'>
+												<i class='fa fa-file-upload'></i>
+											</td>
+											<td>
+												<div class='sidebar-link'  data-id="uploadloader">
+													<a>Upload Loader</a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class='eatfixtable'>
+												<i class='fa fa-file-excel'></i>
+											</td>
+											<td>
+												<div class='sidebar-link' data-id='deleteatt'>
+													<a>Import Data</a>
+												</div>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="eat_actions"></div>
+								<button type="button" class="btn btn-light btn-circle" data-id='wflow'>
+							<i class="fa fa-user-check"></i>
+							<div class="attcounter" data-id='totalatt_sm'>
+							</div>
+							<button type="button" class="btn btn-light btn-circle data-id='filerec'" data-id='filerec'>
+								<i class="fa fa-folder-open"></i>
+							</button>
+						</div>
+						<div class='eat-bs'>
+							<nav class="navbar navbar-icon-top navbar-expand-md">
+								<div class="collapse navbar-collapse" id="toolbars">
+									<ul class="navbar-nav mr-auto">	
+										<li class="nav-item"  data-id="newrec">
+											<a class="nav-link" href="javascript:;">
+												<i class="fa fa-file navbar-primary"></i>
+												<span class='pad-right'>Add</span>
+											</a>
+										</li>
+										<li class="nav-item"  data-id="saverec">
+											<a class="nav-link" href="javascript:;">
+												<i class="fa fa-save navbar-primary"></i>
+												<span class='pad-right'>Save</span>
+											</a>
+										</li>
+										<li class="nav-item" data-id="prevrec">
+											<a class="nav-link" href="javascript:;">
+												<i class="fa fa-arrow-left navbar-primary"></i>
+												<span class='pad-right'>Prev</span>
+											</a>
+										</li>
+										<li class="nav-item" data-id="nextrec">
+											<a class="nav-link" href="javascript:;">
+												<i class="fa fa-arrow-right navbar-primary"></i>
+												<span class='pad-right'>Next</span>
+											</a>
+										</li>
+										<li class="nav-item" data-id="wflowlist">
+											<a class="nav-link" href="javascript:;">
+												<i class="fa fa-clipboard-list navbar-primary"></i>
+												<span class='pad-right'>Approval</span>
+											</a>
+											<div class="attcounter" id="mxswfnotification" ><div class='attcounter_value'  data-id='totalassignments'></div></div>
+										</li>
+										<li class="nav-item" data-id="notification">
+											<a class="nav-link" href="javascript:;">
+												<i class="fa fa-bell navbar-primary"></i>
+												<span class='pad-right'>Notification</span>
+											</a>
+											<div class="attcounter" id="mxsnotification" ><div class='attcounter_value'  data-id='totalassignments'></div></div>
+										</li>
+										<li class="nav-item" data-id="wflow">
+											<a class="nav-link" href="javascript:;">
+												<i class="fa fa-user-check navbar-primary"></i>
+												<span class='pad-right'>Fllw Up</span>
+											</a>
+										</li>
+										<li class="nav-item" data-id="wflowhist">
+											<a class="nav-link" href="javascript:;">
+												<i class="fa fa-clipboard-check navbar-primary"></i>
+												<span class='pad-right'>Hist. Appr</span>
+											</a>
+										</li>
+										
+										
+										<li class="nav-item dropdown" data-id="attrec">
+											<a class="nav-link dropdown-toggle" href="javascript:;" id="fileupload" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<i class="fa fa-folder navbar-primary"></i>
+												<span class='pad-right'>Upload</span>
+											</a>
+											<div class="dropdown-menu" aria-labelledby="fileupload">
+												<table class='tbldata'>
+													<tr>
+														<td class='eatfixtable'>
+															<i class='fa fa-file-upload'></i>
+														</td>
+														<td>
+															<div class='sidebar-link' data-id="uploadatt">
+																<a>Upload File</a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td class='eatfixtable'>
+															<i class='fa fa-trash'></i>
+														</td>
+														<td>
+															<div class='sidebar-link'  data-id="deleteatt">
+																<a>Delete File</a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td class='eatfixtable'>
+															<i class='fa fa-file-download'></i>
+														</td>
+														<td>
+															<div class='sidebar-link'  data-id="downloadloader">
+																<a>Download Loader</a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td class='eatfixtable'>
+															<i class='fa fa-file-upload'></i>
+														</td>
+														<td>
+															<div class='sidebar-link'  data-id="uploadloader">
+																<a>Upload Loader</a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td class='eatfixtable'>
+															<i class='fa fa-file-excel'></i>
+														</td>
+														<td>
+															<div class='sidebar-link'  data-id="importdata">
+																<a>Import Data</a>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td class='eatfixtable'>
+															<i class='fab fa-youtube'></i>
+														</td>
+														<td>
+															<div class='sidebar-link'  data-id="youtube">
+																<a>Youtube Video</a>
+															</div>
+														</td>
+													</tr>
+
+												</table>
+											</div>
+										</li>
+										<li class="nav-item"  data-id="filerec">
+											<a class="nav-link" href="javascript:;" >
+												<i class="fa fa-folder-open navbar-primary"></i>
+												<span class='pad-right'>Attachment</span>
+											</a>
+											 <div class="attcounter"><div class='attcounter_value' data-id='totalatt'></div></div>
+										</li>
+										
+										<li class="nav-item"  data-id="select_action">
+											<a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<i class="fa fa-ellipsis-h navbar-primary"></i>
+												<span class='pad-right'>Select Actions</span>
+											</a>
+											<div class="eat_actions"></div>	
+										</li>
+										
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<!-- Topbar Navbar -->
+				<ul class="navbar-nav ml-auto" data-id='searchbar'>
+					<!-- Nav Item - Search Dropdown (Visible Only XS) -->
+					<li class="nav-item dropdown no-arrow d-md-none">
+						<a class="nav-link dropdown-toggle" href="javascript:;" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fas fa-search fa-fw"></i>
+						</a>
+						<!-- Dropdown - Messages -->
+						<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" data-id="popupsearch" aria-labelledby="searchDropdown">
+							<div class="mr-auto w-100 navbar-search">
+								<div class="input-group">
+									<input type="search" class="form-control bg-light border-0 small" data-id='fixedsearch' placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+										<div class="input-group-append">
+											<button class="btn btn-primary" type="button" data-id='runsearch'>
+												<i class="fas fa-search fa-sm"></i>
+											</button>
+										</div>
+									
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- Nav Item - Messages -->
+					</ul>
+				</nav>
+			</div>

@@ -1,0 +1,43 @@
+
+<div class="conversion-card" style="border: 1px solid #ccc; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+    
+    <!-- Tambahkan header untuk setiap card, misal "Tool #1", "Tool #2", dst. -->
+    <h5 class="card-header"></h5>
+
+    <table class="tbldata">
+        <!-- Untuk Tool Conversion -->
+        <tr class="tool-field">
+            <td>Tool Num</td>
+            <td><input type="text" class="toolnum-input" data-attribute="toolnum"></td>
+        </tr>
+        <!-- Untuk Asset Conversion -->
+        <tr class="asset-field" style="display:none;">
+            <td>Asset Num</td>
+            <td><input type="text" class="assetnum-input" data-attribute="assetnum" data-input="required"></td>
+        </tr>
+        
+        <!-- Kolom Umum -->
+        <tr>
+            <td>Serial Number*</td>
+            <td><input type="text" class="serialnumber-input" data-attribute="serialnumber" data-input="required"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" class="name-input" data-attribute="name" data-input="required"></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><textarea class="description-input" data-attribute="description"></textarea></td>
+        </tr>
+        <tr>
+            <td>Unit Cost</td>
+            <td><input type="text" class="cost-input" data-attribute="unitcost"></td>
+        </tr>
+
+        <!-- Tambahkan field lain jika perlu, misal: brand, model, etc. -->
+    </table>
+    <!-- Simpan data referensi di sini -->
+    <input type="hidden" class="ref-locnum" data-attribute="locnum">
+    <input type="hidden" class="ref-invfifolifocostid" data-attribute="invfifolifocostid">
+    <input type="hidden" class="ref-itemnum" data-attribute="itemnum">
+</div>
