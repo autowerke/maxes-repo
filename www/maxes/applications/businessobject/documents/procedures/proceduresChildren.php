@@ -26,7 +26,6 @@ class ProceduresChildren {
 		
 		// 2. Menangani tabel child Doc. Form (Formulir Terkait)
 		if($tableid == "mxtable_docform_child"){
-			Xbo::select("Line Num.", "docformlinenum");
 			Xbo::select("Doc. Form Num", "docformnum");
 			Xbo::select("Form Name", "docformname");
 			Xbo::select("Category", "category");
