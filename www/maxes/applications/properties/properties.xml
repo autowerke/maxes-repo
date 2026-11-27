@@ -1,7 +1,7 @@
 <properties>
     <!-- Ganti Context Path sesuai nama folder -->
     <contextPath>maxes</contextPath>
-    <host>10.108.142.208</host>
+    <host>10.215.114.208</host>
     <dbhost>localhost</dbhost>
     <remotehost></remotehost>
     <domainhost></domainhost>
@@ -18,7 +18,7 @@
     
     <!-- URL REPORT (PENTING!) -->
     <!-- Akses via Nginx HTTPS di Port 9443 -->
-    <reportURL>http://10.108.142.208:9090/report/</reportURL>
+    <reportURL>http://10.215.114.208:9090/report/</reportURL>
 	
     
     <!-- FOLDER TOMCAT -->
@@ -47,7 +47,7 @@
     </comments>
 	<ssl_config_comments>
         cd /d D:\maxes\nginx\ssl
-        mkcert -key-file server.key -cert-file server.crt 10.108.142.208 localhost 127.0.0.1
+        mkcert -key-file server.key -cert-file server.crt 10.215.114.208 localhost 127.0.0.1
         
     </ssl_config_comments>
     <sql_views_if_access_denied>
