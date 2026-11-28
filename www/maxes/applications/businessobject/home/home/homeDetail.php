@@ -1,14 +1,13 @@
 <?php 
 include ("../../eat.php");
 
-class InventoryDetail  {
+class Home  {
 	public static function showDetail(){
-		XboSet::getXboSet("inventory");
-		XboSet::showDetail();	
+		
 	}	
 }
 
-InventoryDetail::showDetail();
+Home::showDetail();
 
 
 ?>

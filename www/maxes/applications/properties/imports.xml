@@ -75,6 +75,9 @@
 	<path id="home-style">
 		<url type="css" path="/ui/home/home/">ui/home/home/style_light.css</url>
 	</path>
+	<path id="homedoc">
+		<url type="script" path="/ui/home/homedoc/">applications/ui/home/homedoc/homedoc.min.js</url>
+	</path>
 	<path id="teams">
 		<url type="script" path="/ui/resources/teams/">applications/ui/resources/teams/teams.min.js</url>
 	</path>
@@ -138,7 +141,6 @@
 	<path id="teamdecree">
 		<url type="script" path="/ui/documents/teamdecree/">applications/ui/documents/teamdecree/teamdecree.min.js</url>
 	</path>
-
 	<path id="bulletinboard">
 		<url type="script" path="/ui/administration/bulletinboard/">applications/ui/administration/bulletinboard/bulletinboard.min.js</url>
 	</path>
