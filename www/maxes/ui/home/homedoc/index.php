@@ -129,7 +129,7 @@
 												<div class="foundry-header-icon mr-2 text-primary"> <i class="fas fa-layer-group fa-sm"></i> </div>
 												<div>
 													<h6 class="m-0 font-weight-bold text-dark">Document Records by Document Type</h6> </div>
-											</div> <span class="text-muted" style="font-size: 10px;" id="chartContextSubtitle">Period: 2026</span> </div>
+										
 										<div class="card-body px-3 py-2">
 											<!-- Mini Metric Summary row inside card -->
 											<div class="row mb-2">

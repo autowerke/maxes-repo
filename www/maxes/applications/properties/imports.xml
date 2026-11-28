@@ -72,11 +72,11 @@
 	<path id="home">
 		<url type="script" path="/ui/home/home/">applications/ui/home/home/home_light.min.js</url>
 	</path>
-	<path id="home-style">
+	<path id="home-style"> 
 		<url type="css" path="/ui/home/home/">ui/home/home/style_light.css</url>
-	</path>
+	</path> 
 	<path id="homedoc">
-		<url type="script" path="/ui/home/homedoc/">applications/ui-src/home/homedoc/homedoc.js</url>
+		<url type="script" path="/ui/home/homedoc/">applications/ui/home/homedoc/homedoc.min.js</url>
 	</path>
 	<path id="homedoc-style">
 		<url type="css" path="/ui/home/homedoc/">ui/home/homedoc/style.css</url>
