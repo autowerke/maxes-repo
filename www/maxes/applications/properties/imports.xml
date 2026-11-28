@@ -76,7 +76,10 @@
 		<url type="css" path="/ui/home/home/">ui/home/home/style_light.css</url>
 	</path>
 	<path id="homedoc">
-		<url type="script" path="/ui/home/homedoc/">applications/ui/home/homedoc/homedoc.min.js</url>
+		<url type="script" path="/ui/home/homedoc/">applications/ui-src/home/homedoc/homedoc.js</url>
+	</path>
+	<path id="homedoc-style">
+		<url type="css" path="/ui/home/homedoc/">ui/home/homedoc/style.css</url>
 	</path>
 	<path id="teams">
 		<url type="script" path="/ui/resources/teams/">applications/ui/resources/teams/teams.min.js</url>
