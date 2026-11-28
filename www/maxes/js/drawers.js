@@ -10,6 +10,6 @@ const instance = {
     instanceName: "PRODUCTION",
     subject: "ORION",
     description: "Operation Readiness Intelligence and Orchestration Network",
-    manufacture: "Maxes Foundry",
+    manufacture: "Maxes",
     manuDescription: "Software that Amplifies"
 }

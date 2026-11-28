@@ -5558,7 +5558,7 @@ class XboSet {
 		$fileExtension            = strtolower(pathinfo($rawFileName, PATHINFO_EXTENSION));
 
 		// ── SECURITY LAYER 1: WHITELIST EXTENSION ────────────────────────────
-		$allowedExtensions = ['jpg', 'jpeg', 'png', 'pdf', 'xls', 'xlsx'];
+		$allowedExtensions = ['jpg', 'jpeg', 'png', 'pdf', 'xls', 'xlsx', "ppt", "pptx", "doc", "docx"];
 		if (!in_array($fileExtension, $allowedExtensions)) {
 			Set::throws(["msg" => "invalid_extension", "fname" => $originalFname, "cause" => "Extension '.$fileExtension' is not allowed.", "uploadpath" => null, "absolutePath" => $absolutePath]);
 			return;
